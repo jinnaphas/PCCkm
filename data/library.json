@@ -1,0 +1,88 @@
+{
+  "categories": [
+    {
+      "id": "work-standards",
+      "name": "มาตรฐานการทำงาน",
+      "description": "Work Standards, SOP และขั้นตอนการปฏิบัติงานมาตรฐาน",
+      "icon": "📘"
+    },
+    {
+      "id": "engineering",
+      "name": "วิศวกรรมและเทคนิค",
+      "description": "เอกสารทางเทคนิค แบบแปลน และองค์ความรู้ด้านวิศวกรรม",
+      "icon": "⚙️"
+    },
+    {
+      "id": "quality",
+      "name": "คุณภาพและความปลอดภัย",
+      "description": "QA/QC, ความปลอดภัยในการทำงาน และ Lesson Learned",
+      "icon": "🛡️"
+    },
+    {
+      "id": "training",
+      "name": "สื่อการอบรม",
+      "description": "สไลด์อบรม วิดีโอสอนงาน และคู่มือสำหรับพนักงานใหม่",
+      "icon": "🎓"
+    }
+  ],
+  "documents": [
+    {
+      "id": "welcome-guide",
+      "title": "คู่มือการใช้งาน Paradigm Library",
+      "description": "แนะนำวิธีใช้งานระบบ ทั้งการค้นหา การเปิดดูเอกสาร การอัพโหลดเอกสารใหม่ และการอัพเดตเวอร์ชัน",
+      "categoryId": "work-standards",
+      "tags": ["คู่มือ", "เริ่มต้นใช้งาน", "how-to"],
+      "file": {
+        "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
+        "name": "welcome-guide.md",
+        "type": "md",
+        "size": 2905
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-08T09:00:00.000Z",
+      "createdBy": "System",
+      "updatedAt": "2026-07-08T09:00:00.000Z",
+      "updatedBy": "System",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
+          "name": "welcome-guide.md",
+          "updatedAt": "2026-07-08T09:00:00.000Z",
+          "updatedBy": "System",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
+    },
+    {
+      "id": "example-paradigm",
+      "title": "ตัวอย่าง Paradigm: การจัดทำเอกสารองค์ความรู้",
+      "description": "ตัวอย่างโครงสร้างเอกสาร Paradigm ที่ดี ประกอบด้วยที่มา ปัญหา แนวทางแก้ไข และผลลัพธ์ สามารถใช้เป็นแม่แบบในการเขียนเอกสารใหม่",
+      "categoryId": "training",
+      "tags": ["ตัวอย่าง", "แม่แบบ", "template", "KM"],
+      "file": {
+        "path": "assets/training/example-paradigm/v1-example-paradigm.md",
+        "name": "example-paradigm.md",
+        "type": "md",
+        "size": 1930
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-08T09:05:00.000Z",
+      "createdBy": "System",
+      "updatedAt": "2026-07-08T09:05:00.000Z",
+      "updatedBy": "System",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/training/example-paradigm/v1-example-paradigm.md",
+          "name": "example-paradigm.md",
+          "updatedAt": "2026-07-08T09:05:00.000Z",
+          "updatedBy": "System",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
+    }
+  ]
+}

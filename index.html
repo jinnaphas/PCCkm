@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paradigm Library</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">📚 <span>Paradigm Library</span></a>
+    <div class="search-wrap">
+      <input id="search-input" type="search" placeholder="ค้นหาจากชื่อ, Tag, คำอธิบาย…  (กด / เพื่อค้นหา)" autocomplete="off" />
+      <div id="search-dropdown" class="search-dropdown"></div>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-primary" id="btn-add-doc">+ เพิ่มเอกสาร</button>
+      <span id="auth-area"></span>
+    </div>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <footer class="footer">Paradigm Library · เก็บข้อมูลทั้งหมดบน GitHub repository ของทีม</footer>
+
+  <div id="modal-root"></div>
+  <div id="toast" class="toast"></div>
+
+  <script src="js/github.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

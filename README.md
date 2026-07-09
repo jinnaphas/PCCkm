@@ -38,7 +38,9 @@ Webapp สำหรับเก็บองค์ความรู้ (Paradigm
 ```jsonc
 {
   "categories": [
-    { "id": "work-standards", "name": "มาตรฐานการทำงาน", "description": "…", "icon": "📘" }
+    // หมวดหลัก: parentId = null, หมวดย่อย: parentId = id ของหมวดหลัก (รองรับ 2 ระดับ)
+    { "id": "intellectual-capital", "name": "Intellectual Capital", "description": "…", "icon": "💡", "parentId": null },
+    { "id": "ic-human-capital", "name": "Human Capital", "description": "…", "icon": "👥", "parentId": "intellectual-capital" }
   ],
   "documents": [
     {

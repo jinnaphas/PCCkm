@@ -1,28 +1,123 @@
 {
   "categories": [
     {
-      "id": "work-standards",
-      "name": "มาตรฐานการทำงาน",
-      "description": "Work Standards, SOP และขั้นตอนการปฏิบัติงานมาตรฐาน",
-      "icon": "📘"
+      "id": "strategy-bmd",
+      "name": "Strategy, Business Model Development",
+      "description": "กลยุทธ์องค์กรและการพัฒนาโมเดลธุรกิจ",
+      "icon": "🎯",
+      "parentId": null
     },
     {
-      "id": "engineering",
-      "name": "วิศวกรรมและเทคนิค",
-      "description": "เอกสารทางเทคนิค แบบแปลน และองค์ความรู้ด้านวิศวกรรม",
-      "icon": "⚙️"
+      "id": "intellectual-capital",
+      "name": "Intellectual Capital",
+      "description": "ทุนทางปัญญาขององค์กรทั้ง 6 ด้าน",
+      "icon": "💡",
+      "parentId": null
     },
     {
-      "id": "quality",
-      "name": "คุณภาพและความปลอดภัย",
-      "description": "QA/QC, ความปลอดภัยในการทำงาน และ Lesson Learned",
-      "icon": "🛡️"
+      "id": "ic-intellectual",
+      "name": "Intellectual",
+      "description": "องค์ความรู้และทรัพย์สินทางปัญญา",
+      "icon": "🧠",
+      "parentId": "intellectual-capital"
     },
     {
-      "id": "training",
-      "name": "สื่อการอบรม",
-      "description": "สไลด์อบรม วิดีโอสอนงาน และคู่มือสำหรับพนักงานใหม่",
-      "icon": "🎓"
+      "id": "ic-human-capital",
+      "name": "Human Capital",
+      "description": "ทุนมนุษย์ ทักษะ และความสามารถของบุคลากร",
+      "icon": "👥",
+      "parentId": "intellectual-capital"
+    },
+    {
+      "id": "ic-information-capital",
+      "name": "Information Capital",
+      "description": "ทุนสารสนเทศ ข้อมูล และระบบข้อมูลขององค์กร",
+      "icon": "📊",
+      "parentId": "intellectual-capital"
+    },
+    {
+      "id": "ic-digital-process-capital",
+      "name": "Digital Process Capital",
+      "description": "กระบวนการทำงานดิจิทัลและระบบอัตโนมัติ",
+      "icon": "💻",
+      "parentId": "intellectual-capital"
+    },
+    {
+      "id": "ic-relationship-capital",
+      "name": "Relationship Capital",
+      "description": "ทุนความสัมพันธ์กับพันธมิตรและผู้มีส่วนได้ส่วนเสีย",
+      "icon": "🔗",
+      "parentId": "intellectual-capital"
+    },
+    {
+      "id": "ic-customer-capital",
+      "name": "Customer Capital",
+      "description": "ทุนลูกค้าและฐานความสัมพันธ์กับลูกค้า",
+      "icon": "🤝",
+      "parentId": "intellectual-capital"
+    },
+    {
+      "id": "revenue-streams",
+      "name": "6 Revenue Stream Types",
+      "description": "รูปแบบรายได้ทั้ง 6 ประเภทขององค์กร",
+      "icon": "💰",
+      "parentId": null
+    },
+    {
+      "id": "rs-tendering",
+      "name": "Tendering",
+      "description": "งานประมูลและการยื่นข้อเสนอโครงการ",
+      "icon": "📑",
+      "parentId": "revenue-streams"
+    },
+    {
+      "id": "rs-omni-channel",
+      "name": "Omni Channel",
+      "description": "การขายผ่านช่องทางแบบผสมผสาน",
+      "icon": "🛒",
+      "parentId": "revenue-streams"
+    },
+    {
+      "id": "rs-tcs",
+      "name": "TCS",
+      "description": "",
+      "icon": "🔧",
+      "parentId": "revenue-streams"
+    },
+    {
+      "id": "rs-recurring",
+      "name": "Recurring",
+      "description": "รายได้ประจำต่อเนื่อง",
+      "icon": "🔁",
+      "parentId": "revenue-streams"
+    },
+    {
+      "id": "rs-ppa-long-term",
+      "name": "PPA / Long Term Contract",
+      "description": "สัญญาซื้อขายไฟฟ้าและสัญญาระยะยาว",
+      "icon": "📜",
+      "parentId": "revenue-streams"
+    },
+    {
+      "id": "rs-investment",
+      "name": "Investment",
+      "description": "รายได้จากการลงทุน",
+      "icon": "📈",
+      "parentId": "revenue-streams"
+    },
+    {
+      "id": "business-generation",
+      "name": "Business Generation",
+      "description": "การสร้างโอกาสและพัฒนาธุรกิจใหม่",
+      "icon": "🚀",
+      "parentId": null
+    },
+    {
+      "id": "demand-satisfaction",
+      "name": "Demand Satisfaction",
+      "description": "การตอบสนองความต้องการของลูกค้า",
+      "icon": "✅",
+      "parentId": null
     }
   ],
   "documents": [
@@ -30,7 +125,7 @@
       "id": "welcome-guide",
       "title": "คู่มือการใช้งาน Paradigm Library",
       "description": "แนะนำวิธีใช้งานระบบ ทั้งการค้นหา การเปิดดูเอกสาร การอัพโหลดเอกสารใหม่ และการอัพเดตเวอร์ชัน",
-      "categoryId": "work-standards",
+      "categoryId": "ic-information-capital",
       "tags": ["คู่มือ", "เริ่มต้นใช้งาน", "how-to"],
       "file": {
         "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
@@ -59,7 +154,7 @@
       "id": "example-paradigm",
       "title": "ตัวอย่าง Paradigm: การจัดทำเอกสารองค์ความรู้",
       "description": "ตัวอย่างโครงสร้างเอกสาร Paradigm ที่ดี ประกอบด้วยที่มา ปัญหา แนวทางแก้ไข และผลลัพธ์ สามารถใช้เป็นแม่แบบในการเขียนเอกสารใหม่",
-      "categoryId": "training",
+      "categoryId": "ic-intellectual",
       "tags": ["ตัวอย่าง", "แม่แบบ", "template", "KM"],
       "file": {
         "path": "assets/training/example-paradigm/v1-example-paradigm.md",

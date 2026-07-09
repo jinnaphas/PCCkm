@@ -220,6 +220,38 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "แผนกลยุทธ์-3-ระดับ",
+      "title": "แผนกลยุทธ์ 3 ระดับ",
+      "description": "แผนกลยุทธ์ 3 ระดับ: Corporate, Business, Functional Strategy",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Strategy 3 ระดับ"
+      ],
+      "file": {
+        "path": "assets/strategy-bmd/แผนกลยุทธ์-3-ระดับ/v1-Strategy_3_Layers.png",
+        "name": "Strategy 3 Layers.png",
+        "type": "png",
+        "size": 258484
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-09T04:12:58.866Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-09T04:12:58.866Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/strategy-bmd/แผนกลยุทธ์-3-ระดับ/v1-Strategy_3_Layers.png",
+          "name": "Strategy 3 Layers.png",
+          "externalUrl": null,
+          "updatedAt": "2026-07-09T04:12:58.866Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

@@ -118,6 +118,13 @@
       "description": "การตอบสนองความต้องการของลูกค้า",
       "icon": "✅",
       "parentId": null
+    },
+    {
+      "id": "center-of-excellence-coe",
+      "name": "Center of Excellence (CoE)",
+      "description": "ทีมพัฒนาของกลุ่ม",
+      "icon": "📁",
+      "parentId": null
     }
   ],
   "documents": [

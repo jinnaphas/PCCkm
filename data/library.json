@@ -327,6 +327,38 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "organic-growth",
+      "title": "Organic Growth",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Organic Growth"
+      ],
+      "file": {
+        "path": "assets/strategy-bmd/organic-growth/v1-organic_growth.pdf",
+        "name": "organic growth.pdf",
+        "type": "pdf",
+        "size": 200542
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-09T04:39:30.926Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-09T04:39:30.926Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/strategy-bmd/organic-growth/v1-organic_growth.pdf",
+          "name": "organic growth.pdf",
+          "externalUrl": null,
+          "updatedAt": "2026-07-09T04:39:30.926Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

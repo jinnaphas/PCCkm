@@ -378,6 +378,68 @@ section { margin-bottom: 36px; }
 .doc-detail-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .doc-detail-desc { color: var(--text-dim); margin: 14px 0 0; }
 
+/* ---------- attachments ---------- */
+
+.btn-sm { padding: 4px 12px; font-size: 0.82rem; white-space: nowrap; }
+
+.attachments { margin-top: 20px; }
+.attachments h2 { margin-bottom: 10px; }
+
+.attach-list { display: flex; flex-direction: column; gap: 6px; }
+
+.attach-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+.attach-row.active { border-color: var(--primary); background: #eef4fd; }
+.attach-icon { font-size: 1.2rem; flex-shrink: 0; }
+.attach-name {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.92rem;
+}
+.attach-sub { font-size: 0.75rem; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; }
+
+/* ไฟล์แนบเดิมใน modal แก้ไข */
+.attach-edit-label { font-size: 0.88rem; font-weight: 500; }
+.attach-edit { display: flex; flex-wrap: wrap; gap: 6px; }
+.attach-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px 4px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  max-width: 100%;
+}
+.attach-chip-x {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-dim);
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+.attach-chip-x:hover { background: #fbeaea; color: var(--danger); }
+
+/* แถวลิงก์ภายนอกใน modal */
+.link-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.link-row .link-name { flex: 1; }
+.link-row .link-url { flex: 2; }
+#link-rows:not(:empty) { margin-bottom: 2px; }
+
 .preview { margin-top: 20px; }
 .preview-frame {
   width: 100%;

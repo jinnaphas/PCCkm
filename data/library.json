@@ -138,13 +138,6 @@
         "เริ่มต้นใช้งาน",
         "how-to"
       ],
-      "file": {
-        "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
-        "name": "welcome-guide.md",
-        "type": "md",
-        "size": 2905
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-08T09:00:00.000Z",
       "createdBy": "System",
@@ -153,11 +146,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
-          "name": "welcome-guide.md",
           "updatedAt": "2026-07-08T09:00:00.000Z",
           "updatedBy": "System",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
+              "name": "welcome-guide.md"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
+          "name": "welcome-guide.md",
+          "type": "md",
+          "size": 2905
         }
       ]
     },
@@ -172,13 +179,6 @@
         "template",
         "KM"
       ],
-      "file": {
-        "path": "assets/training/example-paradigm/v1-example-paradigm.md",
-        "name": "example-paradigm.md",
-        "type": "md",
-        "size": 1930
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-08T09:05:00.000Z",
       "createdBy": "System",
@@ -187,11 +187,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/training/example-paradigm/v1-example-paradigm.md",
-          "name": "example-paradigm.md",
           "updatedAt": "2026-07-08T09:05:00.000Z",
           "updatedBy": "System",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/training/example-paradigm/v1-example-paradigm.md",
+              "name": "example-paradigm.md"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/training/example-paradigm/v1-example-paradigm.md",
+          "name": "example-paradigm.md",
+          "type": "md",
+          "size": 1930
         }
       ]
     },
@@ -204,13 +218,6 @@
         "Tangible",
         "Intangible Asset"
       ],
-      "file": {
-        "path": "assets/ic-intellectual/intellectual-capital/v1-Intellectual_Capital.png",
-        "name": "Intellectual Capital.png",
-        "type": "png",
-        "size": 136022
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-09T03:55:36.301Z",
       "createdBy": "JPP",
@@ -219,12 +226,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/ic-intellectual/intellectual-capital/v1-Intellectual_Capital.png",
-          "name": "Intellectual Capital.png",
-          "externalUrl": null,
           "updatedAt": "2026-07-09T03:55:36.301Z",
           "updatedBy": "JPP",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/ic-intellectual/intellectual-capital/v1-Intellectual_Capital.png",
+              "name": "Intellectual Capital.png"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/ic-intellectual/intellectual-capital/v1-Intellectual_Capital.png",
+          "name": "Intellectual Capital.png",
+          "type": "png",
+          "size": 136022
         }
       ]
     },
@@ -236,13 +256,6 @@
       "tags": [
         "Strategy 3 ระดับ"
       ],
-      "file": {
-        "path": "assets/strategy-bmd/แผนกลยุทธ์-3-ระดับ/v1-Strategy_3_Layers.png",
-        "name": "Strategy 3 Layers.png",
-        "type": "png",
-        "size": 258484
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-09T04:12:58.866Z",
       "createdBy": "JPP",
@@ -251,12 +264,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/strategy-bmd/แผนกลยุทธ์-3-ระดับ/v1-Strategy_3_Layers.png",
-          "name": "Strategy 3 Layers.png",
-          "externalUrl": null,
           "updatedAt": "2026-07-09T04:12:58.866Z",
           "updatedBy": "JPP",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/แผนกลยุทธ์-3-ระดับ/v1-Strategy_3_Layers.png",
+              "name": "Strategy 3 Layers.png"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/แผนกลยุทธ์-3-ระดับ/v1-Strategy_3_Layers.png",
+          "name": "Strategy 3 Layers.png",
+          "type": "png",
+          "size": 258484
         }
       ]
     },
@@ -268,13 +294,6 @@
       "tags": [
         "TCS Process"
       ],
-      "file": {
-        "path": "assets/rs-tcs/total-customer-solution-process-tcs-proc/v1-2._TCS_Process_Info_Graphic-_Draft.pdf",
-        "name": "2. TCS Process Info Graphic- Draft.pdf",
-        "type": "pdf",
-        "size": 838347
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-09T04:22:59.265Z",
       "createdBy": "JPP",
@@ -283,12 +302,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/rs-tcs/total-customer-solution-process-tcs-proc/v1-2._TCS_Process_Info_Graphic-_Draft.pdf",
-          "name": "2. TCS Process Info Graphic- Draft.pdf",
-          "externalUrl": null,
           "updatedAt": "2026-07-09T04:22:59.265Z",
           "updatedBy": "JPP",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/rs-tcs/total-customer-solution-process-tcs-proc/v1-2._TCS_Process_Info_Graphic-_Draft.pdf",
+              "name": "2. TCS Process Info Graphic- Draft.pdf"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/rs-tcs/total-customer-solution-process-tcs-proc/v1-2._TCS_Process_Info_Graphic-_Draft.pdf",
+          "name": "2. TCS Process Info Graphic- Draft.pdf",
+          "type": "pdf",
+          "size": 838347
         }
       ]
     },
@@ -304,13 +336,6 @@
         "Reactive",
         "Proactive"
       ],
-      "file": {
-        "path": "assets/strategy-bmd/แผนกลยุทธ์-4-ระยะ/v1-Strategy_4_Phase.png",
-        "name": "Strategy 4 Phase.png",
-        "type": "png",
-        "size": 191359
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-09T04:31:09.472Z",
       "createdBy": "JPP",
@@ -319,12 +344,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/strategy-bmd/แผนกลยุทธ์-4-ระยะ/v1-Strategy_4_Phase.png",
-          "name": "Strategy 4 Phase.png",
-          "externalUrl": null,
           "updatedAt": "2026-07-09T04:31:09.472Z",
           "updatedBy": "JPP",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/แผนกลยุทธ์-4-ระยะ/v1-Strategy_4_Phase.png",
+              "name": "Strategy 4 Phase.png"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/แผนกลยุทธ์-4-ระยะ/v1-Strategy_4_Phase.png",
+          "name": "Strategy 4 Phase.png",
+          "type": "png",
+          "size": 191359
         }
       ]
     },
@@ -336,13 +374,6 @@
       "tags": [
         "Organic Growth"
       ],
-      "file": {
-        "path": "assets/strategy-bmd/organic-growth/v1-organic_growth.pdf",
-        "name": "organic growth.pdf",
-        "type": "pdf",
-        "size": 200542
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-09T04:39:30.926Z",
       "createdBy": "JPP",
@@ -351,12 +382,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/strategy-bmd/organic-growth/v1-organic_growth.pdf",
-          "name": "organic growth.pdf",
-          "externalUrl": null,
           "updatedAt": "2026-07-09T04:39:30.926Z",
           "updatedBy": "JPP",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/organic-growth/v1-organic_growth.pdf",
+              "name": "organic growth.pdf"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/organic-growth/v1-organic_growth.pdf",
+          "name": "organic growth.pdf",
+          "type": "pdf",
+          "size": 200542
         }
       ]
     },
@@ -370,13 +414,6 @@
         "Professionalism",
         "Accountability"
       ],
-      "file": {
-        "path": "assets/strategy-bmd/power-of-change/v1-Power_of_Change.png",
-        "name": "Power of Change.png",
-        "type": "png",
-        "size": 270642
-      },
-      "externalUrl": null,
       "version": 1,
       "createdAt": "2026-07-09T04:45:33.743Z",
       "createdBy": "JPP",
@@ -385,12 +422,25 @@
       "history": [
         {
           "version": 1,
-          "path": "assets/strategy-bmd/power-of-change/v1-Power_of_Change.png",
-          "name": "Power of Change.png",
-          "externalUrl": null,
           "updatedAt": "2026-07-09T04:45:33.743Z",
           "updatedBy": "JPP",
-          "note": "เวอร์ชันแรก"
+          "note": "เวอร์ชันแรก",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/power-of-change/v1-Power_of_Change.png",
+              "name": "Power of Change.png"
+            }
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/power-of-change/v1-Power_of_Change.png",
+          "name": "Power of Change.png",
+          "type": "png",
+          "size": 270642
         }
       ]
     }

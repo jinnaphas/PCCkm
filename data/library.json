@@ -126,7 +126,11 @@
       "title": "คู่มือการใช้งาน Paradigm Library",
       "description": "แนะนำวิธีใช้งานระบบ ทั้งการค้นหา การเปิดดูเอกสาร การอัพโหลดเอกสารใหม่ และการอัพเดตเวอร์ชัน",
       "categoryId": "ic-information-capital",
-      "tags": ["คู่มือ", "เริ่มต้นใช้งาน", "how-to"],
+      "tags": [
+        "คู่มือ",
+        "เริ่มต้นใช้งาน",
+        "how-to"
+      ],
       "file": {
         "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
         "name": "welcome-guide.md",
@@ -155,7 +159,12 @@
       "title": "ตัวอย่าง Paradigm: การจัดทำเอกสารองค์ความรู้",
       "description": "ตัวอย่างโครงสร้างเอกสาร Paradigm ที่ดี ประกอบด้วยที่มา ปัญหา แนวทางแก้ไข และผลลัพธ์ สามารถใช้เป็นแม่แบบในการเขียนเอกสารใหม่",
       "categoryId": "ic-intellectual",
-      "tags": ["ตัวอย่าง", "แม่แบบ", "template", "KM"],
+      "tags": [
+        "ตัวอย่าง",
+        "แม่แบบ",
+        "template",
+        "KM"
+      ],
       "file": {
         "path": "assets/training/example-paradigm/v1-example-paradigm.md",
         "name": "example-paradigm.md",
@@ -175,6 +184,39 @@
           "name": "example-paradigm.md",
           "updatedAt": "2026-07-08T09:05:00.000Z",
           "updatedBy": "System",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
+    },
+    {
+      "id": "intellectual-capital",
+      "title": "Intellectual Capital",
+      "description": "Tangible, Intangible  Utilization to Generate Cash and Wealth",
+      "categoryId": "ic-intellectual",
+      "tags": [
+        "Tangible",
+        "Intangible Asset"
+      ],
+      "file": {
+        "path": "assets/ic-intellectual/intellectual-capital/v1-Intellectual_Capital.png",
+        "name": "Intellectual Capital.png",
+        "type": "png",
+        "size": 136022
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-09T03:55:36.301Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-09T03:55:36.301Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/ic-intellectual/intellectual-capital/v1-Intellectual_Capital.png",
+          "name": "Intellectual Capital.png",
+          "externalUrl": null,
+          "updatedAt": "2026-07-09T03:55:36.301Z",
+          "updatedBy": "JPP",
           "note": "เวอร์ชันแรก"
         }
       ]

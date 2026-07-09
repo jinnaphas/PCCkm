@@ -252,6 +252,38 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "total-customer-solution-process-tcs-proc",
+      "title": "Total Customer Solution Process (TCS Process)",
+      "description": "กระบวนการ TCS",
+      "categoryId": "rs-tcs",
+      "tags": [
+        "TCS Process"
+      ],
+      "file": {
+        "path": "assets/rs-tcs/total-customer-solution-process-tcs-proc/v1-2._TCS_Process_Info_Graphic-_Draft.pdf",
+        "name": "2. TCS Process Info Graphic- Draft.pdf",
+        "type": "pdf",
+        "size": 838347
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-09T04:22:59.265Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-09T04:22:59.265Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/rs-tcs/total-customer-solution-process-tcs-proc/v1-2._TCS_Process_Info_Graphic-_Draft.pdf",
+          "name": "2. TCS Process Info Graphic- Draft.pdf",
+          "externalUrl": null,
+          "updatedAt": "2026-07-09T04:22:59.265Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

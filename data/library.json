@@ -284,6 +284,42 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "แผนกลยุทธ์-4-ระยะ",
+      "title": "แผนกลยุทธ์ 4 ระยะ",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "แผนกลยุทธ์ 4 ระยะ",
+        "Budgeting",
+        "Forecasting",
+        "Reactive",
+        "Proactive"
+      ],
+      "file": {
+        "path": "assets/strategy-bmd/แผนกลยุทธ์-4-ระยะ/v1-Strategy_4_Phase.png",
+        "name": "Strategy 4 Phase.png",
+        "type": "png",
+        "size": 191359
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-09T04:31:09.472Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-09T04:31:09.472Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/strategy-bmd/แผนกลยุทธ์-4-ระยะ/v1-Strategy_4_Phase.png",
+          "name": "Strategy 4 Phase.png",
+          "externalUrl": null,
+          "updatedAt": "2026-07-09T04:31:09.472Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

@@ -89,6 +89,26 @@ function categoryById(id) {
   return state.library.categories.find((c) => c.id === id);
 }
 
+/* หมวดหมู่รองรับ 2 ระดับ: หมวดหลัก (parentId = null) และหมวดย่อย */
+function topLevelCategories() {
+  return state.library.categories.filter((c) => !c.parentId);
+}
+
+function childrenOf(id) {
+  return state.library.categories.filter((c) => c.parentId === id);
+}
+
+function descendantIds(id) {
+  const ids = [id];
+  for (const child of childrenOf(id)) ids.push(...descendantIds(child.id));
+  return ids;
+}
+
+function docCountDeep(id) {
+  const ids = new Set(descendantIds(id));
+  return state.library.documents.filter((d) => ids.has(d.categoryId)).length;
+}
+
 function docById(id) {
   return state.library.documents.find((d) => d.id === id);
 }
@@ -149,6 +169,8 @@ function navigate(hash) {
 }
 
 function render() {
+  renderSidebar();
+  closeSidebar();
   const app = document.getElementById('app');
   if (state.loadError) {
     app.innerHTML = `<div class="empty-state">⚠️ ${escapeHtml(state.loadError)}</div>`;
@@ -165,6 +187,69 @@ function render() {
   else renderHome(app);
   window.scrollTo(0, 0);
 }
+
+/* ---------- sidebar ---------- */
+
+const expandedCats = new Set();
+
+function renderSidebar() {
+  const nav = document.getElementById('sidebar-nav');
+  if (!nav) return;
+  const { page, param } = parseRoute();
+  const activeCatId = page === 'category' ? param
+    : (page === 'doc' ? docById(param)?.categoryId : null);
+  if (activeCatId) {
+    const active = categoryById(activeCatId);
+    if (active?.parentId) expandedCats.add(active.parentId);
+    else if (childrenOf(activeCatId).length) expandedCats.add(activeCatId);
+  }
+
+  const groups = topLevelCategories().map((cat) => {
+    const kids = childrenOf(cat.id);
+    const open = expandedCats.has(cat.id);
+    return `
+      <div class="side-group">
+        <div class="side-item ${activeCatId === cat.id ? 'active' : ''}">
+          <a class="side-link" href="#/category/${encodeURIComponent(cat.id)}">
+            <span class="side-icon">${escapeHtml(cat.icon || '📁')}</span>
+            <span class="side-name">${escapeHtml(cat.name)}</span>
+          </a>
+          <span class="side-count">${docCountDeep(cat.id)}</span>
+          ${kids.length ? `<button class="side-caret ${open ? 'open' : ''}" data-cat="${escapeHtml(cat.id)}" aria-label="ขยาย/ย่อหมวดย่อย">▸</button>` : ''}
+        </div>
+        ${kids.length && open ? `<div class="side-children">
+          ${kids.map((k) => `
+            <div class="side-item side-sub ${activeCatId === k.id ? 'active' : ''}">
+              <a class="side-link" href="#/category/${encodeURIComponent(k.id)}">
+                <span class="side-icon">${escapeHtml(k.icon || '·')}</span>
+                <span class="side-name">${escapeHtml(k.name)}</span>
+              </a>
+              <span class="side-count">${docCountDeep(k.id)}</span>
+            </div>`).join('')}
+        </div>` : ''}
+      </div>`;
+  }).join('');
+
+  nav.innerHTML = `
+    <div class="side-item side-home ${page === 'home' ? 'active' : ''}">
+      <a class="side-link" href="#/"><span class="side-icon">🏠</span><span class="side-name">หน้าแรก</span></a>
+    </div>
+    <div class="side-label">หมวดหมู่</div>
+    ${groups || '<div class="side-empty">ยังไม่มีหมวดหมู่</div>'}`;
+
+  nav.querySelectorAll('.side-caret').forEach((btn) => {
+    btn.onclick = (e) => {
+      e.preventDefault();
+      const id = btn.dataset.cat;
+      if (expandedCats.has(id)) expandedCats.delete(id);
+      else expandedCats.add(id);
+      renderSidebar();
+    };
+  });
+}
+
+function openSidebar() { document.body.classList.add('sidebar-open'); }
+function closeSidebar() { document.body.classList.remove('sidebar-open'); }
 
 /* ---------- views ---------- */
 
@@ -189,14 +274,14 @@ function docCard(doc) {
 }
 
 function renderHome(app) {
-  const cats = state.library.categories.map((cat) => {
-    const count = state.library.documents.filter((d) => d.categoryId === cat.id).length;
+  const cats = topLevelCategories().map((cat) => {
+    const kids = childrenOf(cat.id);
     return `
       <a class="cat-card" href="#/category/${encodeURIComponent(cat.id)}">
         <div class="cat-card-icon">${escapeHtml(cat.icon || '📁')}</div>
         <div class="cat-card-name">${escapeHtml(cat.name)}</div>
         <div class="cat-card-desc">${escapeHtml(cat.description || '')}</div>
-        <div class="cat-card-count">${count} เอกสาร</div>
+        <div class="cat-card-count">${docCountDeep(cat.id)} เอกสาร${kids.length ? ` · ${kids.length} หมวดย่อย` : ''}</div>
       </a>`;
   }).join('');
 
@@ -210,35 +295,43 @@ function renderHome(app) {
       <p>คลังองค์ความรู้ของทีม — ค้นหา เปิดดู และแบ่งปัน Paradigm ได้ในที่เดียว</p>
     </section>
     <section>
-      <div class="section-head">
-        <h2>หมวดหมู่</h2>
-        <button class="btn btn-ghost" id="btn-add-category">+ เพิ่มหมวดหมู่</button>
-      </div>
+      <div class="section-head"><h2>หมวดหมู่</h2></div>
       <div class="cat-grid">${cats || '<div class="empty-state">ยังไม่มีหมวดหมู่</div>'}</div>
     </section>
     <section>
       <div class="section-head"><h2>อัพเดตล่าสุด</h2></div>
       <div class="doc-list">${recent.map(docCard).join('') || '<div class="empty-state">ยังไม่มีเอกสาร</div>'}</div>
     </section>`;
-
-  document.getElementById('btn-add-category').onclick = () => requireLogin(openCategoryModal);
 }
 
 function renderCategory(app, catId) {
   const cat = categoryById(catId);
   if (!cat) { app.innerHTML = '<div class="empty-state">ไม่พบหมวดหมู่นี้</div>'; return; }
+  const parent = cat.parentId ? categoryById(cat.parentId) : null;
+  const kids = childrenOf(catId);
+  const ids = new Set(descendantIds(catId));
   const docs = state.library.documents
-    .filter((d) => d.categoryId === catId)
+    .filter((d) => ids.has(d.categoryId))
     .sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''));
 
   const allTags = [...new Set(docs.flatMap((d) => d.tags || []))];
 
   app.innerHTML = `
-    <nav class="breadcrumb"><a href="#/">หน้าแรก</a> › ${escapeHtml(cat.name)}</nav>
+    <nav class="breadcrumb">
+      <a href="#/">หน้าแรก</a> ›
+      ${parent ? `<a href="#/category/${encodeURIComponent(parent.id)}">${escapeHtml(parent.name)}</a> ›` : ''}
+      ${escapeHtml(cat.name)}
+    </nav>
     <section class="hero hero-sm">
       <h1>${escapeHtml(cat.icon || '📁')} ${escapeHtml(cat.name)}</h1>
       <p>${escapeHtml(cat.description || '')}</p>
     </section>
+    ${kids.length ? `<div class="subcat-row">
+      ${kids.map((k) => `
+        <a class="subcat-chip" href="#/category/${encodeURIComponent(k.id)}">
+          ${escapeHtml(k.icon || '📁')} ${escapeHtml(k.name)} <span class="side-count">${docCountDeep(k.id)}</span>
+        </a>`).join('')}
+    </div>` : ''}
     ${allTags.length ? `<div class="tag-filter" id="tag-filter">
       ${allTags.map((t) => `<button class="tag tag-btn" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}
     </div>` : ''}
@@ -288,6 +381,7 @@ function renderDoc(app, docId) {
   app.innerHTML = `
     <nav class="breadcrumb">
       <a href="#/">หน้าแรก</a> ›
+      ${cat?.parentId ? `<a href="#/category/${encodeURIComponent(cat.parentId)}">${escapeHtml(categoryById(cat.parentId)?.name || '')}</a> ›` : ''}
       ${cat ? `<a href="#/category/${encodeURIComponent(cat.id)}">${escapeHtml(cat.name)}</a> ›` : ''}
       ${escapeHtml(doc.title)}
     </nav>
@@ -531,10 +625,18 @@ function openLoginModal(next) {
 }
 
 function openCategoryModal() {
+  const parentOptions = topLevelCategories().map((c) =>
+    `<option value="${escapeHtml(c.id)}">${escapeHtml(c.icon)} ${escapeHtml(c.name)}</option>`).join('');
   const modal = openModal(`
     <h2>เพิ่มหมวดหมู่ใหม่</h2>
     <form id="cat-form">
       <label>ชื่อหมวดหมู่<input name="name" required placeholder="เช่น งานสำรวจ" /></label>
+      <label>อยู่ภายใต้หมวด
+        <select name="parentId">
+          <option value="">— เป็นหมวดหลัก —</option>
+          ${parentOptions}
+        </select>
+      </label>
       <label>คำอธิบาย<input name="description" placeholder="อธิบายสั้นๆ ว่าหมวดนี้เก็บอะไร" /></label>
       <label>ไอคอน (อีโมจิ 1 ตัว)<input name="icon" placeholder="📁" maxlength="4" /></label>
       <div class="modal-actions">
@@ -555,6 +657,7 @@ function openCategoryModal() {
           name,
           description: form.get('description').trim(),
           icon: form.get('icon').trim() || '📁',
+          parentId: form.get('parentId') || null,
         });
       }, `เพิ่มหมวดหมู่: ${name}`, state.session.token);
       closeModal();
@@ -578,8 +681,12 @@ function uniqueCategoryId(name) {
  */
 function openDocModal(doc) {
   const isEdit = !!doc;
-  const cats = state.library.categories.map((c) =>
-    `<option value="${escapeHtml(c.id)}" ${doc?.categoryId === c.id ? 'selected' : ''}>${escapeHtml(c.icon)} ${escapeHtml(c.name)}</option>`).join('');
+  // เรียงหมวดหลักตามด้วยหมวดย่อย (เยื้องขวา) ให้เลือกเก็บเอกสารได้ทั้งสองระดับ
+  const cats = topLevelCategories().flatMap((top) => [
+    `<option value="${escapeHtml(top.id)}" ${doc?.categoryId === top.id ? 'selected' : ''}>${escapeHtml(top.icon)} ${escapeHtml(top.name)}</option>`,
+    ...childrenOf(top.id).map((k) =>
+      `<option value="${escapeHtml(k.id)}" ${doc?.categoryId === k.id ? 'selected' : ''}>&nbsp;&nbsp;&nbsp;— ${escapeHtml(k.name)}</option>`),
+  ]).join('');
   const sourceIsLink = isEdit && !!doc.externalUrl;
 
   const modal = openModal(`
@@ -776,6 +883,11 @@ async function init() {
   renderHeader();
   bindSearchBox();
   document.getElementById('btn-add-doc').onclick = () => requireLogin(() => openDocModal());
+  document.getElementById('btn-add-category').onclick = () => requireLogin(openCategoryModal);
+  document.getElementById('btn-sidebar-toggle').onclick = () => {
+    document.body.classList.toggle('sidebar-open');
+  };
+  document.getElementById('sidebar-backdrop').onclick = closeSidebar;
   window.addEventListener('hashchange', render);
   render(); // แสดงสถานะกำลังโหลด
   try {

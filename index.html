@@ -12,6 +12,7 @@
 </head>
 <body>
   <header class="topbar">
+    <button class="btn btn-ghost sidebar-toggle" id="btn-sidebar-toggle" aria-label="เปิดเมนูหมวดหมู่">☰</button>
     <a class="brand" href="#/">📚 <span>Paradigm Library</span></a>
     <div class="search-wrap">
       <input id="search-input" type="search" placeholder="ค้นหาจากชื่อ, Tag, คำอธิบาย…  (กด / เพื่อค้นหา)" autocomplete="off" />
@@ -23,7 +24,14 @@
     </div>
   </header>
 
-  <main id="app" class="container"></main>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <nav id="sidebar-nav"></nav>
+      <button class="btn btn-ghost sidebar-add" id="btn-add-category">+ เพิ่มหมวดหมู่</button>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <main id="app" class="container"></main>
+  </div>
 
   <footer class="footer">Paradigm Library · เก็บข้อมูลทั้งหมดบน GitHub repository ของทีม</footer>
 

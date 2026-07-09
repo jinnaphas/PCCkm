@@ -130,11 +130,130 @@ h2 { font-size: 1.15rem; margin: 0; }
 
 /* ---------- layout ---------- */
 
+.layout {
+  display: flex;
+  max-width: 1360px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
 .container {
+  flex: 1;
+  min-width: 0;
   max-width: 1080px;
   margin: 0 auto;
   padding: 24px 20px 60px;
 }
+
+/* ---------- sidebar ---------- */
+
+.sidebar {
+  width: 272px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 61px;
+  height: calc(100vh - 61px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 10px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-toggle { display: none; font-size: 1.1rem; padding: 6px 12px; }
+.sidebar-backdrop { display: none; }
+
+.side-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 14px 12px 6px;
+}
+
+.side-group { margin-bottom: 2px; }
+
+.side-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  padding: 6px 8px 6px 12px;
+}
+.side-item:hover { background: var(--bg); }
+.side-item.active { background: #e8f0fd; }
+.side-item.active .side-name { color: var(--primary); font-weight: 600; }
+
+.side-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+.side-link:hover { text-decoration: none; }
+.side-icon { flex-shrink: 0; }
+.side-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.side-count {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 1px 8px;
+  flex-shrink: 0;
+}
+.side-item.active .side-count { background: #d5e4fb; color: var(--primary); }
+
+.side-caret {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+.side-caret:hover { background: var(--border); color: var(--text); }
+.side-caret.open { transform: rotate(90deg); }
+
+.side-children {
+  margin: 2px 0 4px 18px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+}
+.side-sub { padding: 4px 8px; }
+.side-sub .side-link { font-size: 0.87rem; }
+
+.side-home { margin-bottom: 4px; }
+.side-empty { padding: 8px 12px; color: var(--text-dim); font-size: 0.85rem; }
+
+.sidebar-add {
+  margin: 10px 6px 4px;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+/* หมวดย่อยแบบ chip บนหน้าหมวดหลัก */
+.subcat-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.subcat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+.subcat-chip:hover { text-decoration: none; border-color: var(--primary); color: var(--primary); }
 
 section { margin-bottom: 36px; }
 
@@ -384,6 +503,29 @@ video.preview-frame { height: auto; max-height: 70vh; }
 }
 
 /* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 120;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: var(--shadow-lg);
+  }
+  body.sidebar-open .sidebar { transform: none; }
+  body.sidebar-open .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    background: rgba(15, 22, 32, 0.4);
+  }
+  .sidebar-toggle { display: inline-flex; }
+}
 
 @media (max-width: 720px) {
   .topbar { flex-wrap: wrap; }

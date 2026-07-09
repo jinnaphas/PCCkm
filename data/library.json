@@ -359,6 +359,40 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "power-of-change",
+      "title": "Power of Change",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Power of Change",
+        "Professionalism",
+        "Accountability"
+      ],
+      "file": {
+        "path": "assets/strategy-bmd/power-of-change/v1-Power_of_Change.png",
+        "name": "Power of Change.png",
+        "type": "png",
+        "size": 270642
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-09T04:45:33.743Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-09T04:45:33.743Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/strategy-bmd/power-of-change/v1-Power_of_Change.png",
+          "name": "Power of Change.png",
+          "externalUrl": null,
+          "updatedAt": "2026-07-09T04:45:33.743Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

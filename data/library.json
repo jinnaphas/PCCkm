@@ -857,6 +857,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "chase-sale-operation-planning",
+      "title": "Chase Sale & Operation Planning",
+      "description": "Production Planning",
+      "categoryId": "demand-satisfaction",
+      "tags": [
+        "Production Planning",
+        "Chase Sale"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/demand-satisfaction/chase-sale-operation-planning/v1-02.Sale_and_Operation_Planning.pdf",
+          "name": "02.Sale and Operation Planning.pdf",
+          "type": "pdf",
+          "size": 92395
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T07:49:24.868Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T07:49:24.868Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/demand-satisfaction/chase-sale-operation-planning/v1-02.Sale_and_Operation_Planning.pdf",
+              "name": "02.Sale and Operation Planning.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-10T07:49:24.868Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

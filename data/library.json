@@ -393,6 +393,39 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "strategy-cycle-flow",
+      "title": "Strategy Cycle Flow",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Realized Strategy",
+        "Strategy Flow"
+      ],
+      "file": {
+        "path": "assets/strategy-bmd/strategy-cycle-flow/v1-Strategy_Cycle_Flow.png",
+        "name": "Strategy Cycle Flow.png",
+        "type": "png",
+        "size": 34128
+      },
+      "externalUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-10T02:12:49.019Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T02:12:49.019Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "path": "assets/strategy-bmd/strategy-cycle-flow/v1-Strategy_Cycle_Flow.png",
+          "name": "Strategy Cycle Flow.png",
+          "externalUrl": null,
+          "updatedAt": "2026-07-10T02:12:49.019Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

@@ -36,8 +36,40 @@ function fileKind(nameOrExt) {
 }
 
 function docIcon(doc) {
-  if (doc.externalUrl) return '🔗';
-  return fileKind(doc.file?.name || '').icon;
+  const first = (doc.attachments || [])[0];
+  if (!first) return '📄';
+  if (first.kind === 'link') return '🔗';
+  return fileKind(first.name || '').icon;
+}
+
+/*
+ * เอกสาร 1 รายการมีไฟล์แนบได้หลายชิ้น (attachments)
+ * ข้อมูลเก่าที่ยังเป็น file/externalUrl เดี่ยว จะถูกแปลงเป็น attachments อัตโนมัติ
+ */
+function normalizeLibrary(lib) {
+  for (const doc of lib.documents || []) {
+    if (doc.attachments) continue;
+    doc.attachments = [];
+    if (doc.file) doc.attachments.push({ kind: 'file', ...doc.file });
+    if (doc.externalUrl) doc.attachments.push({ kind: 'link', url: doc.externalUrl, name: 'ลิงก์ภายนอก' });
+    delete doc.file;
+    delete doc.externalUrl;
+  }
+  return lib;
+}
+
+/* wrapper ของ GitHub.updateLibrary — normalize ข้อมูลสดก่อน mutate เสมอ */
+async function updateLibrary(mutate, message) {
+  return GitHub.updateLibrary((lib) => {
+    normalizeLibrary(lib);
+    mutate(lib);
+  }, message, state.session.token);
+}
+
+function isPreviewable(att) {
+  if (att.kind === 'link') return !!youtubeEmbedUrl(att.url);
+  const k = fileKind(att.name || '').kind;
+  return ['pdf', 'image', 'video', 'audio', 'md'].includes(k);
 }
 
 /* ---------- utilities ---------- */
@@ -171,6 +203,7 @@ function navigate(hash) {
 function render() {
   renderSidebar();
   closeSidebar();
+  closeModal();
   const app = document.getElementById('app');
   if (state.loadError) {
     app.innerHTML = `<div class="empty-state">⚠️ ${escapeHtml(state.loadError)}</div>`;
@@ -255,6 +288,7 @@ function closeSidebar() { document.body.classList.remove('sidebar-open'); }
 
 function docCard(doc) {
   const cat = categoryById(doc.categoryId);
+  const attCount = (doc.attachments || []).length;
   const tags = (doc.tags || []).slice(0, 4).map((t) =>
     `<span class="tag">${escapeHtml(t)}</span>`).join('');
   return `
@@ -266,6 +300,7 @@ function docCard(doc) {
         <div class="doc-card-meta">
           ${cat ? `<span class="doc-card-cat">${escapeHtml(cat.icon)} ${escapeHtml(cat.name)}</span>` : ''}
           <span>v${doc.version}</span>
+          ${attCount > 1 ? `<span>📎 ${attCount} ไฟล์แนบ</span>` : ''}
           <span>${formatDate(doc.updatedAt)}</span>
         </div>
         <div class="doc-card-tags">${tags}</div>
@@ -371,12 +406,45 @@ function renderSearchPage(app, query) {
     </div>`;
 }
 
+function attachmentRow(att, idx, active) {
+  const icon = att.kind === 'link' ? '🔗' : fileKind(att.name || '').icon;
+  const label = att.kind === 'link' ? (att.name || 'ลิงก์ภายนอก') : (att.name || att.path.split('/').pop());
+  const sub = att.kind === 'link' ? escapeHtml(att.url) : formatSize(att.size);
+  const action = att.kind === 'link'
+    ? `<a class="btn btn-sm" href="${escapeHtml(att.url)}" target="_blank" rel="noopener">เปิดลิงก์ ↗</a>`
+    : `<a class="btn btn-sm" href="${GitHub.fileUrl(att.path)}" download="${escapeHtml(att.name || '')}">⬇ ดาวน์โหลด</a>`;
+  return `
+    <div class="attach-row ${active ? 'active' : ''}" data-idx="${idx}">
+      <span class="attach-icon">${icon}</span>
+      <span class="attach-name" title="${escapeHtml(label)}">
+        ${escapeHtml(label)}
+        <span class="attach-sub">${sub}</span>
+      </span>
+      ${isPreviewable(att) ? `<button class="btn btn-sm btn-preview" data-idx="${idx}">👁 ดู</button>` : ''}
+      ${action}
+    </div>`;
+}
+
+function historyAttachmentLinks(h) {
+  // รองรับทั้งรูปแบบใหม่ (attachments) และรูปแบบเก่า (path/externalUrl เดี่ยว)
+  const atts = h.attachments
+    || [...(h.path ? [{ kind: 'file', path: h.path, name: h.name }] : []),
+        ...(h.externalUrl ? [{ kind: 'link', url: h.externalUrl, name: 'ลิงก์ภายนอก' }] : [])];
+  if (!atts.length) return '-';
+  return atts.map((a) => a.kind === 'link'
+    ? `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.name || 'ลิงก์ภายนอก')} ↗</a>`
+    : `<a href="${GitHub.fileUrl(a.path)}" target="_blank" rel="noopener">${escapeHtml(a.name || a.path.split('/').pop())}</a>`
+  ).join('<br>');
+}
+
 function renderDoc(app, docId) {
   const doc = docById(docId);
   if (!doc) { app.innerHTML = '<div class="empty-state">ไม่พบเอกสารนี้</div>'; return; }
   const cat = categoryById(doc.categoryId);
+  const atts = doc.attachments || [];
   const tags = (doc.tags || []).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('');
   const history = [...(doc.history || [])].sort((a, b) => b.version - a.version);
+  const firstPreviewIdx = atts.findIndex(isPreviewable);
 
   app.innerHTML = `
     <nav class="breadcrumb">
@@ -392,31 +460,33 @@ function renderDoc(app, docId) {
           <h1>${escapeHtml(doc.title)}</h1>
           <div class="doc-card-meta">
             <span>เวอร์ชัน ${doc.version}</span>
+            <span>📎 ${atts.length} ไฟล์แนบ</span>
             <span>อัพเดตล่าสุด ${formatDate(doc.updatedAt)} โดย ${escapeHtml(doc.updatedBy || '-')}</span>
           </div>
           <div class="doc-card-tags">${tags}</div>
         </div>
         <div class="doc-detail-actions">
-          ${doc.externalUrl
-            ? `<a class="btn btn-primary" href="${escapeHtml(doc.externalUrl)}" target="_blank" rel="noopener">เปิดลิงก์ ↗</a>`
-            : `<a class="btn btn-primary" href="${GitHub.fileUrl(doc.file.path)}" download="${escapeHtml(doc.file.name)}">⬇ ดาวน์โหลด</a>`}
           <button class="btn" id="btn-update-doc">อัพเดตเวอร์ชัน / แก้ไข</button>
           <button class="btn btn-danger-ghost" id="btn-delete-doc">ลบ</button>
         </div>
       </header>
       <p class="doc-detail-desc">${escapeHtml(doc.description || '')}</p>
+      <section class="attachments">
+        <h2>ไฟล์แนบ</h2>
+        <div class="attach-list" id="attach-list">
+          ${atts.map((a, i) => attachmentRow(a, i, i === firstPreviewIdx)).join('') || '<div class="empty-state">ไม่มีไฟล์แนบ</div>'}
+        </div>
+      </section>
       <div class="preview" id="preview-area"></div>
       <section class="history">
         <h2>ประวัติเวอร์ชัน</h2>
         <table class="history-table">
-          <thead><tr><th>เวอร์ชัน</th><th>ไฟล์</th><th>วันที่</th><th>โดย</th><th>บันทึก</th></tr></thead>
+          <thead><tr><th>เวอร์ชัน</th><th>ไฟล์แนบ</th><th>วันที่</th><th>โดย</th><th>บันทึก</th></tr></thead>
           <tbody>
             ${history.map((h) => `
               <tr>
                 <td>v${h.version}</td>
-                <td>${h.path
-                  ? `<a href="${GitHub.fileUrl(h.path)}" target="_blank" rel="noopener">${escapeHtml(h.name || h.path.split('/').pop())}</a>`
-                  : (h.externalUrl ? `<a href="${escapeHtml(h.externalUrl)}" target="_blank" rel="noopener">ลิงก์ภายนอก ↗</a>` : '-')}</td>
+                <td>${historyAttachmentLinks(h)}</td>
                 <td>${formatDate(h.updatedAt)}</td>
                 <td>${escapeHtml(h.updatedBy || '-')}</td>
                 <td>${escapeHtml(h.note || '')}</td>
@@ -426,23 +496,31 @@ function renderDoc(app, docId) {
       </section>
     </article>`;
 
-  renderPreview(doc);
+  if (firstPreviewIdx >= 0) renderPreview(doc, atts[firstPreviewIdx]);
+  document.getElementById('attach-list').addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-preview');
+    if (!btn) return;
+    const idx = Number(btn.dataset.idx);
+    document.querySelectorAll('.attach-row').forEach((r) => r.classList.toggle('active', Number(r.dataset.idx) === idx));
+    renderPreview(doc, atts[idx]);
+    document.getElementById('preview-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
   document.getElementById('btn-update-doc').onclick = () => requireLogin(() => openDocModal(doc));
   document.getElementById('btn-delete-doc').onclick = () => requireLogin(() => deleteDocument(doc));
 }
 
-async function renderPreview(doc) {
+async function renderPreview(doc, att) {
   const area = document.getElementById('preview-area');
-  if (!area) return;
-  if (doc.externalUrl) {
-    const yt = youtubeEmbedUrl(doc.externalUrl);
+  if (!area || !att) return;
+  if (att.kind === 'link') {
+    const yt = youtubeEmbedUrl(att.url);
     area.innerHTML = yt
       ? `<iframe class="preview-frame" src="${escapeHtml(yt)}" allowfullscreen></iframe>`
-      : `<div class="preview-fallback">🔗 เอกสารนี้เป็นลิงก์ภายนอก — <a href="${escapeHtml(doc.externalUrl)}" target="_blank" rel="noopener">เปิดดูที่นี่ ↗</a></div>`;
+      : `<div class="preview-fallback">🔗 ลิงก์ภายนอก — <a href="${escapeHtml(att.url)}" target="_blank" rel="noopener">เปิดดูที่นี่ ↗</a></div>`;
     return;
   }
-  const url = GitHub.fileUrl(doc.file.path);
-  const { kind } = fileKind(doc.file.name);
+  const url = GitHub.fileUrl(att.path);
+  const { kind, icon, label } = fileKind(att.name || '');
   if (kind === 'pdf') {
     area.innerHTML = `<embed class="preview-frame" src="${url}" type="application/pdf" />`;
   } else if (kind === 'image') {
@@ -461,8 +539,7 @@ async function renderPreview(doc) {
       area.innerHTML = '<div class="preview-fallback">เปิดตัวอย่างไม่สำเร็จ — ใช้ปุ่มดาวน์โหลดแทน</div>';
     }
   } else {
-    const { icon, label } = fileKind(doc.file.name);
-    area.innerHTML = `<div class="preview-fallback">${icon} ไฟล์ ${escapeHtml(label)} ยังไม่รองรับการแสดงตัวอย่างในหน้าเว็บ — ใช้ปุ่มดาวน์โหลดเพื่อเปิดดู (${formatSize(doc.file.size)})</div>`;
+    area.innerHTML = `<div class="preview-fallback">${icon} ไฟล์ ${escapeHtml(label)} ยังไม่รองรับการแสดงตัวอย่างในหน้าเว็บ — ใช้ปุ่มดาวน์โหลดเพื่อเปิดดู (${formatSize(att.size)})</div>`;
   }
 }
 
@@ -651,7 +728,7 @@ function openCategoryModal() {
     const name = form.get('name').trim();
     const id = uniqueCategoryId(name);
     await withBusy(e.target, async () => {
-      state.library = await GitHub.updateLibrary((lib) => {
+      state.library = await updateLibrary((lib) => {
         lib.categories.push({
           id,
           name,
@@ -659,7 +736,7 @@ function openCategoryModal() {
           icon: form.get('icon').trim() || '📁',
           parentId: form.get('parentId') || null,
         });
-      }, `เพิ่มหมวดหมู่: ${name}`, state.session.token);
+      }, `เพิ่มหมวดหมู่: ${name}`);
       closeModal();
       toast('เพิ่มหมวดหมู่แล้ว');
       render();
@@ -678,6 +755,7 @@ function uniqueCategoryId(name) {
 
 /*
  * Modal เพิ่ม/แก้ไขเอกสาร — doc = undefined คือสร้างใหม่
+ * เอกสาร 1 รายการแนบได้หลายชิ้น: ไฟล์อัพโหลด + ลิงก์ภายนอก ผสมกันได้
  */
 function openDocModal(doc) {
   const isEdit = !!doc;
@@ -687,7 +765,9 @@ function openDocModal(doc) {
     ...childrenOf(top.id).map((k) =>
       `<option value="${escapeHtml(k.id)}" ${doc?.categoryId === k.id ? 'selected' : ''}>&nbsp;&nbsp;&nbsp;— ${escapeHtml(k.name)}</option>`),
   ]).join('');
-  const sourceIsLink = isEdit && !!doc.externalUrl;
+
+  // ไฟล์แนบเดิมที่ยังเก็บไว้ (กด ✕ เพื่อเอาออก)
+  const kept = [...(doc?.attachments || [])];
 
   const modal = openModal(`
     <h2>${isEdit ? 'อัพเดตเอกสาร' : 'เพิ่มเอกสารใหม่'}</h2>
@@ -698,89 +778,126 @@ function openDocModal(doc) {
         <label>หมวดหมู่<select name="categoryId" required>${cats}</select></label>
         <label>Tag (คั่นด้วย ,)<input name="tags" value="${escapeHtml((doc?.tags || []).join(', '))}" placeholder="เช่น SOP, โครงการ A" /></label>
       </div>
-      <label>แหล่งเอกสาร
-        <select name="sourceType" id="source-type">
-          <option value="file" ${!sourceIsLink ? 'selected' : ''}>อัพโหลดไฟล์</option>
-          <option value="link" ${sourceIsLink ? 'selected' : ''}>ลิงก์ภายนอก (YouTube, Drive ฯลฯ)</option>
-        </select>
+      ${isEdit ? '<div class="attach-edit-label">ไฟล์แนบเดิม (กด ✕ เพื่อเอาออก)</div><div class="attach-edit" id="kept-list"></div>' : ''}
+      <label>เพิ่มไฟล์แนบ (เลือกได้หลายไฟล์พร้อมกัน)
+        <input name="files" type="file" multiple />
+        <span class="modal-hint">ขนาดแนะนำไม่เกิน ${MAX_FILE_MB}MB ต่อไฟล์ — วิดีโอใหญ่ให้ใช้ลิงก์ภายนอกแทน</span>
       </label>
-      <label id="file-field" ${sourceIsLink ? 'hidden' : ''}>ไฟล์ ${isEdit ? '(เว้นว่างไว้ถ้าแก้เฉพาะข้อมูล ไม่เปลี่ยนไฟล์)' : ''}
-        <input name="file" type="file" ${isEdit || sourceIsLink ? '' : 'required'} />
-        <span class="modal-hint">ขนาดแนะนำไม่เกิน ${MAX_FILE_MB}MB — วิดีโอใหญ่ให้ใช้ลิงก์ภายนอกแทน</span>
-      </label>
-      <label id="link-field" ${sourceIsLink ? '' : 'hidden'}>URL<input name="externalUrl" type="url" value="${escapeHtml(doc?.externalUrl || '')}" placeholder="https://…" /></label>
-      ${isEdit ? '<label>บันทึกการแก้ไข<input name="note" placeholder="เช่น ปรับขั้นตอนที่ 3 ตามมาตรฐานใหม่" /></label>' : ''}
+      <div id="link-rows"></div>
+      <button type="button" class="btn" id="btn-add-link">+ เพิ่มลิงก์ภายนอก (YouTube, Drive ฯลฯ)</button>
+      ${isEdit ? '<label>บันทึกการแก้ไข<input name="note" placeholder="เช่น เพิ่มไฟล์แบบแปลนชุดที่ 2" /></label>' : ''}
       <div class="modal-actions">
         <button type="button" class="btn" id="btn-cancel">ยกเลิก</button>
         <button type="submit" class="btn btn-primary">${isEdit ? 'บันทึกการอัพเดต' : 'เพิ่มเอกสาร'}</button>
       </div>
     </form>`);
 
-  const sourceSel = modal.querySelector('#source-type');
-  sourceSel.onchange = () => {
-    const isLink = sourceSel.value === 'link';
-    modal.querySelector('#file-field').hidden = isLink;
-    modal.querySelector('#link-field').hidden = !isLink;
+  const keptList = modal.querySelector('#kept-list');
+  const renderKept = () => {
+    if (!keptList) return;
+    keptList.innerHTML = kept.map((a, i) => `
+      <span class="attach-chip">
+        ${a.kind === 'link' ? '🔗' : fileKind(a.name || '').icon}
+        ${escapeHtml(a.kind === 'link' ? (a.name || 'ลิงก์ภายนอก') : (a.name || ''))}
+        <button type="button" class="attach-chip-x" data-idx="${i}" aria-label="เอาไฟล์แนบนี้ออก">✕</button>
+      </span>`).join('') || '<span class="modal-hint">— ไม่เหลือไฟล์แนบเดิม —</span>';
+    keptList.querySelectorAll('.attach-chip-x').forEach((btn) => {
+      btn.onclick = () => { kept.splice(Number(btn.dataset.idx), 1); renderKept(); };
+    });
   };
+  renderKept();
+
+  const linkRows = modal.querySelector('#link-rows');
+  modal.querySelector('#btn-add-link').onclick = () => {
+    const row = document.createElement('div');
+    row.className = 'link-row';
+    row.innerHTML = `
+      <input class="link-name" placeholder="ชื่อลิงก์ เช่น วิดีโอสอนงาน" />
+      <input class="link-url" type="url" placeholder="https://…" required />
+      <button type="button" class="btn btn-sm link-row-x" aria-label="ลบลิงก์นี้">✕</button>`;
+    row.querySelector('.link-row-x').onclick = () => row.remove();
+    linkRows.appendChild(row);
+    row.querySelector('.link-name').focus();
+  };
+
   modal.querySelector('#btn-cancel').onclick = closeModal;
   modal.querySelector('#doc-form').onsubmit = (e) => {
     e.preventDefault();
-    saveDocument(e.target, doc);
+    saveDocument(e.target, doc, kept);
   };
 }
 
-async function saveDocument(formEl, existingDoc) {
+async function saveDocument(formEl, existingDoc, keptAttachments) {
   const form = new FormData(formEl);
   const title = form.get('title').trim();
-  const sourceType = form.get('sourceType');
-  const file = form.get('file');
-  const hasNewFile = sourceType === 'file' && file && file.size > 0;
+  const files = form.getAll('files').filter((f) => f && f.size > 0);
+  const links = [...formEl.querySelectorAll('.link-row')]
+    .map((row) => ({
+      name: row.querySelector('.link-name').value.trim(),
+      url: row.querySelector('.link-url').value.trim(),
+    }))
+    .filter((l) => l.url);
 
-  if (hasNewFile && file.size > MAX_FILE_MB * 1024 * 1024) {
-    const goOn = confirm(`ไฟล์ขนาด ${formatSize(file.size)} ใหญ่กว่าที่แนะนำ (${MAX_FILE_MB}MB) การอัพโหลดอาจช้าหรือล้มเหลว ต้องการดำเนินการต่อไหม?`);
-    if (!goOn) return;
-  }
-  if (sourceType === 'link' && !form.get('externalUrl').trim()) {
-    toast('กรุณาใส่ URL ของเอกสาร', true);
+  const kept = existingDoc ? keptAttachments : [];
+  if (kept.length + files.length + links.length === 0) {
+    toast('กรุณาแนบไฟล์ หรือเพิ่มลิงก์อย่างน้อย 1 รายการ', true);
     return;
   }
-  if (!existingDoc && sourceType === 'file' && !hasNewFile) {
-    toast('กรุณาเลือกไฟล์', true);
-    return;
+  for (const file of files) {
+    if (file.size > MAX_FILE_MB * 1024 * 1024) {
+      const goOn = confirm(`ไฟล์ "${file.name}" ขนาด ${formatSize(file.size)} ใหญ่กว่าที่แนะนำ (${MAX_FILE_MB}MB) การอัพโหลดอาจช้าหรือล้มเหลว ต้องการดำเนินการต่อไหม?`);
+      if (!goOn) return;
+    }
   }
 
   await withBusy(formEl, async () => {
     const { token, name: userName } = state.session;
     const now = new Date().toISOString();
     const docId = existingDoc ? existingDoc.id : uniqueDocId(title);
-    const newVersion = existingDoc ? existingDoc.version + 1 : 1;
     const categoryId = form.get('categoryId');
     const tags = form.get('tags').split(',').map((t) => t.trim()).filter(Boolean);
+
+    const attachmentsChanged = !existingDoc
+      || files.length > 0
+      || links.length > 0
+      || kept.length !== (existingDoc.attachments || []).length;
+    const newVersion = existingDoc
+      ? (attachmentsChanged ? existingDoc.version + 1 : existingDoc.version)
+      : 1;
     const note = (form.get('note') || '').trim() || (existingDoc ? 'อัพเดตข้อมูล' : 'เวอร์ชันแรก');
 
-    // 1) อัพโหลดไฟล์ (ถ้ามีไฟล์ใหม่) — เก็บแยกตามเวอร์ชัน เพื่อย้อนดูของเก่าได้
-    let fileMeta = existingDoc?.file || null;
-    let externalUrl = null;
-    if (sourceType === 'link') {
-      externalUrl = form.get('externalUrl').trim();
-      if (hasNewFile === false) fileMeta = null;
-    } else if (hasNewFile) {
+    // 1) อัพโหลดไฟล์ใหม่ทีละไฟล์ — path แยกตามเวอร์ชัน เพื่อย้อนดูของเก่าได้เสมอ
+    const uploaded = [];
+    for (const [i, file] of files.entries()) {
       const safeName = sanitizeFileName(file.name);
       const path = `assets/${categoryId}/${docId}/v${newVersion}-${safeName}`;
-      toast('กำลังอัพโหลดไฟล์…');
+      toast(`กำลังอัพโหลดไฟล์ ${i + 1}/${files.length}…`);
       const base64 = await fileToBase64(file);
-      await GitHub.putFile(path, base64, `อัพโหลดไฟล์: ${title} (v${newVersion})`, token);
-      fileMeta = { path, name: file.name, type: file.name.split('.').pop().toLowerCase(), size: file.size };
+      await GitHub.putFile(path, base64, `อัพโหลดไฟล์: ${title} (v${newVersion}) — ${file.name}`, token);
+      uploaded.push({
+        kind: 'file',
+        path,
+        name: file.name,
+        type: file.name.split('.').pop().toLowerCase(),
+        size: file.size,
+      });
     }
 
+    const finalAttachments = [
+      ...kept,
+      ...uploaded,
+      ...links.map((l) => ({ kind: 'link', url: l.url, name: l.name || 'ลิงก์ภายนอก' })),
+    ];
+    // snapshot สำหรับ history — เก็บเฉพาะข้อมูลที่ใช้เปิดไฟล์ย้อนหลัง
+    const snapshot = finalAttachments.map((a) => a.kind === 'link'
+      ? { kind: 'link', url: a.url, name: a.name }
+      : { kind: 'file', path: a.path, name: a.name });
+
     // 2) อัพเดต catalog (อ่าน sha สดก่อนเขียนเสมอ)
-    const changedSource = hasNewFile || sourceType === 'link';
-    state.library = await GitHub.updateLibrary((lib) => {
+    state.library = await updateLibrary((lib) => {
       const historyEntry = {
         version: newVersion,
-        path: externalUrl ? null : fileMeta?.path || null,
-        name: externalUrl ? null : fileMeta?.name || null,
-        externalUrl,
+        attachments: snapshot,
         updatedAt: now,
         updatedBy: userName,
         note,
@@ -796,10 +913,9 @@ async function saveDocument(formEl, existingDoc) {
           updatedAt: now,
           updatedBy: userName,
         });
-        if (changedSource) {
+        if (attachmentsChanged) {
           target.version = newVersion;
-          target.file = externalUrl ? null : fileMeta;
-          target.externalUrl = externalUrl;
+          target.attachments = finalAttachments;
           target.history = [...(target.history || []), historyEntry];
         }
       } else {
@@ -809,8 +925,7 @@ async function saveDocument(formEl, existingDoc) {
           description: form.get('description').trim(),
           categoryId,
           tags,
-          file: externalUrl ? null : fileMeta,
-          externalUrl,
+          attachments: finalAttachments,
           version: 1,
           createdAt: now,
           createdBy: userName,
@@ -819,7 +934,7 @@ async function saveDocument(formEl, existingDoc) {
           history: [historyEntry],
         });
       }
-    }, existingDoc ? `อัพเดตเอกสาร: ${title} (v${newVersion})` : `เพิ่มเอกสาร: ${title}`, token);
+    }, existingDoc ? `อัพเดตเอกสาร: ${title} (v${newVersion})` : `เพิ่มเอกสาร: ${title}`);
 
     closeModal();
     toast(existingDoc ? 'อัพเดตเอกสารเรียบร้อย' : 'เพิ่มเอกสารเรียบร้อย');
@@ -831,9 +946,9 @@ async function saveDocument(formEl, existingDoc) {
 async function deleteDocument(doc) {
   if (!confirm(`ลบ “${doc.title}” ออกจากคลัง?\n\n(รายการจะหายจากหน้าเว็บ แต่ไฟล์และประวัติยังอยู่ใน git history ของ repo กู้คืนได้โดยผู้ดูแล)`)) return;
   try {
-    state.library = await GitHub.updateLibrary((lib) => {
+    state.library = await updateLibrary((lib) => {
       lib.documents = lib.documents.filter((d) => d.id !== doc.id);
-    }, `ลบเอกสาร: ${doc.title}`, state.session.token);
+    }, `ลบเอกสาร: ${doc.title}`);
     toast('ลบเอกสารแล้ว');
     navigate('#/');
     render();
@@ -873,7 +988,7 @@ function toast(message, isError = false) {
 
 async function reloadLibrary() {
   const { library } = await GitHub.loadLibrary(state.session?.token);
-  state.library = library;
+  state.library = normalizeLibrary(library);
   state.loaded = true;
   state.loadError = null;
 }
@@ -896,7 +1011,7 @@ async function init() {
     // token อาจหมดสิทธิ์อ่าน — ลอง fallback อ่านแบบ static
     try {
       const { library } = await GitHub.loadLibrary(null);
-      state.library = library;
+      state.library = normalizeLibrary(library);
       state.loaded = true;
     } catch (_) {
       state.loadError = `โหลดคลังเอกสารไม่สำเร็จ: ${err.message}`;

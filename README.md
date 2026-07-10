@@ -49,12 +49,16 @@ Webapp สำหรับเก็บองค์ความรู้ (Paradigm
       "description": "…",
       "categoryId": "work-standards",
       "tags": ["คู่มือ"],
-      "file": { "path": "assets/…/v1-….md", "name": "….md", "type": "md", "size": 1234 },
-      "externalUrl": null,          // ใช้แทน file ได้ สำหรับลิงก์ YouTube/Drive
+      // เอกสาร 1 รายการแนบได้หลายชิ้น — ผสมไฟล์อัพโหลดกับลิงก์ภายนอกได้
+      "attachments": [
+        { "kind": "file", "path": "assets/…/v1-….md", "name": "….md", "type": "md", "size": 1234 },
+        { "kind": "link", "url": "https://youtube.com/…", "name": "วิดีโอสอนงาน" }
+      ],
       "version": 1,
       "createdAt": "…", "createdBy": "…",
       "updatedAt": "…", "updatedBy": "…",
-      "history": [ { "version": 1, "path": "…", "updatedAt": "…", "updatedBy": "…", "note": "…" } ]
+      "history": [ { "version": 1, "attachments": [ { "kind": "file", "path": "…", "name": "…" } ], "updatedAt": "…", "updatedBy": "…", "note": "…" } ]
+      // เอกสารรูปแบบเก่า (file/externalUrl เดี่ยว) ถูกแปลงเป็น attachments อัตโนมัติตอนโหลด
     }
   ]
 }

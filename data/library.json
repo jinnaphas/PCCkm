@@ -665,6 +665,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "delta-model",
+      "title": "Delta Model",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Delta"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/delta-model/v1-Delta_Model_1_.pdf",
+          "name": "Delta Model(1).pdf",
+          "type": "pdf",
+          "size": 1650713
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T07:30:44.804Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T07:30:44.804Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/delta-model/v1-Delta_Model_1_.pdf",
+              "name": "Delta Model(1).pdf"
+            }
+          ],
+          "updatedAt": "2026-07-10T07:30:44.804Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

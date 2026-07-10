@@ -629,6 +629,42 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "recurring-revenue-streams",
+      "title": "Recurring Revenue Streams",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Recurring Platform Idea"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://chatgpt.com/share/6a43455d-eeb8-83ec-a960-6dd4a2e41bac?ogimg=plain",
+          "name": "ChatGPT"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T03:15:21.180Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T03:15:21.180Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://chatgpt.com/share/6a43455d-eeb8-83ec-a960-6dd4a2e41bac?ogimg=plain",
+              "name": "ChatGPT"
+            }
+          ],
+          "updatedAt": "2026-07-10T03:15:21.180Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

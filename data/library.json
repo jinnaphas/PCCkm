@@ -819,6 +819,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "market-type",
+      "title": "Market Type",
+      "description": "4 Market Type Categories",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "4 Market"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/market-type/v1-market_competition_types_infographic.png",
+          "name": "market_competition_types_infographic.png",
+          "type": "png",
+          "size": 829174
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T07:45:51.584Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T07:45:51.584Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/market-type/v1-market_competition_types_infographic.png",
+              "name": "market_competition_types_infographic.png"
+            }
+          ],
+          "updatedAt": "2026-07-10T07:45:51.584Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

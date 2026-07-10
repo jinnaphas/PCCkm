@@ -938,6 +938,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "tendering-revenue-stream-flow",
+      "title": "Tendering Revenue Stream Flow",
+      "description": "ChatGPT Knowledge",
+      "categoryId": "rs-tendering",
+      "tags": [
+        "Tendering",
+        "Revenue Stream",
+        "ChatGPT"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/rs-tendering/tendering-revenue-stream-flow/v1-ChatGPT_-_the_revenue_flow_as_stream_from_tendering.pdf",
+          "name": "ChatGPT - the revenue flow as stream from tendering.pdf",
+          "type": "pdf",
+          "size": 311138
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T07:57:05.525Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T07:57:05.525Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/rs-tendering/tendering-revenue-stream-flow/v1-ChatGPT_-_the_revenue_flow_as_stream_from_tendering.pdf",
+              "name": "ChatGPT - the revenue flow as stream from tendering.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-10T07:57:05.525Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

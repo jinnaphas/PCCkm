@@ -778,6 +778,47 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "the-hierarchies-of-planning",
+      "title": "The Hierarchies of Planning",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Strategy",
+        "Tactical",
+        "Operation",
+        "Strategy Level"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/the-hierarchies-of-planning/v1-The_Hierarchies_of_planning_strategic_tactical_operational_.pdf",
+          "name": "The Hierarchies of planning (strategic tactical operational).pdf",
+          "type": "pdf",
+          "size": 99413
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T07:42:57.182Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T07:42:57.182Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/the-hierarchies-of-planning/v1-The_Hierarchies_of_planning_strategic_tactical_operational_.pdf",
+              "name": "The Hierarchies of planning (strategic tactical operational).pdf"
+            }
+          ],
+          "updatedAt": "2026-07-10T07:42:57.182Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

@@ -169,47 +169,6 @@
       ]
     },
     {
-      "id": "example-paradigm",
-      "title": "ตัวอย่าง Paradigm: การจัดทำเอกสารองค์ความรู้",
-      "description": "ตัวอย่างโครงสร้างเอกสาร Paradigm ที่ดี ประกอบด้วยที่มา ปัญหา แนวทางแก้ไข และผลลัพธ์ สามารถใช้เป็นแม่แบบในการเขียนเอกสารใหม่",
-      "categoryId": "ic-intellectual",
-      "tags": [
-        "ตัวอย่าง",
-        "แม่แบบ",
-        "template",
-        "KM"
-      ],
-      "version": 1,
-      "createdAt": "2026-07-08T09:05:00.000Z",
-      "createdBy": "System",
-      "updatedAt": "2026-07-08T09:05:00.000Z",
-      "updatedBy": "System",
-      "history": [
-        {
-          "version": 1,
-          "updatedAt": "2026-07-08T09:05:00.000Z",
-          "updatedBy": "System",
-          "note": "เวอร์ชันแรก",
-          "attachments": [
-            {
-              "kind": "file",
-              "path": "assets/training/example-paradigm/v1-example-paradigm.md",
-              "name": "example-paradigm.md"
-            }
-          ]
-        }
-      ],
-      "attachments": [
-        {
-          "kind": "file",
-          "path": "assets/training/example-paradigm/v1-example-paradigm.md",
-          "name": "example-paradigm.md",
-          "type": "md",
-          "size": 1930
-        }
-      ]
-    },
-    {
       "id": "intellectual-capital",
       "title": "Intellectual Capital",
       "description": "Tangible, Intangible  Utilization to Generate Cash and Wealth",

@@ -703,6 +703,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "feasibility-paradigm",
+      "title": "Feasibility Paradigm",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Feasibility",
+        "Go",
+        "Go no Go"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/feasibility-paradigm/v1-Feas.png",
+          "name": "Feas.png",
+          "type": "png",
+          "size": 35898
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T07:32:03.852Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T07:32:03.852Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/feasibility-paradigm/v1-Feas.png",
+              "name": "Feas.png"
+            }
+          ],
+          "updatedAt": "2026-07-10T07:32:03.852Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

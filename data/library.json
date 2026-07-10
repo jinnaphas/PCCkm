@@ -702,6 +702,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "leadership-pipeline",
+      "title": "Leadership Pipeline",
+      "description": "",
+      "categoryId": "ic-human-capital",
+      "tags": [
+        "Leadership"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/ic-human-capital/leadership-pipeline/v1-Leadership.png",
+          "name": "Leadership.png",
+          "type": "png",
+          "size": 121140
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T07:39:07.982Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T07:39:07.982Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/ic-human-capital/leadership-pipeline/v1-Leadership.png",
+              "name": "Leadership.png"
+            }
+          ],
+          "updatedAt": "2026-07-10T07:39:07.982Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

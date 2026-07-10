@@ -589,6 +589,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "capitalism-transformation",
+      "title": "Capitalism Transformation",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Industrial",
+        "Platform",
+        "Ecosystem"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/capitalism-transformation/v1-Capitalism.jpg",
+          "name": "Capitalism.jpg",
+          "type": "jpg",
+          "size": 347224
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-10T03:10:59.499Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-10T03:10:59.499Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/capitalism-transformation/v1-Capitalism.jpg",
+              "name": "Capitalism.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-10T03:10:59.499Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

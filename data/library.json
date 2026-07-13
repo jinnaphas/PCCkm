@@ -978,6 +978,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "oprins-bamboo",
+      "title": "Oprins Bamboo",
+      "description": "",
+      "categoryId": "rs-ppa-long-term",
+      "tags": [
+        "Oprins",
+        "Bamboo",
+        "Micropropagation Process"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/rs-ppa-long-term/oprins-bamboo/v1-24339_Oprins_tarns_260417_095831.pdf",
+          "name": "24339_Oprins tarns_260417_095831.pdf",
+          "type": "pdf",
+          "size": 7543305
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-13T07:35:36.610Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-13T07:35:36.610Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/rs-ppa-long-term/oprins-bamboo/v1-24339_Oprins_tarns_260417_095831.pdf",
+              "name": "24339_Oprins tarns_260417_095831.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-13T07:35:36.610Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

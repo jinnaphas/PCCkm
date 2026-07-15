@@ -1018,6 +1018,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "tcs-factsheet",
+      "title": "TCS Factsheet",
+      "description": "TCS Factsheet represent to buyers",
+      "categoryId": "rs-tcs",
+      "tags": [
+        "Factsheet",
+        "TCS",
+        "Sale"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/rs-tcs/tcs-factsheet/v1-TCS_Fact_sheet.jpg",
+          "name": "TCS Fact sheet.jpg",
+          "type": "jpg",
+          "size": 467185
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-15T07:55:27.586Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-15T07:55:27.586Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/rs-tcs/tcs-factsheet/v1-TCS_Fact_sheet.jpg",
+              "name": "TCS Fact sheet.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-15T07:55:27.586Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

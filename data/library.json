@@ -1058,6 +1058,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "the-new-price-profit-cost-equation",
+      "title": "The New Price/Profit/Cost Equation",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Cost down",
+        "New Market"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/the-new-price-profit-cost-equation/v1-The_New_Price_profit_cost_Equation.jpg",
+          "name": "The New Price_profit_cost Equation.jpg",
+          "type": "jpg",
+          "size": 141636
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-23T08:02:51.840Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-23T08:02:51.840Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/the-new-price-profit-cost-equation/v1-The_New_Price_profit_cost_Equation.jpg",
+              "name": "The New Price_profit_cost Equation.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-23T08:02:51.840Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

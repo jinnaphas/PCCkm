@@ -756,12 +756,19 @@
           "name": "Technology Readiness Level-TRL - Thaiversion.pdf",
           "type": "pdf",
           "size": 1342233
+        },
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/technology-readiness-level-trl/v2-TRL_9_Level_Readiness.jpg",
+          "name": "TRL 9 Level Readiness.jpg",
+          "type": "jpg",
+          "size": 134553
         }
       ],
-      "version": 1,
+      "version": 2,
       "createdAt": "2026-07-10T07:40:49.112Z",
       "createdBy": "JPP",
-      "updatedAt": "2026-07-10T07:40:49.112Z",
+      "updatedAt": "2026-07-26T07:58:37.078Z",
       "updatedBy": "JPP",
       "history": [
         {
@@ -776,6 +783,24 @@
           "updatedAt": "2026-07-10T07:40:49.112Z",
           "updatedBy": "JPP",
           "note": "เวอร์ชันแรก"
+        },
+        {
+          "version": 2,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/technology-readiness-level-trl/v1-Technology_Readiness_Level-TRL_-_Thaiversion.pdf",
+              "name": "Technology Readiness Level-TRL - Thaiversion.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/technology-readiness-level-trl/v2-TRL_9_Level_Readiness.jpg",
+              "name": "TRL 9 Level Readiness.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-26T07:58:37.078Z",
+          "updatedBy": "JPP",
+          "note": "อัพเดตข้อมูล"
         }
       ]
     },

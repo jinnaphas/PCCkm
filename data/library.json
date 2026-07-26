@@ -1319,6 +1319,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "total-quality-management-concept-tqm",
+      "title": "Total Quality Management Concept (TQM)",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "TQM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/total-quality-management-concept-tqm/v1-TQM_Concept.jpg",
+          "name": "TQM Concept.jpg",
+          "type": "jpg",
+          "size": 97952
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-26T08:15:51.918Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-26T08:15:51.918Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/total-quality-management-concept-tqm/v1-TQM_Concept.jpg",
+              "name": "TQM Concept.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-26T08:15:51.918Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

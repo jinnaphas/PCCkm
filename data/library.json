@@ -1241,6 +1241,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "sgam-laboratory",
+      "title": "SGAM Laboratory",
+      "description": "",
+      "categoryId": "center-of-excellence-coe",
+      "tags": [
+        "SGAM Lab"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/sgam-laboratory/v1-SGAM_Lab.jpg",
+          "name": "SGAM Lab.jpg",
+          "type": "jpg",
+          "size": 48247
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-26T08:01:29.144Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-26T08:01:29.144Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/sgam-laboratory/v1-SGAM_Lab.jpg",
+              "name": "SGAM Lab.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-26T08:01:29.144Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

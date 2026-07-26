@@ -1279,6 +1279,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "end-way-mean",
+      "title": "End Way Mean",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "End",
+        "Way",
+        "Mean"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/end-way-mean/v1-End_way_mean.jpg",
+          "name": "End way mean.jpg",
+          "type": "jpg",
+          "size": 54656
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-26T08:04:47.155Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-26T08:04:47.155Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/end-way-mean/v1-End_way_mean.jpg",
+              "name": "End way mean.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-26T08:04:47.155Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

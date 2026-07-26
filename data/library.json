@@ -1137,6 +1137,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "digital-manufacturing-platform",
+      "title": "Digital Manufacturing Platform",
+      "description": "",
+      "categoryId": "center-of-excellence-coe",
+      "tags": [
+        "Manufacturing",
+        "Digital",
+        "Platform"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/digital-manufacturing-platform/v1-applsci-09-04433-with-cover.pdf",
+          "name": "applsci-09-04433-with-cover.pdf",
+          "type": "pdf",
+          "size": 2488219
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-26T07:49:42.868Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-26T07:49:42.868Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/digital-manufacturing-platform/v1-applsci-09-04433-with-cover.pdf",
+              "name": "applsci-09-04433-with-cover.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-26T07:49:42.868Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

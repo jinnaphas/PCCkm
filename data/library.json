@@ -1177,6 +1177,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "smart-grid-architecture-model",
+      "title": "Smart Grid Architecture Model",
+      "description": "",
+      "categoryId": "center-of-excellence-coe",
+      "tags": [
+        "Smart Grid",
+        "Energy"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/smart-grid-architecture-model/v1-energies-12-00258_260722_095405.PDF",
+          "name": "energies-12-00258_260722_095405.PDF",
+          "type": "pdf",
+          "size": 5348729
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-26T07:51:07.361Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-26T07:51:07.361Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/smart-grid-architecture-model/v1-energies-12-00258_260722_095405.PDF",
+              "name": "energies-12-00258_260722_095405.PDF"
+            }
+          ],
+          "updatedAt": "2026-07-26T07:51:07.361Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

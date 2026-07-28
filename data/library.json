@@ -1297,12 +1297,19 @@
           "name": "End way mean.jpg",
           "type": "jpg",
           "size": 54656
+        },
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/end-way-mean/v2-92223_Understanding_Military_Strategy_Arthur_Lykke.pdf",
+          "name": "92223_Understanding Military Strategy Arthur Lykke.pdf",
+          "type": "pdf",
+          "size": 89838
         }
       ],
-      "version": 1,
+      "version": 2,
       "createdAt": "2026-07-26T08:04:47.155Z",
       "createdBy": "JPP",
-      "updatedAt": "2026-07-26T08:04:47.155Z",
+      "updatedAt": "2026-07-28T06:04:38.693Z",
       "updatedBy": "JPP",
       "history": [
         {
@@ -1317,6 +1324,24 @@
           "updatedAt": "2026-07-26T08:04:47.155Z",
           "updatedBy": "JPP",
           "note": "เวอร์ชันแรก"
+        },
+        {
+          "version": 2,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/end-way-mean/v1-End_way_mean.jpg",
+              "name": "End way mean.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/end-way-mean/v2-92223_Understanding_Military_Strategy_Arthur_Lykke.pdf",
+              "name": "92223_Understanding Military Strategy Arthur Lykke.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-28T06:04:38.693Z",
+          "updatedBy": "JPP",
+          "note": "อัพเดตข้อมูล"
         }
       ]
     },

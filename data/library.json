@@ -1475,6 +1475,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "total-quality-control-tqc-management",
+      "title": "Total Quality Control (TQC) Management",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "TQC",
+        "Total Quality Control"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/total-quality-control-tqc-management/v1-152586_TQC_for_management_of_precise_group.pdf.pdf",
+          "name": "152586_TQC for management of precise group.pdf.pdf",
+          "type": "pdf",
+          "size": 1336470
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-28T06:03:22.878Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-28T06:03:22.878Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/total-quality-control-tqc-management/v1-152586_TQC_for_management_of_precise_group.pdf.pdf",
+              "name": "152586_TQC for management of precise group.pdf.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-28T06:03:22.878Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

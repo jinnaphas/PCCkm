@@ -1436,6 +1436,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "level-of-strategy",
+      "title": "Level of Strategy",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "แผนกลยุทธ์ 3 ระดับ",
+        "Strategy"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/level-of-strategy/v1-392727_Levels_of_Strategy.pdf",
+          "name": "392727_Levels of Strategy.pdf",
+          "type": "pdf",
+          "size": 373404
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-28T06:01:13.138Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-28T06:01:13.138Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/level-of-strategy/v1-392727_Levels_of_Strategy.pdf",
+              "name": "392727_Levels of Strategy.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-28T06:01:13.138Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

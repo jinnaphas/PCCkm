@@ -1397,6 +1397,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "supply-chain-management",
+      "title": "Supply Chain Management",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "SCM",
+        "Supply Chain"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/supply-chain-management/v1-251057_0.jpg",
+          "name": "251057_0.jpg",
+          "type": "jpg",
+          "size": 69653
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-28T05:54:20.133Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-28T05:54:20.133Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/supply-chain-management/v1-251057_0.jpg",
+              "name": "251057_0.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-28T05:54:20.133Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

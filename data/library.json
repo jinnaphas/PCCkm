@@ -1357,6 +1357,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "virtual-factory-data-model",
+      "title": "Virtual Factory Data Model",
+      "description": "",
+      "categoryId": "center-of-excellence-coe",
+      "tags": [
+        "Factory",
+        "Virtual",
+        "Data"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/virtual-factory-data-model/v1-Virtual_Factory_Data_Model.pdf",
+          "name": "Virtual Factory Data Model.pdf",
+          "type": "pdf",
+          "size": 288043
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-07-28T05:50:00.693Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-07-28T05:50:00.693Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/virtual-factory-data-model/v1-Virtual_Factory_Data_Model.pdf",
+              "name": "Virtual Factory Data Model.pdf"
+            }
+          ],
+          "updatedAt": "2026-07-28T05:50:00.693Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

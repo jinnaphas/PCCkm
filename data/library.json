@@ -1264,12 +1264,19 @@
           "name": "254229.jpg",
           "type": "jpg",
           "size": 79625
+        },
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/sgam-laboratory/v3-SGAM_v2.jpg",
+          "name": "SGAM v2.jpg",
+          "type": "jpg",
+          "size": 84438
         }
       ],
-      "version": 2,
+      "version": 3,
       "createdAt": "2026-07-26T08:01:29.144Z",
       "createdBy": "JPP",
-      "updatedAt": "2026-07-31T04:20:14.678Z",
+      "updatedAt": "2026-07-31T04:21:47.705Z",
       "updatedBy": "JPP",
       "history": [
         {
@@ -1300,6 +1307,29 @@
             }
           ],
           "updatedAt": "2026-07-31T04:20:14.678Z",
+          "updatedBy": "JPP",
+          "note": "อัพเดตข้อมูล"
+        },
+        {
+          "version": 3,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/sgam-laboratory/v1-SGAM_Lab.jpg",
+              "name": "SGAM Lab.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/sgam-laboratory/v2-254229.jpg",
+              "name": "254229.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/sgam-laboratory/v3-SGAM_v2.jpg",
+              "name": "SGAM v2.jpg"
+            }
+          ],
+          "updatedAt": "2026-07-31T04:21:47.705Z",
           "updatedBy": "JPP",
           "note": "อัพเดตข้อมูล"
         }

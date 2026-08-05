@@ -1629,6 +1629,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "smart-farming-architecture-model",
+      "title": "Smart Farming Architecture Model",
+      "description": "",
+      "categoryId": "center-of-excellence-coe",
+      "tags": [
+        "SFAM",
+        "Smart Farming",
+        "SGAM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/smart-farming-architecture-model/v1-Smart_Farming_SGAM_Lab.pdf",
+          "name": "Smart Farming SGAM Lab.pdf",
+          "type": "pdf",
+          "size": 9239747
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-08-05T04:02:41.936Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-08-05T04:02:41.936Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/smart-farming-architecture-model/v1-Smart_Farming_SGAM_Lab.pdf",
+              "name": "Smart Farming SGAM Lab.pdf"
+            }
+          ],
+          "updatedAt": "2026-08-05T04:02:41.936Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

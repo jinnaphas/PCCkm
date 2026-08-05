@@ -1669,6 +1669,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "digital-engineering-and-life-cycle-costi",
+      "title": "Digital Engineering and Life Cycle Costing",
+      "description": "",
+      "categoryId": "center-of-excellence-coe",
+      "tags": [
+        "LCC",
+        "DE"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/center-of-excellence-coe/digital-engineering-and-life-cycle-costi/v1-DE_Life_Cycle_Costing.pdf",
+          "name": "DE Life Cycle Costing.pdf",
+          "type": "pdf",
+          "size": 1134146
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-08-05T06:06:06.145Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-08-05T06:06:06.145Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/center-of-excellence-coe/digital-engineering-and-life-cycle-costi/v1-DE_Life_Cycle_Costing.pdf",
+              "name": "DE Life Cycle Costing.pdf"
+            }
+          ],
+          "updatedAt": "2026-08-05T06:06:06.145Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

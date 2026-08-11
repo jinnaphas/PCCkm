@@ -1708,6 +1708,45 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "digital-architecture-smart-architecture-",
+      "title": "Digital Architecture, Smart Architecture Model",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "SGAM",
+        "SFAM",
+        "SCIAM",
+        "RAMI4.0"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://jinnaphas.github.io/Architecture/app/",
+          "name": "Architecture Workshop"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-08-11T02:22:44.912Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-08-11T02:22:44.912Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://jinnaphas.github.io/Architecture/app/",
+              "name": "Architecture Workshop"
+            }
+          ],
+          "updatedAt": "2026-08-11T02:22:44.912Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

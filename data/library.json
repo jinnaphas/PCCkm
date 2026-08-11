@@ -1747,6 +1747,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "platform-capitalism-6-revenue-stream-typ",
+      "title": "Platform Capitalism 6 Revenue Stream Type",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Platform",
+        "6 RST",
+        "Revenue Stream Type"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://jinnaphas.github.io/platform/prototype/?api=https://rst-arch-sync.jinnaphas-phas.workers.dev",
+          "name": "6 Revenue Stream Type Platform"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-08-11T02:23:58.723Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-08-11T02:23:58.723Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://jinnaphas.github.io/platform/prototype/?api=https://rst-arch-sync.jinnaphas-phas.workers.dev",
+              "name": "6 Revenue Stream Type Platform"
+            }
+          ],
+          "updatedAt": "2026-08-11T02:23:58.723Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

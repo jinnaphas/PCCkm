@@ -1785,6 +1785,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "scientific-problem-solving",
+      "title": "Scientific Problem Solving",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Problem Solving"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/scientific-problem-solving/v1-Problem-solving_Method.jpg",
+          "name": "Problem-solving Method.jpg",
+          "type": "jpg",
+          "size": 127686
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-08-18T09:29:31.194Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-08-18T09:29:31.194Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/scientific-problem-solving/v1-Problem-solving_Method.jpg",
+              "name": "Problem-solving Method.jpg"
+            }
+          ],
+          "updatedAt": "2026-08-18T09:29:31.194Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

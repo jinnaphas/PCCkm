@@ -1823,6 +1823,42 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "cot-model",
+      "title": "COT Model",
+      "description": "C O T",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "COT"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://chatgpt.com/share/6a767f9a-7dc8-83ec-aad0-b2abf60a3715?ogimg=plain",
+          "name": "ลิงก์ภายนอก"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-09-02T07:23:42.510Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-09-02T07:23:42.510Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://chatgpt.com/share/6a767f9a-7dc8-83ec-aad0-b2abf60a3715?ogimg=plain",
+              "name": "ลิงก์ภายนอก"
+            }
+          ],
+          "updatedAt": "2026-09-02T07:23:42.510Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

@@ -1859,6 +1859,46 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "output-outcome-impact",
+      "title": "Output Outcome Impact",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Output",
+        "Outcome",
+        "Impact"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/output-outcome-impact/v1-Outout.jpg",
+          "name": "Outout.jpg",
+          "type": "jpg",
+          "size": 394976
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-09-02T08:59:42.075Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-09-02T08:59:42.075Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/output-outcome-impact/v1-Outout.jpg",
+              "name": "Outout.jpg"
+            }
+          ],
+          "updatedAt": "2026-09-02T08:59:42.075Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

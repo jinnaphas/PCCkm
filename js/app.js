@@ -999,8 +999,22 @@ async function init() {
   bindSearchBox();
   document.getElementById('btn-add-doc').onclick = () => requireLogin(() => openDocModal());
   document.getElementById('btn-add-category').onclick = () => requireLogin(openCategoryModal);
+  // มือถือ: เปิด/ปิดแบบ off-canvas — จอใหญ่: ยุบ sidebar ให้เนื้อหากว้างขึ้น (จำสถานะไว้)
+  const isMobile = window.matchMedia('(max-width: 900px)');
+  try {
+    if (localStorage.getItem('pcckm.sidebarCollapsed') === '1') {
+      document.body.classList.add('sidebar-collapsed');
+    }
+  } catch (_) { /* private mode ฯลฯ */ }
   document.getElementById('btn-sidebar-toggle').onclick = () => {
-    document.body.classList.toggle('sidebar-open');
+    if (isMobile.matches) {
+      document.body.classList.toggle('sidebar-open');
+      return;
+    }
+    const collapsed = document.body.classList.toggle('sidebar-collapsed');
+    try {
+      localStorage.setItem('pcckm.sidebarCollapsed', collapsed ? '1' : '0');
+    } catch (_) { /* เก็บไม่ได้ก็ข้าม */ }
   };
   document.getElementById('sidebar-backdrop').onclick = closeSidebar;
   window.addEventListener('hashchange', render);

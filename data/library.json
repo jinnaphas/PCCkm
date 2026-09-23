@@ -1899,6 +1899,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "canon",
+      "title": "Canon",
+      "description": "Distinctive Competency",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Cannon"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/canon/v1-Cannon.jpg",
+          "name": "Cannon.jpg",
+          "type": "jpg",
+          "size": 65278
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-09-23T09:30:18.156Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-09-23T09:30:18.156Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/canon/v1-Cannon.jpg",
+              "name": "Cannon.jpg"
+            }
+          ],
+          "updatedAt": "2026-09-23T09:30:18.156Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

@@ -1975,6 +1975,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "business-philosophy",
+      "title": "Business Philosophy",
+      "description": "Business Philosophy",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Business Philosophy"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/business-philosophy/v1-philosophy.jpg",
+          "name": "philosophy.jpg",
+          "type": "jpg",
+          "size": 373945
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-09-30T07:10:47.983Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-09-30T07:10:47.983Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/business-philosophy/v1-philosophy.jpg",
+              "name": "philosophy.jpg"
+            }
+          ],
+          "updatedAt": "2026-09-30T07:10:47.983Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

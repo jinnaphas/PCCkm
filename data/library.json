@@ -2050,6 +2050,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "ปากเกร็ด-location-investment-smart-campu",
+      "title": "ปากเกร็ด Location Investment Smart Campus",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Location",
+        "Investment",
+        "Smart Campus"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://claude.ai/artifact/XQpoGjiWHRUgK6Emp1WqSa",
+          "name": "Pakret Smart Campus"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-06T04:53:20.682Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-10-06T04:53:20.682Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://claude.ai/artifact/XQpoGjiWHRUgK6Emp1WqSa",
+              "name": "Pakret Smart Campus"
+            }
+          ],
+          "updatedAt": "2026-10-06T04:53:20.682Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

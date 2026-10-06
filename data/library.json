@@ -2088,6 +2088,55 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "bamboo-analogous-model",
+      "title": "Bamboo Analogous Model",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Analogous Model",
+        "Bamboo"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/bamboo-analogous-model/v1-Bamboo-Refinery-Analogous-Model-A3.pdf",
+          "name": "Bamboo-Refinery-Analogous-Model-A3.pdf",
+          "type": "pdf",
+          "size": 1921906
+        },
+        {
+          "kind": "link",
+          "url": "https://claude.ai/artifact/RYNTV69f4WJRvEm8tbCpD6",
+          "name": "Bamboo Analogous Model"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-06T04:57:56.411Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-10-06T04:57:56.411Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/bamboo-analogous-model/v1-Bamboo-Refinery-Analogous-Model-A3.pdf",
+              "name": "Bamboo-Refinery-Analogous-Model-A3.pdf"
+            },
+            {
+              "kind": "link",
+              "url": "https://claude.ai/artifact/RYNTV69f4WJRvEm8tbCpD6",
+              "name": "Bamboo Analogous Model"
+            }
+          ],
+          "updatedAt": "2026-10-06T04:57:56.411Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

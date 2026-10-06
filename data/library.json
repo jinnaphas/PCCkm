@@ -2013,6 +2013,43 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "pcc-platform-to-ecosystem",
+      "title": "PCC Platform to Ecosystem",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Platform",
+        "Ecosystem"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://claude.ai/artifact/W84SB4zK93MXS6yyRzy8Ja",
+          "name": "PCC Ecosystem"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-06T04:51:46.343Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-10-06T04:51:46.343Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://claude.ai/artifact/W84SB4zK93MXS6yyRzy8Ja",
+              "name": "PCC Ecosystem"
+            }
+          ],
+          "updatedAt": "2026-10-06T04:51:46.343Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

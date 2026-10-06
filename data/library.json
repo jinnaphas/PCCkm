@@ -2137,6 +2137,43 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "bamboo-biobased-product-flow-chart",
+      "title": "Bamboo Biobased Product Flow-chart",
+      "description": "",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Bamboo Biobased Product Flow-chart",
+        "Analogous Model"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://claude.ai/artifact/YJSimG9GULMBzTxgyZf2Sf",
+          "name": "Bamboo Biobased Product Flow-chart"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-06T04:59:06.589Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-10-06T04:59:06.589Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://claude.ai/artifact/YJSimG9GULMBzTxgyZf2Sf",
+              "name": "Bamboo Biobased Product Flow-chart"
+            }
+          ],
+          "updatedAt": "2026-10-06T04:59:06.589Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

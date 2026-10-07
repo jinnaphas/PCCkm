@@ -2210,6 +2210,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "fifth-discipline",
+      "title": "Fifth Discipline",
+      "description": "Learning Organization",
+      "categoryId": "strategy-bmd",
+      "tags": [
+        "Fifth Discipline"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/strategy-bmd/fifth-discipline/v1-Fifth_Discipline.png",
+          "name": "Fifth Discipline.png",
+          "type": "png",
+          "size": 639350
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-07T08:42:41.519Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-10-07T08:42:41.519Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/strategy-bmd/fifth-discipline/v1-Fifth_Discipline.png",
+              "name": "Fifth Discipline.png"
+            }
+          ],
+          "updatedAt": "2026-10-07T08:42:41.519Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

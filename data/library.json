@@ -125,6 +125,13 @@
       "description": "ทีมพัฒนาของกลุ่ม",
       "icon": "📁",
       "parentId": null
+    },
+    {
+      "id": "test",
+      "name": "Test",
+      "description": "",
+      "icon": "📁",
+      "parentId": null
     }
   ],
   "documents": [

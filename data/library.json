@@ -132,6 +132,118 @@
       "description": "",
       "icon": "📁",
       "parentId": null
+    },
+    {
+      "id": "g1-strategy",
+      "name": "Strategy",
+      "description": "กลุ่ม 1 — กลยุทธ์",
+      "icon": "🎯",
+      "parentId": null
+    },
+    {
+      "id": "g1-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g1-strategy"
+    },
+    {
+      "id": "g1-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g1-strategy"
+    },
+    {
+      "id": "g1-transform-md-for-llm",
+      "name": "Transform .md for LLM",
+      "description": "",
+      "icon": "🤖",
+      "parentId": "g1-strategy"
+    },
+    {
+      "id": "g2-stem-dbtp",
+      "name": "STEM & DBTP (SGAM/SFAM/SCIAM/RAMI 4.0) - Product Development and Business Generation",
+      "description": "กลุ่ม 2 — STEM & DBTP, การพัฒนาผลิตภัณฑ์และการสร้างธุรกิจ",
+      "icon": "🔬",
+      "parentId": null
+    },
+    {
+      "id": "g2-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g2-stem-dbtp"
+    },
+    {
+      "id": "g2-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g2-stem-dbtp"
+    },
+    {
+      "id": "g2-transform-md-for-llm",
+      "name": "Transform .md for LLM",
+      "description": "",
+      "icon": "🤖",
+      "parentId": "g2-stem-dbtp"
+    },
+    {
+      "id": "g3-operation-technology",
+      "name": "Operation Technology· Digital · AI · Automation for Demand Satisfaction",
+      "description": "กลุ่ม 3 — Operation Technology, Digital, AI, Automation เพื่อ Demand Satisfaction",
+      "icon": "⚙️",
+      "parentId": null
+    },
+    {
+      "id": "g3-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g3-operation-technology"
+    },
+    {
+      "id": "g3-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g3-operation-technology"
+    },
+    {
+      "id": "g3-transform-md-for-llm",
+      "name": "Transform .md for LLM",
+      "description": "",
+      "icon": "🤖",
+      "parentId": "g3-operation-technology"
+    },
+    {
+      "id": "g4-business-management",
+      "name": "Business Management & Corporate Support for Platform & Ecosystem Capitalism & Intellectual Capital Management&Governance Technology",
+      "description": "กลุ่ม 4 — Business Management & Corporate Support",
+      "icon": "🏛️",
+      "parentId": null
+    },
+    {
+      "id": "g4-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g4-business-management"
+    },
+    {
+      "id": "g4-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g4-business-management"
+    },
+    {
+      "id": "g4-transform-md-for-llm",
+      "name": "Transform .md for LLM",
+      "description": "",
+      "icon": "🤖",
+      "parentId": "g4-business-management"
     }
   ],
   "documents": [

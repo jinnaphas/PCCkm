@@ -135,8 +135,8 @@
     },
     {
       "id": "g1-strategy",
-      "name": "Strategy",
-      "description": "กลุ่ม 1 — กลยุทธ์",
+      "name": "Strategy & Business Model Development",
+      "description": "กลุ่ม 1 — กลยุทธ์และการพัฒนาโมเดลธุรกิจ",
       "icon": "🎯",
       "parentId": null
     },

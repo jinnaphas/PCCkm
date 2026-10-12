@@ -148,7 +148,7 @@ h2 { font-size: 1.15rem; margin: 0; }
 /* ---------- sidebar ---------- */
 
 .sidebar {
-  width: 272px;
+  width: 320px;
   flex-shrink: 0;
   position: sticky;
   top: 61px;
@@ -194,7 +194,7 @@ h2 { font-size: 1.15rem; margin: 0; }
 
 .side-link {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   flex: 1;
   min-width: 0;
@@ -203,7 +203,16 @@ h2 { font-size: 1.15rem; margin: 0; }
 }
 .side-link:hover { text-decoration: none; }
 .side-icon { flex-shrink: 0; }
-.side-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* ชื่อหมวดยาวให้ขึ้นบรรทัดใหม่ได้ (สูงสุด 5 บรรทัด) แทนการตัดเป็น … */
+.side-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
 
 .side-count {
   font-size: 0.72rem;

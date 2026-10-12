@@ -278,7 +278,7 @@ function renderSidebar() {
     return `
       <div class="side-group">
         <div class="side-item ${depth ? 'side-sub' : ''} ${activeCatId === cat.id ? 'active' : ''}">
-          <a class="side-link" href="#/category/${encodeURIComponent(cat.id)}">
+          <a class="side-link" href="#/category/${encodeURIComponent(cat.id)}" title="${escapeHtml(cat.name)}">
             <span class="side-icon">${escapeHtml(cat.icon || (depth ? '·' : '📁'))}</span>
             <span class="side-name">${escapeHtml(cat.name)}</span>
           </a>

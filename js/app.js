@@ -241,7 +241,7 @@ function navigate(hash) {
 }
 
 function render() {
-  renderSidebar();
+  renderSidebar(true);
   closeSidebar();
   closeModal();
   const app = document.getElementById('app');
@@ -265,13 +265,14 @@ function render() {
 
 const expandedCats = new Set();
 
-function renderSidebar() {
+// autoExpand = true เฉพาะตอนเปลี่ยนหน้า — ตอนผู้ใช้กดหุบ/ขยายเองต้องไม่ถูกบังคับเปิดกลับ
+function renderSidebar(autoExpand = false) {
   const nav = document.getElementById('sidebar-nav');
   if (!nav) return;
   const { page, param } = parseRoute();
   const activeCatId = page === 'category' ? param
     : (page === 'doc' ? docById(param)?.categoryId : null);
-  if (activeCatId) {
+  if (autoExpand && activeCatId) {
     ancestorsOf(activeCatId).forEach((a) => expandedCats.add(a.id));
     if (childrenOf(activeCatId).length) expandedCats.add(activeCatId);
   }

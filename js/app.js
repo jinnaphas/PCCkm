@@ -148,6 +148,11 @@ function ancestorsOf(id) {
   return chain;
 }
 
+/* ชื่อหมวดใน sidebar: แสดงเฉพาะส่วนภาษาอังกฤษหน้า " / " (ชื่อเต็มยังอยู่ใน tooltip และหน้าอื่น) */
+function sidebarLabel(name) {
+  return String(name).split(' / ')[0].trim();
+}
+
 /* รายการหมวดทั้งต้นไม้เรียงตามลำดับ พร้อมระดับความลึก (ใช้ใน <select>) */
 function categoryTreeFlat() {
   const out = [];
@@ -280,7 +285,7 @@ function renderSidebar() {
         <div class="side-item ${depth ? 'side-sub' : ''} ${activeCatId === cat.id ? 'active' : ''}">
           <a class="side-link" href="#/category/${encodeURIComponent(cat.id)}" title="${escapeHtml(cat.name)}">
             <span class="side-icon">${escapeHtml(cat.icon || (depth ? '·' : '📁'))}</span>
-            <span class="side-name">${escapeHtml(cat.name)}</span>
+            <span class="side-name">${escapeHtml(sidebarLabel(cat.name))}</span>
           </a>
           <span class="side-count">${docCountDeep(cat.id)}</span>
           ${kids.length ? `<button class="side-caret ${open ? 'open' : ''}" data-cat="${escapeHtml(cat.id)}" aria-label="ขยาย/ย่อหมวดย่อย">▸</button>` : ''}

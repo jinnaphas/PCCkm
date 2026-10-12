@@ -136,6 +136,41 @@ function descendantIds(id) {
   return ids;
 }
 
+/* หมวดแม่ทั้งสายจากบนสุดลงมา (ไม่รวมตัวเอง) — ใช้ทำ breadcrumb และขยาย sidebar */
+function ancestorsOf(id) {
+  const chain = [];
+  let cur = categoryById(id);
+  while (cur?.parentId) {
+    cur = categoryById(cur.parentId);
+    if (!cur || chain.includes(cur)) break;
+    chain.unshift(cur);
+  }
+  return chain;
+}
+
+/* รายการหมวดทั้งต้นไม้เรียงตามลำดับ พร้อมระดับความลึก (ใช้ใน <select>) */
+function categoryTreeFlat() {
+  const out = [];
+  const walk = (cat, depth) => {
+    out.push({ cat, depth });
+    childrenOf(cat.id).forEach((k) => walk(k, depth + 1));
+  };
+  topLevelCategories().forEach((c) => walk(c, 0));
+  return out;
+}
+
+function categoryOptionsHtml(selectedId, emptyLabel) {
+  const opts = categoryTreeFlat().map(({ cat, depth }) =>
+    `<option value="${escapeHtml(cat.id)}" ${selectedId === cat.id ? 'selected' : ''}>${'&nbsp;&nbsp;&nbsp;'.repeat(depth)}${depth ? '— ' : `${escapeHtml(cat.icon || '')} `}${escapeHtml(cat.name)}</option>`);
+  return (emptyLabel ? [`<option value="">${emptyLabel}</option>`] : []).concat(opts).join('');
+}
+
+function breadcrumbHtml(cat, lastLabel) {
+  const trail = [...ancestorsOf(cat.id), ...(lastLabel ? [cat] : [])]
+    .map((c) => `<a href="#/category/${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a> ›`).join(' ');
+  return `<a href="#/">หน้าแรก</a> › ${trail} ${escapeHtml(lastLabel || cat.name)}`;
+}
+
 function docCountDeep(id) {
   const ids = new Set(descendantIds(id));
   return state.library.documents.filter((d) => ids.has(d.categoryId)).length;
@@ -232,36 +267,28 @@ function renderSidebar() {
   const activeCatId = page === 'category' ? param
     : (page === 'doc' ? docById(param)?.categoryId : null);
   if (activeCatId) {
-    const active = categoryById(activeCatId);
-    if (active?.parentId) expandedCats.add(active.parentId);
-    else if (childrenOf(activeCatId).length) expandedCats.add(activeCatId);
+    ancestorsOf(activeCatId).forEach((a) => expandedCats.add(a.id));
+    if (childrenOf(activeCatId).length) expandedCats.add(activeCatId);
   }
 
-  const groups = topLevelCategories().map((cat) => {
+  // วาดหมวดแบบ recursive — รองรับหมวดย่อยกี่ระดับก็ได้
+  const renderNode = (cat, depth) => {
     const kids = childrenOf(cat.id);
     const open = expandedCats.has(cat.id);
     return `
       <div class="side-group">
-        <div class="side-item ${activeCatId === cat.id ? 'active' : ''}">
+        <div class="side-item ${depth ? 'side-sub' : ''} ${activeCatId === cat.id ? 'active' : ''}">
           <a class="side-link" href="#/category/${encodeURIComponent(cat.id)}">
-            <span class="side-icon">${escapeHtml(cat.icon || '📁')}</span>
+            <span class="side-icon">${escapeHtml(cat.icon || (depth ? '·' : '📁'))}</span>
             <span class="side-name">${escapeHtml(cat.name)}</span>
           </a>
           <span class="side-count">${docCountDeep(cat.id)}</span>
           ${kids.length ? `<button class="side-caret ${open ? 'open' : ''}" data-cat="${escapeHtml(cat.id)}" aria-label="ขยาย/ย่อหมวดย่อย">▸</button>` : ''}
         </div>
-        ${kids.length && open ? `<div class="side-children">
-          ${kids.map((k) => `
-            <div class="side-item side-sub ${activeCatId === k.id ? 'active' : ''}">
-              <a class="side-link" href="#/category/${encodeURIComponent(k.id)}">
-                <span class="side-icon">${escapeHtml(k.icon || '·')}</span>
-                <span class="side-name">${escapeHtml(k.name)}</span>
-              </a>
-              <span class="side-count">${docCountDeep(k.id)}</span>
-            </div>`).join('')}
-        </div>` : ''}
+        ${kids.length && open ? `<div class="side-children">${kids.map((k) => renderNode(k, depth + 1)).join('')}</div>` : ''}
       </div>`;
-  }).join('');
+  };
+  const groups = topLevelCategories().map((cat) => renderNode(cat, 0)).join('');
 
   nav.innerHTML = `
     <div class="side-item side-home ${page === 'home' ? 'active' : ''}">
@@ -342,7 +369,6 @@ function renderHome(app) {
 function renderCategory(app, catId) {
   const cat = categoryById(catId);
   if (!cat) { app.innerHTML = '<div class="empty-state">ไม่พบหมวดหมู่นี้</div>'; return; }
-  const parent = cat.parentId ? categoryById(cat.parentId) : null;
   const kids = childrenOf(catId);
   const ids = new Set(descendantIds(catId));
   const docs = state.library.documents
@@ -352,11 +378,7 @@ function renderCategory(app, catId) {
   const allTags = [...new Set(docs.flatMap((d) => d.tags || []))];
 
   app.innerHTML = `
-    <nav class="breadcrumb">
-      <a href="#/">หน้าแรก</a> ›
-      ${parent ? `<a href="#/category/${encodeURIComponent(parent.id)}">${escapeHtml(parent.name)}</a> ›` : ''}
-      ${escapeHtml(cat.name)}
-    </nav>
+    <nav class="breadcrumb">${breadcrumbHtml(cat)}</nav>
     <section class="hero hero-sm">
       <h1>${escapeHtml(cat.icon || '📁')} ${escapeHtml(cat.name)}</h1>
       <p>${escapeHtml(cat.description || '')}</p>
@@ -447,12 +469,7 @@ function renderDoc(app, docId) {
   const firstPreviewIdx = atts.findIndex(isPreviewable);
 
   app.innerHTML = `
-    <nav class="breadcrumb">
-      <a href="#/">หน้าแรก</a> ›
-      ${cat?.parentId ? `<a href="#/category/${encodeURIComponent(cat.parentId)}">${escapeHtml(categoryById(cat.parentId)?.name || '')}</a> ›` : ''}
-      ${cat ? `<a href="#/category/${encodeURIComponent(cat.id)}">${escapeHtml(cat.name)}</a> ›` : ''}
-      ${escapeHtml(doc.title)}
-    </nav>
+    <nav class="breadcrumb">${cat ? breadcrumbHtml(cat, doc.title) : `<a href="#/">หน้าแรก</a> › ${escapeHtml(doc.title)}`}</nav>
     <article class="doc-detail">
       <header class="doc-detail-head">
         <div class="doc-detail-icon">${docIcon(doc)}</div>
@@ -702,17 +719,13 @@ function openLoginModal(next) {
 }
 
 function openCategoryModal() {
-  const parentOptions = topLevelCategories().map((c) =>
-    `<option value="${escapeHtml(c.id)}">${escapeHtml(c.icon)} ${escapeHtml(c.name)}</option>`).join('');
+  const parentOptions = categoryOptionsHtml(null, '— เป็นหมวดหลัก —');
   const modal = openModal(`
     <h2>เพิ่มหมวดหมู่ใหม่</h2>
     <form id="cat-form">
       <label>ชื่อหมวดหมู่<input name="name" required placeholder="เช่น งานสำรวจ" /></label>
       <label>อยู่ภายใต้หมวด
-        <select name="parentId">
-          <option value="">— เป็นหมวดหลัก —</option>
-          ${parentOptions}
-        </select>
+        <select name="parentId">${parentOptions}</select>
       </label>
       <label>คำอธิบาย<input name="description" placeholder="อธิบายสั้นๆ ว่าหมวดนี้เก็บอะไร" /></label>
       <label>ไอคอน (อีโมจิ 1 ตัว)<input name="icon" placeholder="📁" maxlength="4" /></label>
@@ -760,11 +773,7 @@ function uniqueCategoryId(name) {
 function openDocModal(doc) {
   const isEdit = !!doc;
   // เรียงหมวดหลักตามด้วยหมวดย่อย (เยื้องขวา) ให้เลือกเก็บเอกสารได้ทั้งสองระดับ
-  const cats = topLevelCategories().flatMap((top) => [
-    `<option value="${escapeHtml(top.id)}" ${doc?.categoryId === top.id ? 'selected' : ''}>${escapeHtml(top.icon)} ${escapeHtml(top.name)}</option>`,
-    ...childrenOf(top.id).map((k) =>
-      `<option value="${escapeHtml(k.id)}" ${doc?.categoryId === k.id ? 'selected' : ''}>&nbsp;&nbsp;&nbsp;— ${escapeHtml(k.name)}</option>`),
-  ]).join('');
+  const cats = categoryOptionsHtml(doc?.categoryId);
 
   // ไฟล์แนบเดิมที่ยังเก็บไว้ (กด ✕ เพื่อเอาออก)
   const kept = [...(doc?.attachments || [])];

@@ -244,6 +244,132 @@
       "description": "",
       "icon": "🤖",
       "parentId": "g4-business-management"
+    },
+    {
+      "id": "g2-km-coe",
+      "name": "Center of Excellence (CoE) / ทีมพัฒนาของกลุ่ม",
+      "description": "ทีมพัฒนาของกลุ่ม",
+      "icon": "🏅",
+      "parentId": "g2-knowledge-management"
+    },
+    {
+      "id": "g3-km-digital-ai",
+      "name": "Digital & AI Transformation / การเปลี่ยนผ่านสู่ดิจิทัลและ AI",
+      "description": "การเปลี่ยนผ่านสู่ดิจิทัลและ AI",
+      "icon": "🤖",
+      "parentId": "g3-knowledge-management"
+    },
+    {
+      "id": "g3-km-ops-excellence",
+      "name": "Operations Excellence & Factory 4.0 / ความเป็นเลิศด้านการปฏิบัติการและโรงงาน 4.0",
+      "description": "ความเป็นเลิศด้านการปฏิบัติการและโรงงาน 4.0",
+      "icon": "🏭",
+      "parentId": "g3-knowledge-management"
+    },
+    {
+      "id": "g4-km-intellectual-capital",
+      "name": "Intellectual Capital / ทุนทางปัญญา",
+      "description": "ทุนทางปัญญาขององค์กร",
+      "icon": "💡",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-ic-human",
+      "name": "Human Capital / ทุนมนุษย์ ทักษะ และความสามารถของบุคลากร",
+      "description": "",
+      "icon": "👥",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-information",
+      "name": "Information Capital / ทุนสารสนเทศ ข้อมูล และระบบข้อมูลขององค์กร",
+      "description": "",
+      "icon": "🗂️",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-digital-process",
+      "name": "Digital Process Capital / กระบวนการทำงานดิจิทัลและระบบอัตโนมัติ",
+      "description": "",
+      "icon": "⚙️",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-relationship",
+      "name": "Relationship Capital / ทุนความสัมพันธ์กับพันธมิตรและผู้มีส่วนได้ส่วนเสีย",
+      "description": "",
+      "icon": "🤝",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-customer",
+      "name": "Customer Capital / ทุนลูกค้าและฐานความสัมพันธ์กับลูกค้า",
+      "description": "",
+      "icon": "🧑‍💼",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-revenue-streams",
+      "name": "6 Revenue Stream Types / รูปแบบรายได้ทั้ง 6 ประเภทขององค์กร",
+      "description": "รูปแบบรายได้ทั้ง 6 ประเภทขององค์กร",
+      "icon": "💰",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-business-generation",
+      "name": "Business Generation / การสร้างโอกาสและพัฒนาธุรกิจใหม่",
+      "description": "การสร้างโอกาสและพัฒนาธุรกิจใหม่",
+      "icon": "🚀",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-demand-satisfaction",
+      "name": "Demand Satisfaction / การตอบสนองความต้องการของลูกค้า",
+      "description": "การตอบสนองความต้องการของลูกค้า",
+      "icon": "✅",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-esg",
+      "name": "ESG & Sustainability / ESG และความยั่งยืน",
+      "description": "ESG และความยั่งยืน",
+      "icon": "🌱",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-finance-budget",
+      "name": "Finance & Budget / การเงินและงบประมาณ",
+      "description": "การเงินและงบประมาณ",
+      "icon": "🏦",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-policy-risk-compliance",
+      "name": "Policy, Risk & Compliance / นโยบาย ความเสี่ยง และการปฏิบัติตามกฎ",
+      "description": "นโยบาย ความเสี่ยง และการปฏิบัติตามกฎ",
+      "icon": "🛡️",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-projects-kpi",
+      "name": "Projects, KPI & Performance / โครงการ KPI และการติดตามผล",
+      "description": "โครงการ KPI และการติดตามผล",
+      "icon": "📈",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-meetings-decisions",
+      "name": "Meetings & Decisions / การประชุมและมติ",
+      "description": "การประชุมและมติ",
+      "icon": "🗓️",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-external-references",
+      "name": "External References & Standards / อ้างอิงภายนอกและมาตรฐาน",
+      "description": "อ้างอิงภายนอกและมาตรฐาน",
+      "icon": "📎",
+      "parentId": "g4-knowledge-management"
     }
   ],
   "documents": [

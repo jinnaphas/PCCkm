@@ -370,6 +370,118 @@
       "description": "อ้างอิงภายนอกและมาตรฐาน",
       "icon": "📎",
       "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-pd-intellectual-capital",
+      "name": "Intellectual Capital",
+      "description": "ทุนทางปัญญาขององค์กรทั้ง 6 ด้าน",
+      "icon": "💡",
+      "parentId": "g4-paradigm"
+    },
+    {
+      "id": "g4-pd-ic-intellectual",
+      "name": "Intellectual",
+      "description": "องค์ความรู้และทรัพย์สินทางปัญญา",
+      "icon": "🧠",
+      "parentId": "g4-pd-intellectual-capital"
+    },
+    {
+      "id": "g4-pd-ic-human-capital",
+      "name": "Human Capital",
+      "description": "ทุนมนุษย์ ทักษะ และความสามารถของบุคลากร",
+      "icon": "👥",
+      "parentId": "g4-pd-intellectual-capital"
+    },
+    {
+      "id": "g4-pd-ic-information-capital",
+      "name": "Information Capital",
+      "description": "ทุนสารสนเทศ ข้อมูล และระบบข้อมูลขององค์กร",
+      "icon": "📊",
+      "parentId": "g4-pd-intellectual-capital"
+    },
+    {
+      "id": "g4-pd-ic-digital-process-capital",
+      "name": "Digital Process Capital",
+      "description": "กระบวนการทำงานดิจิทัลและระบบอัตโนมัติ",
+      "icon": "💻",
+      "parentId": "g4-pd-intellectual-capital"
+    },
+    {
+      "id": "g4-pd-ic-relationship-capital",
+      "name": "Relationship Capital",
+      "description": "ทุนความสัมพันธ์กับพันธมิตรและผู้มีส่วนได้ส่วนเสีย",
+      "icon": "🔗",
+      "parentId": "g4-pd-intellectual-capital"
+    },
+    {
+      "id": "g4-pd-ic-customer-capital",
+      "name": "Customer Capital",
+      "description": "ทุนลูกค้าและฐานความสัมพันธ์กับลูกค้า",
+      "icon": "🤝",
+      "parentId": "g4-pd-intellectual-capital"
+    },
+    {
+      "id": "g4-pd-revenue-streams",
+      "name": "6 Revenue Stream Types",
+      "description": "รูปแบบรายได้ทั้ง 6 ประเภทขององค์กร",
+      "icon": "💰",
+      "parentId": "g4-paradigm"
+    },
+    {
+      "id": "g4-pd-rs-tendering",
+      "name": "Tendering",
+      "description": "งานประมูลและการยื่นข้อเสนอโครงการ",
+      "icon": "📑",
+      "parentId": "g4-pd-revenue-streams"
+    },
+    {
+      "id": "g4-pd-rs-omni-channel",
+      "name": "Omni Channel",
+      "description": "การขายผ่านช่องทางแบบผสมผสาน",
+      "icon": "🛒",
+      "parentId": "g4-pd-revenue-streams"
+    },
+    {
+      "id": "g4-pd-rs-tcs",
+      "name": "TCS",
+      "description": "",
+      "icon": "🔧",
+      "parentId": "g4-pd-revenue-streams"
+    },
+    {
+      "id": "g4-pd-rs-recurring",
+      "name": "Recurring",
+      "description": "รายได้ประจำต่อเนื่อง",
+      "icon": "🔁",
+      "parentId": "g4-pd-revenue-streams"
+    },
+    {
+      "id": "g4-pd-rs-ppa-long-term",
+      "name": "PPA / Long Term Contract",
+      "description": "สัญญาซื้อขายไฟฟ้าและสัญญาระยะยาว",
+      "icon": "📜",
+      "parentId": "g4-pd-revenue-streams"
+    },
+    {
+      "id": "g4-pd-rs-investment",
+      "name": "Investment",
+      "description": "รายได้จากการลงทุน",
+      "icon": "📈",
+      "parentId": "g4-pd-revenue-streams"
+    },
+    {
+      "id": "g4-pd-business-generation",
+      "name": "Business Generation",
+      "description": "การสร้างโอกาสและพัฒนาธุรกิจใหม่",
+      "icon": "🚀",
+      "parentId": "g4-paradigm"
+    },
+    {
+      "id": "g4-pd-demand-satisfaction",
+      "name": "Demand Satisfaction",
+      "description": "การตอบสนองความต้องการของลูกค้า",
+      "icon": "✅",
+      "parentId": "g4-paradigm"
     }
   ],
   "documents": [
@@ -377,7 +489,7 @@
       "id": "welcome-guide",
       "title": "คู่มือการใช้งาน Paradigm Library",
       "description": "แนะนำวิธีใช้งานระบบ ทั้งการค้นหา การเปิดดูเอกสาร การอัพโหลดเอกสารใหม่ และการอัพเดตเวอร์ชัน",
-      "categoryId": "ic-information-capital",
+      "categoryId": "g4-pd-ic-information-capital",
       "tags": [
         "คู่มือ",
         "เริ่มต้นใช้งาน",
@@ -417,7 +529,7 @@
       "id": "intellectual-capital",
       "title": "Intellectual Capital",
       "description": "Tangible, Intangible  Utilization to Generate Cash and Wealth",
-      "categoryId": "ic-intellectual",
+      "categoryId": "g4-pd-ic-intellectual",
       "tags": [
         "Tangible",
         "Intangible Asset"
@@ -456,7 +568,7 @@
       "id": "แผนกลยุทธ์-3-ระดับ",
       "title": "แผนกลยุทธ์ 3 ระดับ",
       "description": "แผนกลยุทธ์ 3 ระดับ: Corporate, Business, Functional Strategy",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Strategy 3 ระดับ"
       ],
@@ -494,7 +606,7 @@
       "id": "total-customer-solution-process-tcs-proc",
       "title": "Total Customer Solution Process (TCS Process)",
       "description": "กระบวนการ TCS",
-      "categoryId": "rs-tcs",
+      "categoryId": "g4-pd-rs-tcs",
       "tags": [
         "TCS Process"
       ],
@@ -532,7 +644,7 @@
       "id": "แผนกลยุทธ์-4-ระยะ",
       "title": "แผนกลยุทธ์ 4 ระยะ",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "แผนกลยุทธ์ 4 ระยะ",
         "Budgeting",
@@ -574,7 +686,7 @@
       "id": "organic-growth",
       "title": "Organic Growth",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Organic Growth"
       ],
@@ -612,7 +724,7 @@
       "id": "power-of-change",
       "title": "Power of Change",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Power of Change",
         "Professionalism",
@@ -652,7 +764,7 @@
       "id": "strategy-cycle-flow",
       "title": "Strategy Cycle Flow",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Realized Strategy",
         "Strategy Flow"
@@ -687,7 +799,7 @@
       "id": "tricker-model",
       "title": "Tricker Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Tricker Model"
       ],
@@ -721,7 +833,7 @@
       "id": "distinctive-competencies",
       "title": "Distinctive Competencies",
       "description": "ทฤษฏีการทำ Competitiveness",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Distinctive"
       ],
@@ -759,7 +871,7 @@
       "id": "business-model-canvas",
       "title": "Business Model Canvas",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Business Plan",
         "Business Model"
@@ -798,7 +910,7 @@
       "id": "capitalism-transformation",
       "title": "Capitalism Transformation",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Industrial",
         "Platform",
@@ -838,7 +950,7 @@
       "id": "recurring-revenue-streams",
       "title": "Recurring Revenue Streams",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Recurring Platform Idea"
       ],
@@ -874,7 +986,7 @@
       "id": "delta-model",
       "title": "Delta Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Delta"
       ],
@@ -912,7 +1024,7 @@
       "id": "feasibility-paradigm",
       "title": "Feasibility Paradigm",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Feasibility",
         "Go",
@@ -952,7 +1064,7 @@
       "id": "leadership-pipeline",
       "title": "Leadership Pipeline",
       "description": "",
-      "categoryId": "ic-human-capital",
+      "categoryId": "g4-pd-ic-human-capital",
       "tags": [
         "Leadership"
       ],
@@ -990,7 +1102,7 @@
       "id": "technology-readiness-level-trl",
       "title": "Technology Readiness Level (TRL)",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "TRL"
       ],
@@ -1053,7 +1165,7 @@
       "id": "the-hierarchies-of-planning",
       "title": "The Hierarchies of Planning",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Strategy",
         "Tactical",
@@ -1094,7 +1206,7 @@
       "id": "market-type",
       "title": "Market Type",
       "description": "4 Market Type Categories",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "4 Market"
       ],
@@ -1132,7 +1244,7 @@
       "id": "chase-sale-operation-planning",
       "title": "Chase Sale & Operation Planning",
       "description": "Production Planning",
-      "categoryId": "demand-satisfaction",
+      "categoryId": "g4-pd-demand-satisfaction",
       "tags": [
         "Production Planning",
         "Chase Sale"
@@ -1171,7 +1283,7 @@
       "id": "addressing-overall-supply-chain-of-bambo",
       "title": "Addressing Overall Supply Chain of Bamboo",
       "description": "People, Private, Partner, Planet",
-      "categoryId": "rs-ppa-long-term",
+      "categoryId": "g4-pd-rs-ppa-long-term",
       "tags": [
         "Bamboo",
         "Governance",
@@ -1213,7 +1325,7 @@
       "id": "tendering-revenue-stream-flow",
       "title": "Tendering Revenue Stream Flow",
       "description": "ChatGPT Knowledge",
-      "categoryId": "rs-tendering",
+      "categoryId": "g4-pd-rs-tendering",
       "tags": [
         "Tendering",
         "Revenue Stream",
@@ -1253,7 +1365,7 @@
       "id": "oprins-bamboo",
       "title": "Oprins Bamboo",
       "description": "",
-      "categoryId": "rs-ppa-long-term",
+      "categoryId": "g4-pd-rs-ppa-long-term",
       "tags": [
         "Oprins",
         "Bamboo",
@@ -1293,7 +1405,7 @@
       "id": "tcs-factsheet",
       "title": "TCS Factsheet",
       "description": "TCS Factsheet represent to buyers",
-      "categoryId": "rs-tcs",
+      "categoryId": "g4-pd-rs-tcs",
       "tags": [
         "Factsheet",
         "TCS",
@@ -1333,7 +1445,7 @@
       "id": "the-new-price-profit-cost-equation",
       "title": "The New Price/Profit/Cost Equation",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Cost down",
         "New Market"
@@ -1372,7 +1484,7 @@
       "id": "six-layer-smart-factory",
       "title": "Six Layer Smart Factory",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Sensor",
         "SGAM",
@@ -1412,7 +1524,7 @@
       "id": "digital-manufacturing-platform",
       "title": "Digital Manufacturing Platform",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Manufacturing",
         "Digital",
@@ -1452,7 +1564,7 @@
       "id": "smart-grid-architecture-model",
       "title": "Smart Grid Architecture Model",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Smart Grid",
         "Energy"
@@ -1491,7 +1603,7 @@
       "id": "sgam-laboratory",
       "title": "SGAM Laboratory",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "SGAM Lab"
       ],
@@ -1619,7 +1731,7 @@
       "id": "end-way-mean",
       "title": "End Way Mean",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "End",
         "Way",
@@ -1684,7 +1796,7 @@
       "id": "total-quality-management-concept-tqm",
       "title": "Total Quality Management Concept (TQM)",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "TQM"
       ],
@@ -1722,7 +1834,7 @@
       "id": "virtual-factory-data-model",
       "title": "Virtual Factory Data Model",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Factory",
         "Virtual",
@@ -1762,7 +1874,7 @@
       "id": "supply-chain-management",
       "title": "Supply Chain Management",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "SCM",
         "Supply Chain"
@@ -1801,7 +1913,7 @@
       "id": "level-of-strategy",
       "title": "Level of Strategy",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "แผนกลยุทธ์ 3 ระดับ",
         "Strategy"
@@ -1840,7 +1952,7 @@
       "id": "total-quality-control-tqc-management",
       "title": "Total Quality Control (TQC) Management",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "TQC",
         "Total Quality Control"
@@ -1879,7 +1991,7 @@
       "id": "smart-farming-architecture-model",
       "title": "Smart Farming Architecture Model",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "SFAM",
         "Smart Farming",
@@ -1919,7 +2031,7 @@
       "id": "digital-engineering-and-life-cycle-costi",
       "title": "Digital Engineering and Life Cycle Costing",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "LCC",
         "DE"
@@ -1958,7 +2070,7 @@
       "id": "digital-architecture-smart-architecture-",
       "title": "Digital Architecture, Smart Architecture Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "SGAM",
         "SFAM",
@@ -1997,7 +2109,7 @@
       "id": "platform-capitalism-6-revenue-stream-typ",
       "title": "Platform Capitalism 6 Revenue Stream Type",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Platform",
         "6 RST",
@@ -2035,7 +2147,7 @@
       "id": "scientific-problem-solving",
       "title": "Scientific Problem Solving",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Problem Solving"
       ],
@@ -2073,7 +2185,7 @@
       "id": "cot-model",
       "title": "COT Model",
       "description": "C O T",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "COT"
       ],
@@ -2109,7 +2221,7 @@
       "id": "output-outcome-impact",
       "title": "Output Outcome Impact",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Output",
         "Outcome",
@@ -2149,7 +2261,7 @@
       "id": "canon",
       "title": "Canon",
       "description": "Distinctive Competency",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Cannon"
       ],
@@ -2187,7 +2299,7 @@
       "id": "business-philosophy",
       "title": "Business Philosophy",
       "description": "Business Philosophy",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Business Philosophy"
       ],
@@ -2225,7 +2337,7 @@
       "id": "business-philosophy",
       "title": "Business Philosophy",
       "description": "Business Philosophy",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Business Philosophy"
       ],
@@ -2263,7 +2375,7 @@
       "id": "pcc-platform-to-ecosystem",
       "title": "PCC Platform to Ecosystem",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Platform",
         "Ecosystem"
@@ -2300,7 +2412,7 @@
       "id": "ปากเกร็ด-location-investment-smart-campu",
       "title": "ปากเกร็ด Location Investment Smart Campus",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Location",
         "Investment",
@@ -2338,7 +2450,7 @@
       "id": "bamboo-analogous-model",
       "title": "Bamboo Analogous Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Analogous Model",
         "Bamboo"
@@ -2387,7 +2499,7 @@
       "id": "bamboo-biobased-product-flow-chart",
       "title": "Bamboo Biobased Product Flow-chart",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Bamboo Biobased Product Flow-chart",
         "Analogous Model"
@@ -2424,7 +2536,7 @@
       "id": "pcc-data-colocation-data-center",
       "title": "PCC Data Colocation Data Center",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "PCC Data Colocation Data Center"
       ],
@@ -2460,7 +2572,7 @@
       "id": "fifth-discipline",
       "title": "Fifth Discipline",
       "description": "Learning Organization",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Fifth Discipline"
       ],

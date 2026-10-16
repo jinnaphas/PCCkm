@@ -38,7 +38,7 @@ Webapp สำหรับเก็บองค์ความรู้ (Paradigm
 ```jsonc
 {
   "categories": [
-    // หมวดหลัก: parentId = null, หมวดย่อย: parentId = id ของหมวดหลัก (รองรับ 2 ระดับ)
+    // หมวดหลัก: parentId = null, หมวดย่อย: parentId = id ของหมวดหลัก (รองรับหมวดย่อยหลายระดับ)
     { "id": "intellectual-capital", "name": "Intellectual Capital", "description": "…", "icon": "💡", "parentId": null },
     { "id": "ic-human-capital", "name": "Human Capital", "description": "…", "icon": "👥", "parentId": "intellectual-capital" }
   ],
@@ -63,6 +63,26 @@ Webapp สำหรับเก็บองค์ความรู้ (Paradigm
   ]
 }
 ```
+
+## Knowledge Management และการซิงก์กับ OneDrive
+
+เอกสารใต้หมวด **Knowledge Management** (ฐานความรู้ Business Management) มีกติกาเพิ่มเติม:
+
+- ต้องแนบไฟล์ **.md สำหรับ LLM** (เก็บเป็นไฟล์แนบที่มี `"role": "llm-md"` และแสดงเป็นปุ่ม "Markdown for LLM" ในหน้าเอกสาร)
+- ต้องมี **Tag รหัสเอกสาร** `BM-<รหัสหมวด>-<ลำดับ 3 หลัก>` เช่น `BM-STR-004` — เป็นกุญแจจับคู่กับสารบัญ `00_INDEX.md/.csv` ใน OneDrive
+- ชื่อไฟล์ต้องเหมือนฝั่ง OneDrive ทุกตัวอักษร
+
+เครื่องมือ (ต้องมี Perl — ใช้ Git Bash บน Windows) อยู่ในโฟลเดอร์ `tools/`:
+
+```bash
+# ตรวจว่า OneDrive กับเว็บตรงกันทุกเอกสาร (exit 1 ถ้าพบความต่าง)
+perl tools/check_sync.pl "/c/Users/<ชื่อผู้ใช้>/OneDrive - Precise Group/Business Management - Documents/Business Management"
+
+# เพิ่มเอกสารใหม่จาก OneDrive ขึ้นเว็บ (ไม่ใส่ --apply = แสดงแผนเฉยๆ)
+perl tools/sync_from_onedrive.pl "<โฟลเดอร์ OneDrive เดียวกัน>" --apply
+```
+
+ตารางจับคู่รหัสหมวดกับหมวดบนเว็บอยู่ใน `tools/check_sync.pl` และ `tools/sync_from_onedrive.pl` (ต้องแก้ทั้งสองไฟล์พร้อมกับ `00_INDEX.md` เมื่อเพิ่มหมวด) คู่มือฉบับเต็มอยู่ที่ OneDrive: `Business Management/Manual/BM_Folder_User_Guide_20261012.md`
 
 ## ข้อจำกัดที่ควรรู้
 

@@ -1,155 +1,346 @@
 {
   "categories": [
     {
-      "id": "strategy-bmd",
-      "name": "Strategy, Business Model Development",
-      "description": "กลยุทธ์องค์กรและการพัฒนาโมเดลธุรกิจ",
+      "id": "g1-strategy",
+      "name": "Strategy & Business Model Development",
+      "description": "กลุ่ม 1 — กลยุทธ์และการพัฒนาโมเดลธุรกิจ",
       "icon": "🎯",
       "parentId": null
     },
     {
-      "id": "intellectual-capital",
+      "id": "g1-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g1-strategy"
+    },
+    {
+      "id": "g1-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g1-strategy"
+    },
+    {
+      "id": "g2-stem-dbtp",
+      "name": "STEM & DBTP (SGAM/SFAM/SCIAM/RAMI 4.0) - Product Development and Business Generation",
+      "description": "กลุ่ม 2 — STEM & DBTP, การพัฒนาผลิตภัณฑ์และการสร้างธุรกิจ",
+      "icon": "🔬",
+      "parentId": null
+    },
+    {
+      "id": "g2-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g2-stem-dbtp"
+    },
+    {
+      "id": "g2-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g2-stem-dbtp"
+    },
+    {
+      "id": "g3-operation-technology",
+      "name": "Operation Technology· Digital · AI · Automation for Demand Satisfaction",
+      "description": "กลุ่ม 3 — Operation Technology, Digital, AI, Automation เพื่อ Demand Satisfaction",
+      "icon": "⚙️",
+      "parentId": null
+    },
+    {
+      "id": "g3-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g3-operation-technology"
+    },
+    {
+      "id": "g3-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g3-operation-technology"
+    },
+    {
+      "id": "g4-business-management",
+      "name": "Business Management & Corporate Support for Platform & Ecosystem Capitalism & Intellectual Capital Management&Governance Technology",
+      "description": "กลุ่ม 4 — Business Management & Corporate Support",
+      "icon": "🏛️",
+      "parentId": null
+    },
+    {
+      "id": "g4-paradigm",
+      "name": "Paradigm",
+      "description": "",
+      "icon": "🧭",
+      "parentId": "g4-business-management"
+    },
+    {
+      "id": "g4-knowledge-management",
+      "name": "Knowledge Management",
+      "description": "",
+      "icon": "📚",
+      "parentId": "g4-business-management"
+    },
+    {
+      "id": "g2-km-coe",
+      "name": "Center of Excellence (CoE) / ทีมพัฒนาของกลุ่ม",
+      "description": "ทีมพัฒนาของกลุ่ม",
+      "icon": "🏅",
+      "parentId": "g2-knowledge-management"
+    },
+    {
+      "id": "g3-km-digital-ai",
+      "name": "Digital & AI Transformation / การเปลี่ยนผ่านสู่ดิจิทัลและ AI",
+      "description": "การเปลี่ยนผ่านสู่ดิจิทัลและ AI",
+      "icon": "🤖",
+      "parentId": "g3-knowledge-management"
+    },
+    {
+      "id": "g3-km-ops-excellence",
+      "name": "Operations Excellence & Factory 4.0 / ความเป็นเลิศด้านการปฏิบัติการและโรงงาน 4.0",
+      "description": "ความเป็นเลิศด้านการปฏิบัติการและโรงงาน 4.0",
+      "icon": "🏭",
+      "parentId": "g3-knowledge-management"
+    },
+    {
+      "id": "g4-km-intellectual-capital",
+      "name": "Intellectual Capital / ทุนทางปัญญา",
+      "description": "ทุนทางปัญญาขององค์กร",
+      "icon": "💡",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-ic-human",
+      "name": "Human Capital / ทุนมนุษย์ ทักษะ และความสามารถของบุคลากร",
+      "description": "",
+      "icon": "👥",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-information",
+      "name": "Information Capital / ทุนสารสนเทศ ข้อมูล และระบบข้อมูลขององค์กร",
+      "description": "",
+      "icon": "🗂️",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-digital-process",
+      "name": "Digital Process Capital / กระบวนการทำงานดิจิทัลและระบบอัตโนมัติ",
+      "description": "",
+      "icon": "⚙️",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-relationship",
+      "name": "Relationship Capital / ทุนความสัมพันธ์กับพันธมิตรและผู้มีส่วนได้ส่วนเสีย",
+      "description": "",
+      "icon": "🤝",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-ic-customer",
+      "name": "Customer Capital / ทุนลูกค้าและฐานความสัมพันธ์กับลูกค้า",
+      "description": "",
+      "icon": "🧑‍💼",
+      "parentId": "g4-km-intellectual-capital"
+    },
+    {
+      "id": "g4-km-revenue-streams",
+      "name": "6 Revenue Stream Types / รูปแบบรายได้ทั้ง 6 ประเภทขององค์กร",
+      "description": "รูปแบบรายได้ทั้ง 6 ประเภทขององค์กร",
+      "icon": "💰",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-business-generation",
+      "name": "Business Generation / การสร้างโอกาสและพัฒนาธุรกิจใหม่",
+      "description": "การสร้างโอกาสและพัฒนาธุรกิจใหม่",
+      "icon": "🚀",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-demand-satisfaction",
+      "name": "Demand Satisfaction / การตอบสนองความต้องการของลูกค้า",
+      "description": "การตอบสนองความต้องการของลูกค้า",
+      "icon": "✅",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-esg",
+      "name": "ESG & Sustainability / ESG และความยั่งยืน",
+      "description": "ESG และความยั่งยืน",
+      "icon": "🌱",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-finance-budget",
+      "name": "Finance & Budget / การเงินและงบประมาณ",
+      "description": "การเงินและงบประมาณ",
+      "icon": "🏦",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-policy-risk-compliance",
+      "name": "Policy, Risk & Compliance / นโยบาย ความเสี่ยง และการปฏิบัติตามกฎ",
+      "description": "นโยบาย ความเสี่ยง และการปฏิบัติตามกฎ",
+      "icon": "🛡️",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-projects-kpi",
+      "name": "Projects, KPI & Performance / โครงการ KPI และการติดตามผล",
+      "description": "โครงการ KPI และการติดตามผล",
+      "icon": "📈",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-meetings-decisions",
+      "name": "Meetings & Decisions / การประชุมและมติ",
+      "description": "การประชุมและมติ",
+      "icon": "🗓️",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-km-external-references",
+      "name": "External References & Standards / อ้างอิงภายนอกและมาตรฐาน",
+      "description": "อ้างอิงภายนอกและมาตรฐาน",
+      "icon": "📎",
+      "parentId": "g4-knowledge-management"
+    },
+    {
+      "id": "g4-pd-intellectual-capital",
       "name": "Intellectual Capital",
       "description": "ทุนทางปัญญาขององค์กรทั้ง 6 ด้าน",
       "icon": "💡",
-      "parentId": null
+      "parentId": "g4-paradigm"
     },
     {
-      "id": "ic-intellectual",
+      "id": "g4-pd-ic-intellectual",
       "name": "Intellectual",
       "description": "องค์ความรู้และทรัพย์สินทางปัญญา",
       "icon": "🧠",
-      "parentId": "intellectual-capital"
+      "parentId": "g4-pd-intellectual-capital"
     },
     {
-      "id": "ic-human-capital",
+      "id": "g4-pd-ic-human-capital",
       "name": "Human Capital",
       "description": "ทุนมนุษย์ ทักษะ และความสามารถของบุคลากร",
       "icon": "👥",
-      "parentId": "intellectual-capital"
+      "parentId": "g4-pd-intellectual-capital"
     },
     {
-      "id": "ic-information-capital",
+      "id": "g4-pd-ic-information-capital",
       "name": "Information Capital",
       "description": "ทุนสารสนเทศ ข้อมูล และระบบข้อมูลขององค์กร",
       "icon": "📊",
-      "parentId": "intellectual-capital"
+      "parentId": "g4-pd-intellectual-capital"
     },
     {
-      "id": "ic-digital-process-capital",
+      "id": "g4-pd-ic-digital-process-capital",
       "name": "Digital Process Capital",
       "description": "กระบวนการทำงานดิจิทัลและระบบอัตโนมัติ",
       "icon": "💻",
-      "parentId": "intellectual-capital"
+      "parentId": "g4-pd-intellectual-capital"
     },
     {
-      "id": "ic-relationship-capital",
+      "id": "g4-pd-ic-relationship-capital",
       "name": "Relationship Capital",
       "description": "ทุนความสัมพันธ์กับพันธมิตรและผู้มีส่วนได้ส่วนเสีย",
       "icon": "🔗",
-      "parentId": "intellectual-capital"
+      "parentId": "g4-pd-intellectual-capital"
     },
     {
-      "id": "ic-customer-capital",
+      "id": "g4-pd-ic-customer-capital",
       "name": "Customer Capital",
       "description": "ทุนลูกค้าและฐานความสัมพันธ์กับลูกค้า",
       "icon": "🤝",
-      "parentId": "intellectual-capital"
+      "parentId": "g4-pd-intellectual-capital"
     },
     {
-      "id": "revenue-streams",
+      "id": "g4-pd-revenue-streams",
       "name": "6 Revenue Stream Types",
       "description": "รูปแบบรายได้ทั้ง 6 ประเภทขององค์กร",
       "icon": "💰",
-      "parentId": null
+      "parentId": "g4-paradigm"
     },
     {
-      "id": "rs-tendering",
+      "id": "g4-pd-rs-tendering",
       "name": "Tendering",
       "description": "งานประมูลและการยื่นข้อเสนอโครงการ",
       "icon": "📑",
-      "parentId": "revenue-streams"
+      "parentId": "g4-pd-revenue-streams"
     },
     {
-      "id": "rs-omni-channel",
+      "id": "g4-pd-rs-omni-channel",
       "name": "Omni Channel",
       "description": "การขายผ่านช่องทางแบบผสมผสาน",
       "icon": "🛒",
-      "parentId": "revenue-streams"
+      "parentId": "g4-pd-revenue-streams"
     },
     {
-      "id": "rs-tcs",
+      "id": "g4-pd-rs-tcs",
       "name": "TCS",
       "description": "",
       "icon": "🔧",
-      "parentId": "revenue-streams"
+      "parentId": "g4-pd-revenue-streams"
     },
     {
-      "id": "rs-recurring",
+      "id": "g4-pd-rs-recurring",
       "name": "Recurring",
       "description": "รายได้ประจำต่อเนื่อง",
       "icon": "🔁",
-      "parentId": "revenue-streams"
+      "parentId": "g4-pd-revenue-streams"
     },
     {
-      "id": "rs-ppa-long-term",
+      "id": "g4-pd-rs-ppa-long-term",
       "name": "PPA / Long Term Contract",
       "description": "สัญญาซื้อขายไฟฟ้าและสัญญาระยะยาว",
       "icon": "📜",
-      "parentId": "revenue-streams"
+      "parentId": "g4-pd-revenue-streams"
     },
     {
-      "id": "rs-investment",
+      "id": "g4-pd-rs-investment",
       "name": "Investment",
       "description": "รายได้จากการลงทุน",
       "icon": "📈",
-      "parentId": "revenue-streams"
+      "parentId": "g4-pd-revenue-streams"
     },
     {
-      "id": "business-generation",
+      "id": "g4-pd-business-generation",
       "name": "Business Generation",
       "description": "การสร้างโอกาสและพัฒนาธุรกิจใหม่",
       "icon": "🚀",
-      "parentId": null
+      "parentId": "g4-paradigm"
     },
     {
-      "id": "demand-satisfaction",
+      "id": "g4-pd-demand-satisfaction",
       "name": "Demand Satisfaction",
       "description": "การตอบสนองความต้องการของลูกค้า",
       "icon": "✅",
-      "parentId": null
-    },
-    {
-      "id": "center-of-excellence-coe",
-      "name": "Center of Excellence (CoE)",
-      "description": "ทีมพัฒนาของกลุ่ม",
-      "icon": "📁",
-      "parentId": null
-    },
-    {
-      "id": "test",
-      "name": "Test",
-      "description": "",
-      "icon": "📁",
-      "parentId": null
+      "parentId": "g4-paradigm"
     }
   ],
   "documents": [
     {
       "id": "welcome-guide",
-      "title": "คู่มือการใช้งาน Paradigm Library",
-      "description": "แนะนำวิธีใช้งานระบบ ทั้งการค้นหา การเปิดดูเอกสาร การอัพโหลดเอกสารใหม่ และการอัพเดตเวอร์ชัน",
-      "categoryId": "ic-information-capital",
+      "title": "คู่มือการใช้งาน Paradigm Library และการซิงก์กับ OneDrive",
+      "description": "แนะนำวิธีใช้งานระบบ ทั้งการค้นหา การเปิดดูเอกสาร การเพิ่ม/อัพเดตเอกสาร กติกา Knowledge Management (ต้องมีไฟล์ .md และ Tag รหัสเอกสาร) และวิธีให้ข้อมูลบนเว็บกับ OneDrive ตรงกัน",
+      "categoryId": "g4-pd-ic-information-capital",
       "tags": [
         "คู่มือ",
         "เริ่มต้นใช้งาน",
-        "how-to"
+        "how-to",
+        "OneDrive",
+        "Knowledge Management"
       ],
-      "version": 1,
+      "version": 2,
       "createdAt": "2026-07-08T09:00:00.000Z",
       "createdBy": "System",
-      "updatedAt": "2026-07-08T09:00:00.000Z",
-      "updatedBy": "System",
+      "updatedAt": "2026-10-12T09:00:00.000Z",
+      "updatedBy": "Claude",
       "history": [
         {
           "version": 1,
@@ -163,15 +354,28 @@
               "name": "welcome-guide.md"
             }
           ]
+        },
+        {
+          "version": 2,
+          "updatedAt": "2026-10-12T09:00:00.000Z",
+          "updatedBy": "Claude",
+          "note": "เพิ่มโครงสร้าง 4 กลุ่ม, ปุ่ม Markdown for LLM, กติกา Knowledge Management และการซิงก์กับ OneDrive",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/work-standards/welcome-guide/v2-welcome-guide.md",
+              "name": "welcome-guide.md"
+            }
+          ]
         }
       ],
       "attachments": [
         {
           "kind": "file",
-          "path": "assets/work-standards/welcome-guide/v1-welcome-guide.md",
+          "path": "assets/work-standards/welcome-guide/v2-welcome-guide.md",
           "name": "welcome-guide.md",
           "type": "md",
-          "size": 2905
+          "size": 7791
         }
       ]
     },
@@ -179,7 +383,7 @@
       "id": "intellectual-capital",
       "title": "Intellectual Capital",
       "description": "Tangible, Intangible  Utilization to Generate Cash and Wealth",
-      "categoryId": "ic-intellectual",
+      "categoryId": "g4-pd-ic-intellectual",
       "tags": [
         "Tangible",
         "Intangible Asset"
@@ -218,7 +422,7 @@
       "id": "แผนกลยุทธ์-3-ระดับ",
       "title": "แผนกลยุทธ์ 3 ระดับ",
       "description": "แผนกลยุทธ์ 3 ระดับ: Corporate, Business, Functional Strategy",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Strategy 3 ระดับ"
       ],
@@ -256,7 +460,7 @@
       "id": "total-customer-solution-process-tcs-proc",
       "title": "Total Customer Solution Process (TCS Process)",
       "description": "กระบวนการ TCS",
-      "categoryId": "rs-tcs",
+      "categoryId": "g4-pd-rs-tcs",
       "tags": [
         "TCS Process"
       ],
@@ -294,7 +498,7 @@
       "id": "แผนกลยุทธ์-4-ระยะ",
       "title": "แผนกลยุทธ์ 4 ระยะ",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "แผนกลยุทธ์ 4 ระยะ",
         "Budgeting",
@@ -336,7 +540,7 @@
       "id": "organic-growth",
       "title": "Organic Growth",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Organic Growth"
       ],
@@ -374,7 +578,7 @@
       "id": "power-of-change",
       "title": "Power of Change",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Power of Change",
         "Professionalism",
@@ -414,7 +618,7 @@
       "id": "strategy-cycle-flow",
       "title": "Strategy Cycle Flow",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Realized Strategy",
         "Strategy Flow"
@@ -449,7 +653,7 @@
       "id": "tricker-model",
       "title": "Tricker Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Tricker Model"
       ],
@@ -483,7 +687,7 @@
       "id": "distinctive-competencies",
       "title": "Distinctive Competencies",
       "description": "ทฤษฏีการทำ Competitiveness",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Distinctive"
       ],
@@ -521,7 +725,7 @@
       "id": "business-model-canvas",
       "title": "Business Model Canvas",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Business Plan",
         "Business Model"
@@ -560,7 +764,7 @@
       "id": "capitalism-transformation",
       "title": "Capitalism Transformation",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Industrial",
         "Platform",
@@ -600,7 +804,7 @@
       "id": "recurring-revenue-streams",
       "title": "Recurring Revenue Streams",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Recurring Platform Idea"
       ],
@@ -636,7 +840,7 @@
       "id": "delta-model",
       "title": "Delta Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Delta"
       ],
@@ -674,7 +878,7 @@
       "id": "feasibility-paradigm",
       "title": "Feasibility Paradigm",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Feasibility",
         "Go",
@@ -714,7 +918,7 @@
       "id": "leadership-pipeline",
       "title": "Leadership Pipeline",
       "description": "",
-      "categoryId": "ic-human-capital",
+      "categoryId": "g4-pd-ic-human-capital",
       "tags": [
         "Leadership"
       ],
@@ -752,7 +956,7 @@
       "id": "technology-readiness-level-trl",
       "title": "Technology Readiness Level (TRL)",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "TRL"
       ],
@@ -815,7 +1019,7 @@
       "id": "the-hierarchies-of-planning",
       "title": "The Hierarchies of Planning",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Strategy",
         "Tactical",
@@ -856,7 +1060,7 @@
       "id": "market-type",
       "title": "Market Type",
       "description": "4 Market Type Categories",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "4 Market"
       ],
@@ -894,7 +1098,7 @@
       "id": "chase-sale-operation-planning",
       "title": "Chase Sale & Operation Planning",
       "description": "Production Planning",
-      "categoryId": "demand-satisfaction",
+      "categoryId": "g4-pd-demand-satisfaction",
       "tags": [
         "Production Planning",
         "Chase Sale"
@@ -933,7 +1137,7 @@
       "id": "addressing-overall-supply-chain-of-bambo",
       "title": "Addressing Overall Supply Chain of Bamboo",
       "description": "People, Private, Partner, Planet",
-      "categoryId": "rs-ppa-long-term",
+      "categoryId": "g4-pd-rs-ppa-long-term",
       "tags": [
         "Bamboo",
         "Governance",
@@ -975,7 +1179,7 @@
       "id": "tendering-revenue-stream-flow",
       "title": "Tendering Revenue Stream Flow",
       "description": "ChatGPT Knowledge",
-      "categoryId": "rs-tendering",
+      "categoryId": "g4-pd-rs-tendering",
       "tags": [
         "Tendering",
         "Revenue Stream",
@@ -1015,7 +1219,7 @@
       "id": "oprins-bamboo",
       "title": "Oprins Bamboo",
       "description": "",
-      "categoryId": "rs-ppa-long-term",
+      "categoryId": "g4-pd-rs-ppa-long-term",
       "tags": [
         "Oprins",
         "Bamboo",
@@ -1055,7 +1259,7 @@
       "id": "tcs-factsheet",
       "title": "TCS Factsheet",
       "description": "TCS Factsheet represent to buyers",
-      "categoryId": "rs-tcs",
+      "categoryId": "g4-pd-rs-tcs",
       "tags": [
         "Factsheet",
         "TCS",
@@ -1095,7 +1299,7 @@
       "id": "the-new-price-profit-cost-equation",
       "title": "The New Price/Profit/Cost Equation",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Cost down",
         "New Market"
@@ -1134,7 +1338,7 @@
       "id": "six-layer-smart-factory",
       "title": "Six Layer Smart Factory",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Sensor",
         "SGAM",
@@ -1174,7 +1378,7 @@
       "id": "digital-manufacturing-platform",
       "title": "Digital Manufacturing Platform",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Manufacturing",
         "Digital",
@@ -1214,7 +1418,7 @@
       "id": "smart-grid-architecture-model",
       "title": "Smart Grid Architecture Model",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Smart Grid",
         "Energy"
@@ -1253,7 +1457,7 @@
       "id": "sgam-laboratory",
       "title": "SGAM Laboratory",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "SGAM Lab"
       ],
@@ -1381,7 +1585,7 @@
       "id": "end-way-mean",
       "title": "End Way Mean",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "End",
         "Way",
@@ -1446,7 +1650,7 @@
       "id": "total-quality-management-concept-tqm",
       "title": "Total Quality Management Concept (TQM)",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "TQM"
       ],
@@ -1484,7 +1688,7 @@
       "id": "virtual-factory-data-model",
       "title": "Virtual Factory Data Model",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "Factory",
         "Virtual",
@@ -1524,7 +1728,7 @@
       "id": "supply-chain-management",
       "title": "Supply Chain Management",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "SCM",
         "Supply Chain"
@@ -1563,7 +1767,7 @@
       "id": "level-of-strategy",
       "title": "Level of Strategy",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "แผนกลยุทธ์ 3 ระดับ",
         "Strategy"
@@ -1602,7 +1806,7 @@
       "id": "total-quality-control-tqc-management",
       "title": "Total Quality Control (TQC) Management",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "TQC",
         "Total Quality Control"
@@ -1641,7 +1845,7 @@
       "id": "smart-farming-architecture-model",
       "title": "Smart Farming Architecture Model",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "SFAM",
         "Smart Farming",
@@ -1681,7 +1885,7 @@
       "id": "digital-engineering-and-life-cycle-costi",
       "title": "Digital Engineering and Life Cycle Costing",
       "description": "",
-      "categoryId": "center-of-excellence-coe",
+      "categoryId": "g2-paradigm",
       "tags": [
         "LCC",
         "DE"
@@ -1720,7 +1924,7 @@
       "id": "digital-architecture-smart-architecture-",
       "title": "Digital Architecture, Smart Architecture Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "SGAM",
         "SFAM",
@@ -1759,7 +1963,7 @@
       "id": "platform-capitalism-6-revenue-stream-typ",
       "title": "Platform Capitalism 6 Revenue Stream Type",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Platform",
         "6 RST",
@@ -1797,7 +2001,7 @@
       "id": "scientific-problem-solving",
       "title": "Scientific Problem Solving",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Problem Solving"
       ],
@@ -1835,7 +2039,7 @@
       "id": "cot-model",
       "title": "COT Model",
       "description": "C O T",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "COT"
       ],
@@ -1871,7 +2075,7 @@
       "id": "output-outcome-impact",
       "title": "Output Outcome Impact",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Output",
         "Outcome",
@@ -1911,7 +2115,7 @@
       "id": "canon",
       "title": "Canon",
       "description": "Distinctive Competency",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Cannon"
       ],
@@ -1949,7 +2153,7 @@
       "id": "business-philosophy",
       "title": "Business Philosophy",
       "description": "Business Philosophy",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Business Philosophy"
       ],
@@ -1987,7 +2191,7 @@
       "id": "business-philosophy",
       "title": "Business Philosophy",
       "description": "Business Philosophy",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Business Philosophy"
       ],
@@ -2025,7 +2229,7 @@
       "id": "pcc-platform-to-ecosystem",
       "title": "PCC Platform to Ecosystem",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Platform",
         "Ecosystem"
@@ -2062,7 +2266,7 @@
       "id": "ปากเกร็ด-location-investment-smart-campu",
       "title": "ปากเกร็ด Location Investment Smart Campus",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Location",
         "Investment",
@@ -2100,7 +2304,7 @@
       "id": "bamboo-analogous-model",
       "title": "Bamboo Analogous Model",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Analogous Model",
         "Bamboo"
@@ -2149,7 +2353,7 @@
       "id": "bamboo-biobased-product-flow-chart",
       "title": "Bamboo Biobased Product Flow-chart",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Bamboo Biobased Product Flow-chart",
         "Analogous Model"
@@ -2186,7 +2390,7 @@
       "id": "pcc-data-colocation-data-center",
       "title": "PCC Data Colocation Data Center",
       "description": "",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "PCC Data Colocation Data Center"
       ],
@@ -2222,7 +2426,7 @@
       "id": "fifth-discipline",
       "title": "Fifth Discipline",
       "description": "Learning Organization",
-      "categoryId": "strategy-bmd",
+      "categoryId": "g1-paradigm",
       "tags": [
         "Fifth Discipline"
       ],
@@ -2253,6 +2457,1090 @@
           "updatedAt": "2026-10-07T08:42:41.519Z",
           "updatedBy": "JPP",
           "note": "เวอร์ชันแรก"
+        }
+      ]
+    },
+    {
+      "id": "bm-str-001",
+      "title": "PCC Smart Grid — Executive Summary สำหรับ Group COO: 6 โอกาสต่อยอด (Strategic Bets)",
+      "description": "PCC Smart Grid — Group COO Executive Summary (6 Strategic Bets)",
+      "categoryId": "g1-knowledge-management",
+      "tags": [
+        "BM-STR-001",
+        "Smart Grid",
+        "SGAM",
+        "Strategic Bets",
+        "AMI",
+        "Smart Transformer",
+        "TMS",
+        "Data Center",
+        "PEMS",
+        "Factory Energy",
+        "Energy Data Platform",
+        "EV Fleet",
+        "Decision Gate",
+        "Group COO",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-001/v1-BM-STR-001_PCC_01_Group_COO_Executive_Summary_V1_20260928.pdf",
+          "name": "BM-STR-001_PCC_01_Group_COO_Executive_Summary_V1_20260928.pdf",
+          "type": "pdf",
+          "size": 360805
+        },
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-001/v1-BM-STR-001_smart-grid-coo-executive-summary.md",
+          "name": "BM-STR-001_smart-grid-coo-executive-summary.md",
+          "type": "md",
+          "size": 25827,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-001/v1-BM-STR-001_PCC_01_Group_COO_Executive_Summary_V1_20260928.pdf",
+              "name": "BM-STR-001_PCC_01_Group_COO_Executive_Summary_V1_20260928.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-001/v1-BM-STR-001_smart-grid-coo-executive-summary.md",
+              "name": "BM-STR-001_smart-grid-coo-executive-summary.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-str-002",
+      "title": "PCC Smart Grid — รายงานศึกษาฉบับเต็ม: จากของที่มีอยู่ สู่ธุรกิจที่ทำซ้ำและสะสมความได้เปรียบ",
+      "description": "PCC Smart Grid — Full Study (6 Strategic Bets)",
+      "categoryId": "g1-knowledge-management",
+      "tags": [
+        "BM-STR-002",
+        "Smart Grid",
+        "SGAM",
+        "Strategic Bets",
+        "AMI",
+        "MDMS",
+        "Smart Transformer",
+        "TMS",
+        "Data Center",
+        "MV",
+        "PEMS",
+        "Energy Data Platform",
+        "EV Charging",
+        "Moat",
+        "Partner",
+        "Standards",
+        "IEC",
+        "ISO",
+        "Red Team",
+        "TAM SAM SOM",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-002/v1-BM-STR-002_PCC_02_Smart_Grid_Full_Study_V1_20260928.pdf",
+          "name": "BM-STR-002_PCC_02_Smart_Grid_Full_Study_V1_20260928.pdf",
+          "type": "pdf",
+          "size": 1479666
+        },
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-002/v1-BM-STR-002_smart-grid-full-study.md",
+          "name": "BM-STR-002_smart-grid-full-study.md",
+          "type": "md",
+          "size": 150936,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-002/v1-BM-STR-002_PCC_02_Smart_Grid_Full_Study_V1_20260928.pdf",
+              "name": "BM-STR-002_PCC_02_Smart_Grid_Full_Study_V1_20260928.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-002/v1-BM-STR-002_smart-grid-full-study.md",
+              "name": "BM-STR-002_smart-grid-full-study.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-str-003",
+      "title": "PCC Future Moat กันจีน (Infographic)",
+      "description": "PCC Future Moat vs. China (infographic)",
+      "categoryId": "g1-knowledge-management",
+      "tags": [
+        "BM-STR-003",
+        "Moat",
+        "China competition",
+        "System Service Data",
+        "KPI",
+        "Service revenue",
+        "Attach rate",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-003/v1-BM-STR-003_S__20258849.jpg",
+          "name": "BM-STR-003_S__20258849.jpg",
+          "type": "jpg",
+          "size": 455462
+        },
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-003/v1-BM-STR-003_future-moat-infographic.md",
+          "name": "BM-STR-003_future-moat-infographic.md",
+          "type": "md",
+          "size": 7633,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-003/v1-BM-STR-003_S__20258849.jpg",
+              "name": "BM-STR-003_S__20258849.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-003/v1-BM-STR-003_future-moat-infographic.md",
+              "name": "BM-STR-003_future-moat-infographic.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-rel-001",
+      "title": "PCC: \"พูดไว้ vs ทำได้\" — Management Guidance Scorecard 2565-2569",
+      "description": "PCC Management Guidance Scorecard 2022-2026",
+      "categoryId": "g4-km-ic-relationship",
+      "tags": [
+        "BM-REL-001",
+        "Guidance",
+        "Investor Relations",
+        "Opportunity Day",
+        "Revenue",
+        "Forecast discipline",
+        "Dividend policy",
+        "Payout",
+        "Buffett",
+        "MD&A",
+        "SET",
+        "SEC",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g4-km-ic-relationship/bm-rel-001/v1-BM-REL-001_PCC_Management_Guidance_Scorecard_2565_2569.pdf",
+          "name": "BM-REL-001_PCC_Management_Guidance_Scorecard_2565_2569.pdf",
+          "type": "pdf",
+          "size": 306755
+        },
+        {
+          "kind": "file",
+          "path": "assets/g4-km-ic-relationship/bm-rel-001/v1-BM-REL-001_management-guidance-scorecard-2565-2569.md",
+          "name": "BM-REL-001_management-guidance-scorecard-2565-2569.md",
+          "type": "md",
+          "size": 31970,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-km-ic-relationship/bm-rel-001/v1-BM-REL-001_PCC_Management_Guidance_Scorecard_2565_2569.pdf",
+              "name": "BM-REL-001_PCC_Management_Guidance_Scorecard_2565_2569.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g4-km-ic-relationship/bm-rel-001/v1-BM-REL-001_management-guidance-scorecard-2565-2569.md",
+              "name": "BM-REL-001_management-guidance-scorecard-2565-2569.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-rel-002",
+      "title": "Buffett Check: ผู้บริหาร PCC ดู 4 เรื่องนี้ก่อนเชื่อเรื่องการเติบโต (Infographic)",
+      "description": "Buffett Check on PCC management (infographic)",
+      "categoryId": "g4-km-ic-relationship",
+      "tags": [
+        "BM-REL-002",
+        "Buffett",
+        "Capital allocation",
+        "ROIC",
+        "Cash conversion",
+        "Moat",
+        "KPI",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g4-km-ic-relationship/bm-rel-002/v1-BM-REL-002_S__20258848.jpg",
+          "name": "BM-REL-002_S__20258848.jpg",
+          "type": "jpg",
+          "size": 472896
+        },
+        {
+          "kind": "file",
+          "path": "assets/g4-km-ic-relationship/bm-rel-002/v1-BM-REL-002_buffett-check-infographic.md",
+          "name": "BM-REL-002_buffett-check-infographic.md",
+          "type": "md",
+          "size": 8876,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-km-ic-relationship/bm-rel-002/v1-BM-REL-002_S__20258848.jpg",
+              "name": "BM-REL-002_S__20258848.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g4-km-ic-relationship/bm-rel-002/v1-BM-REL-002_buffett-check-infographic.md",
+              "name": "BM-REL-002_buffett-check-infographic.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-bg-001",
+      "title": "โอกาสความร่วมมือพรีไซซและไซเท็มในธุรกิจศูนย์ข้อมูล (SITEM Opportunity Brief)",
+      "description": "Precise × SITEM Data Center Opportunity Brief",
+      "categoryId": "g4-km-business-generation",
+      "tags": [
+        "BM-BG-001",
+        "SITEM",
+        "ไซเท็ม",
+        "Data Center",
+        "ศูนย์ข้อมูล",
+        "หม้อแปลง",
+        "ตู้ไฟฟ้า",
+        "Vendor registration",
+        "PEM",
+        "PSP",
+        "Partnership",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g4-km-business-generation/bm-bg-001/v1-BM-BG-001_PCC_SITEM_Opportunity_Brief.docx",
+          "name": "BM-BG-001_PCC_SITEM_Opportunity_Brief.docx",
+          "type": "docx",
+          "size": 62542
+        },
+        {
+          "kind": "file",
+          "path": "assets/g4-km-business-generation/bm-bg-001/v1-BM-BG-001_PCC_SITEM_Opportunity_Brief.pdf",
+          "name": "BM-BG-001_PCC_SITEM_Opportunity_Brief.pdf",
+          "type": "pdf",
+          "size": 282787
+        },
+        {
+          "kind": "file",
+          "path": "assets/g4-km-business-generation/bm-bg-001/v1-BM-BG-001_sitem-opportunity-brief.md",
+          "name": "BM-BG-001_sitem-opportunity-brief.md",
+          "type": "md",
+          "size": 41979,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-km-business-generation/bm-bg-001/v1-BM-BG-001_PCC_SITEM_Opportunity_Brief.docx",
+              "name": "BM-BG-001_PCC_SITEM_Opportunity_Brief.docx"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g4-km-business-generation/bm-bg-001/v1-BM-BG-001_PCC_SITEM_Opportunity_Brief.pdf",
+              "name": "BM-BG-001_PCC_SITEM_Opportunity_Brief.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g4-km-business-generation/bm-bg-001/v1-BM-BG-001_sitem-opportunity-brief.md",
+              "name": "BM-BG-001_sitem-opportunity-brief.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-bg-002",
+      "title": "โอกาสความร่วมมือ พรีไซซ × ไซเท็ม — ภาพสรุปหน้าเดียว",
+      "description": "Precise × SITEM — one-page summary image",
+      "categoryId": "g4-km-business-generation",
+      "tags": [
+        "BM-BG-002",
+        "SITEM",
+        "ไซเท็ม",
+        "Data Center",
+        "Partnership",
+        "PEM",
+        "PSP",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g4-km-business-generation/bm-bg-002/v1-BM-BG-002_B272BCF6-6934-4105-B7E1-A1F9F20319D1.png",
+          "name": "BM-BG-002_B272BCF6-6934-4105-B7E1-A1F9F20319D1.png",
+          "type": "png",
+          "size": 315698
+        },
+        {
+          "kind": "file",
+          "path": "assets/g4-km-business-generation/bm-bg-002/v1-BM-BG-002_sitem-one-page-summary.md",
+          "name": "BM-BG-002_sitem-one-page-summary.md",
+          "type": "md",
+          "size": 7008,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-km-business-generation/bm-bg-002/v1-BM-BG-002_B272BCF6-6934-4105-B7E1-A1F9F20319D1.png",
+              "name": "BM-BG-002_B272BCF6-6934-4105-B7E1-A1F9F20319D1.png"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g4-km-business-generation/bm-bg-002/v1-BM-BG-002_sitem-one-page-summary.md",
+              "name": "BM-BG-002_sitem-one-page-summary.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-ai-001",
+      "title": "PCC AI Transformation Pack — START_HERE และรายการแหล่งอ้างอิง (Sources.json)",
+      "description": "PCC AI Transformation Pack — START_HERE & Sources",
+      "categoryId": "g3-km-digital-ai",
+      "tags": [
+        "BM-AI-001",
+        "AI Transformation",
+        "Precise Got Digital Talent",
+        "17 ทีม",
+        "7 ทีม",
+        "Earth",
+        "Mentor",
+        "G1-G5",
+        "MIT CISR",
+        "Microsoft HAX",
+        "Stage-Gate",
+        "NIST AI RMF",
+        "ISO/IEC 42001",
+        "OECD",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-001/v1-BM-AI-001_START_HERE.txt",
+          "name": "BM-AI-001_START_HERE.txt",
+          "type": "txt",
+          "size": 6845
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-001/v1-BM-AI-001_Sources.json",
+          "name": "BM-AI-001_Sources.json",
+          "type": "json",
+          "size": 2177
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-001/v1-BM-AI-001_ai-transformation-pack-start-here.md",
+          "name": "BM-AI-001_ai-transformation-pack-start-here.md",
+          "type": "md",
+          "size": 14256,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-001/v1-BM-AI-001_START_HERE.txt",
+              "name": "BM-AI-001_START_HERE.txt"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-001/v1-BM-AI-001_Sources.json",
+              "name": "BM-AI-001_Sources.json"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-001/v1-BM-AI-001_ai-transformation-pack-start-here.md",
+              "name": "BM-AI-001_ai-transformation-pack-start-here.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-ai-002",
+      "title": "PCC AI Transformation Framework — คู่มือโค้ช Group COO และ Accelerator Playbook",
+      "description": "PCC AI Transformation Framework — COO Coaching Guide & Accelerator Playbook",
+      "categoryId": "g3-km-digital-ai",
+      "tags": [
+        "BM-AI-002",
+        "AI Transformation",
+        "Precise Got Digital Talent",
+        "Group COO",
+        "Coaching",
+        "G1-G5",
+        "Stage-Gate",
+        "NIST AI RMF",
+        "ISO/IEC 42001",
+        "Human-AI",
+        "Credit Collection",
+        "ลูกหนี้",
+        "12 สัปดาห์",
+        "Earth",
+        "Mentor",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-002/v1-BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.docx",
+          "name": "BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.docx",
+          "type": "docx",
+          "size": 1323323
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-002/v1-BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.pdf",
+          "name": "BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.pdf",
+          "type": "pdf",
+          "size": 934912
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-002/v1-BM-AI-002_coo-guide-accelerator-playbook.md",
+          "name": "BM-AI-002_coo-guide-accelerator-playbook.md",
+          "type": "md",
+          "size": 92077,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-002/v1-BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.docx",
+              "name": "BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.docx"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-002/v1-BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.pdf",
+              "name": "BM-AI-002_PCC_COO_Guide_and_Accelerator_Playbook.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-002/v1-BM-AI-002_coo-guide-accelerator-playbook.md",
+              "name": "BM-AI-002_coo-guide-accelerator-playbook.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-ai-003",
+      "title": "PCC AI Transformation Framework — Executive Teaching Boards (4 บอร์ดสอน)",
+      "description": "PCC AI Transformation — Executive Teaching Boards 01–04",
+      "categoryId": "g3-km-digital-ai",
+      "tags": [
+        "BM-AI-003",
+        "AI Transformation",
+        "Teaching Board",
+        "Reference Models",
+        "Target Model",
+        "Credit Collection",
+        "COO Coaching",
+        "G1-G5",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_01_Reference_Models.jpg",
+          "name": "BM-AI-003_01_Reference_Models.jpg",
+          "type": "jpg",
+          "size": 1734480
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_02_PCC_Target_Model.jpg",
+          "name": "BM-AI-003_02_PCC_Target_Model.jpg",
+          "type": "jpg",
+          "size": 1601723
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_03_Credit_Collection_Example.jpg",
+          "name": "BM-AI-003_03_Credit_Collection_Example.jpg",
+          "type": "jpg",
+          "size": 1647305
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_04_COO_Coaching_Gates.jpg",
+          "name": "BM-AI-003_04_COO_Coaching_Gates.jpg",
+          "type": "jpg",
+          "size": 1519799
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_PCC_Executive_Teaching_Boards.pdf",
+          "name": "BM-AI-003_PCC_Executive_Teaching_Boards.pdf",
+          "type": "pdf",
+          "size": 8133016
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_executive-teaching-boards.md",
+          "name": "BM-AI-003_executive-teaching-boards.md",
+          "type": "md",
+          "size": 28314,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_01_Reference_Models.jpg",
+              "name": "BM-AI-003_01_Reference_Models.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_02_PCC_Target_Model.jpg",
+              "name": "BM-AI-003_02_PCC_Target_Model.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_03_Credit_Collection_Example.jpg",
+              "name": "BM-AI-003_03_Credit_Collection_Example.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_04_COO_Coaching_Gates.jpg",
+              "name": "BM-AI-003_04_COO_Coaching_Gates.jpg"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_PCC_Executive_Teaching_Boards.pdf",
+              "name": "BM-AI-003_PCC_Executive_Teaching_Boards.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-003/v1-BM-AI-003_executive-teaching-boards.md",
+              "name": "BM-AI-003_executive-teaching-boards.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-ai-004",
+      "title": "PCC AI Transformation Framework — แม่แบบหลักฐานสำหรับทีม (Team Evidence Templates T1–T8)",
+      "description": "PCC AI Transformation — Team Evidence Templates T1–T8",
+      "categoryId": "g3-km-digital-ai",
+      "tags": [
+        "BM-AI-004",
+        "Template",
+        "Evidence Pack",
+        "Data QC",
+        "Gate Decision",
+        "Coaching Note",
+        "IT/Data handover",
+        "Rubric",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-004/v1-BM-AI-004_PCC_Team_Evidence_Templates.docx",
+          "name": "BM-AI-004_PCC_Team_Evidence_Templates.docx",
+          "type": "docx",
+          "size": 58936
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-004/v1-BM-AI-004_PCC_Team_Evidence_Templates.pdf",
+          "name": "BM-AI-004_PCC_Team_Evidence_Templates.pdf",
+          "type": "pdf",
+          "size": 293187
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-004/v1-BM-AI-004_team-evidence-templates.md",
+          "name": "BM-AI-004_team-evidence-templates.md",
+          "type": "md",
+          "size": 23998,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-004/v1-BM-AI-004_PCC_Team_Evidence_Templates.docx",
+              "name": "BM-AI-004_PCC_Team_Evidence_Templates.docx"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-004/v1-BM-AI-004_PCC_Team_Evidence_Templates.pdf",
+              "name": "BM-AI-004_PCC_Team_Evidence_Templates.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-004/v1-BM-AI-004_team-evidence-templates.md",
+              "name": "BM-AI-004_team-evidence-templates.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-ai-005",
+      "title": "PCC Earth Program Workbook — แบบทำงานติดตามโปรแกรม (Excel 8 ชีต)",
+      "description": "PCC Earth Program Workbook (8 sheets)",
+      "categoryId": "g3-km-digital-ai",
+      "tags": [
+        "BM-AI-005",
+        "Workbook",
+        "Earth",
+        "Team register",
+        "Actions",
+        "Evidence register",
+        "Gate checklist",
+        "Metrics",
+        "Rubric",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-005/v1-BM-AI-005_PCC_Earth_Program_Workbook.xlsx",
+          "name": "BM-AI-005_PCC_Earth_Program_Workbook.xlsx",
+          "type": "xlsx",
+          "size": 33975
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-digital-ai/bm-ai-005/v1-BM-AI-005_earth-program-workbook.md",
+          "name": "BM-AI-005_earth-program-workbook.md",
+          "type": "md",
+          "size": 35105,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-005/v1-BM-AI-005_PCC_Earth_Program_Workbook.xlsx",
+              "name": "BM-AI-005_PCC_Earth_Program_Workbook.xlsx"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-digital-ai/bm-ai-005/v1-BM-AI-005_earth-program-workbook.md",
+              "name": "BM-AI-005_earth-program-workbook.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-ops-001",
+      "title": "PCC Smart & Sustainable Factory — สไลด์นำเสนอ PCC Forum 1 ตุลาคม 2569",
+      "description": "PCC Smart & Sustainable Factory — PCC Forum deck (1 Oct 2026)",
+      "categoryId": "g3-km-ops-excellence",
+      "tags": [
+        "BM-OPS-001",
+        "Factory 4.0",
+        "ESG",
+        "Energy",
+        "Carbon",
+        "Scope 2",
+        "kWh ต่อชิ้นงานดี",
+        "Pilot",
+        "หม้อแปลง",
+        "RAMI 4.0",
+        "SGAM",
+        "PCC Forum",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g3-km-ops-excellence/bm-ops-001/v1-BM-OPS-001_PCC_Forum_Presentation.pptx",
+          "name": "BM-OPS-001_PCC_Forum_Presentation.pptx",
+          "type": "pptx",
+          "size": 3251813
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-ops-excellence/bm-ops-001/v1-BM-OPS-001_PCC_Forum_Presentation.pdf",
+          "name": "BM-OPS-001_PCC_Forum_Presentation.pdf",
+          "type": "pdf",
+          "size": 825173
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-ops-excellence/bm-ops-001/v1-BM-OPS-001_forum-smart-sustainable-factory-slides.md",
+          "name": "BM-OPS-001_forum-smart-sustainable-factory-slides.md",
+          "type": "md",
+          "size": 68857,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g3-km-ops-excellence/bm-ops-001/v1-BM-OPS-001_PCC_Forum_Presentation.pptx",
+              "name": "BM-OPS-001_PCC_Forum_Presentation.pptx"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-ops-excellence/bm-ops-001/v1-BM-OPS-001_PCC_Forum_Presentation.pdf",
+              "name": "BM-OPS-001_PCC_Forum_Presentation.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-ops-excellence/bm-ops-001/v1-BM-OPS-001_forum-smart-sustainable-factory-slides.md",
+              "name": "BM-OPS-001_forum-smart-sustainable-factory-slides.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-ops-002",
+      "title": "คู่มือนำเสนอ PCC Smart and Sustainable Factory — Forum 1 ตุลาคม 2569",
+      "description": "PCC Smart & Sustainable Factory — Presenter Guide",
+      "categoryId": "g3-km-ops-excellence",
+      "tags": [
+        "BM-OPS-002",
+        "Presenter guide",
+        "Script",
+        "PCC Forum",
+        "Factory 4.0",
+        "ESG",
+        "Q&A",
+        "Energy",
+        "Carbon",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g3-km-ops-excellence/bm-ops-002/v1-BM-OPS-002_PCC_Forum_Presenter_Guide.docx",
+          "name": "BM-OPS-002_PCC_Forum_Presenter_Guide.docx",
+          "type": "docx",
+          "size": 5473633
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-ops-excellence/bm-ops-002/v1-BM-OPS-002_PCC_Forum_Presenter_Guide.pdf",
+          "name": "BM-OPS-002_PCC_Forum_Presenter_Guide.pdf",
+          "type": "pdf",
+          "size": 1440370
+        },
+        {
+          "kind": "file",
+          "path": "assets/g3-km-ops-excellence/bm-ops-002/v1-BM-OPS-002_forum-presenter-guide.md",
+          "name": "BM-OPS-002_forum-presenter-guide.md",
+          "type": "md",
+          "size": 65289,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T05:41:54.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T05:41:54.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g3-km-ops-excellence/bm-ops-002/v1-BM-OPS-002_PCC_Forum_Presenter_Guide.docx",
+              "name": "BM-OPS-002_PCC_Forum_Presenter_Guide.docx"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-ops-excellence/bm-ops-002/v1-BM-OPS-002_PCC_Forum_Presenter_Guide.pdf",
+              "name": "BM-OPS-002_PCC_Forum_Presenter_Guide.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g3-km-ops-excellence/bm-ops-002/v1-BM-OPS-002_forum-presenter-guide.md",
+              "name": "BM-OPS-002_forum-presenter-guide.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T05:41:54.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
+        }
+      ]
+    },
+    {
+      "id": "bm-str-004",
+      "title": "Bamboo Business Intelligence V3 — กลยุทธ์ที่ชัดขึ้นต้องเดินคู่กับระบบบริหารที่ทำให้งานต่อกันได้",
+      "description": "Bamboo Business Intelligence (BBI) V3 Report — ข้อเสนอเพื่อพิจารณา ยังไม่ใช่แผนอนุมัติ (2 ต.ค. 2569, 32 หน้า): 3 กลยุทธ์ S1/S2/S3, ระบบบริหาร Board PBI–Group COO, Priority, มูลนิธิและเกษตรกร, Roadmap 2027–2036",
+      "categoryId": "g1-knowledge-management",
+      "tags": [
+        "BM-STR-004",
+        "Bamboo",
+        "BBI",
+        "PBI",
+        "Industrial Capitalism",
+        "Platform / Ecosystem",
+        "SFAM",
+        "Business Model",
+        "Roadmap 2027-2036",
+        "Priority Management",
+        "Board PBI",
+        "Group COO",
+        "มูลนิธิ",
+        "เกษตรกร",
+        "วัตถุดิบ",
+        "ศรีเทพ",
+        "Markdown",
+        "LLM"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-004/v1-BM-STR-004_Bamboo_Business_Intelligence_V3_Report.pdf",
+          "name": "BM-STR-004_Bamboo_Business_Intelligence_V3_Report.pdf",
+          "type": "pdf",
+          "size": 822339
+        },
+        {
+          "kind": "file",
+          "path": "assets/g1-knowledge-management/bm-str-004/v1-BM-STR-004_bamboo-business-intelligence-v3-report.md",
+          "name": "BM-STR-004_bamboo-business-intelligence-v3-report.md",
+          "type": "md",
+          "size": 107814,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-12T06:01:53.000Z",
+      "createdBy": "นำเข้าโดย Claude",
+      "updatedAt": "2026-10-12T06:01:53.000Z",
+      "updatedBy": "นำเข้าโดย Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-004/v1-BM-STR-004_Bamboo_Business_Intelligence_V3_Report.pdf",
+              "name": "BM-STR-004_Bamboo_Business_Intelligence_V3_Report.pdf"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g1-knowledge-management/bm-str-004/v1-BM-STR-004_bamboo-business-intelligence-v3-report.md",
+              "name": "BM-STR-004_bamboo-business-intelligence-v3-report.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-12T06:01:53.000Z",
+          "updatedBy": "นำเข้าโดย Claude",
+          "note": "นำเข้าจาก OneDrive: Business Management"
         }
       ]
     }

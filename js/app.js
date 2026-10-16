@@ -136,6 +136,67 @@ function descendantIds(id) {
   return ids;
 }
 
+/* หมวดแม่ทั้งสายจากบนสุดลงมา (ไม่รวมตัวเอง) — ใช้ทำ breadcrumb และขยาย sidebar */
+function ancestorsOf(id) {
+  const chain = [];
+  let cur = categoryById(id);
+  while (cur?.parentId) {
+    cur = categoryById(cur.parentId);
+    if (!cur || chain.includes(cur)) break;
+    chain.unshift(cur);
+  }
+  return chain;
+}
+
+/*
+ * Knowledge Management: ทุกเอกสารในหมวดนี้ต้องมีไฟล์ .md สำหรับ LLM แนบมาด้วย
+ * ไฟล์ .md ถูกทำเครื่องหมาย role = 'llm-md' และแสดงเป็นปุ่มในหน้าเอกสาร (ไม่อยู่ในรายการไฟล์แนบ)
+ */
+const LLM_MD_ROLE = 'llm-md';
+
+function isKnowledgeCategory(catId) {
+  const cat = categoryById(catId);
+  if (!cat) return false;
+  return [...ancestorsOf(catId), cat].some((c) => /^knowledge management$/i.test(c.name.trim()));
+}
+
+function isMdAttachment(att) {
+  return att.kind === 'file' && fileKind(att.name || '').kind === 'md' && /\.(md|markdown)$/i.test(att.name || '');
+}
+
+function llmMdAttachment(doc) {
+  const atts = doc.attachments || [];
+  return atts.find((a) => a.role === LLM_MD_ROLE) || atts.find(isMdAttachment) || null;
+}
+
+/* ชื่อหมวดใน sidebar: แสดงเฉพาะส่วนภาษาอังกฤษหน้า " / " (ชื่อเต็มยังอยู่ใน tooltip และหน้าอื่น) */
+function sidebarLabel(name) {
+  return String(name).split(' / ')[0].trim();
+}
+
+/* รายการหมวดทั้งต้นไม้เรียงตามลำดับ พร้อมระดับความลึก (ใช้ใน <select>) */
+function categoryTreeFlat() {
+  const out = [];
+  const walk = (cat, depth) => {
+    out.push({ cat, depth });
+    childrenOf(cat.id).forEach((k) => walk(k, depth + 1));
+  };
+  topLevelCategories().forEach((c) => walk(c, 0));
+  return out;
+}
+
+function categoryOptionsHtml(selectedId, emptyLabel) {
+  const opts = categoryTreeFlat().map(({ cat, depth }) =>
+    `<option value="${escapeHtml(cat.id)}" ${selectedId === cat.id ? 'selected' : ''}>${'&nbsp;&nbsp;&nbsp;'.repeat(depth)}${depth ? '— ' : `${escapeHtml(cat.icon || '')} `}${escapeHtml(cat.name)}</option>`);
+  return (emptyLabel ? [`<option value="">${emptyLabel}</option>`] : []).concat(opts).join('');
+}
+
+function breadcrumbHtml(cat, lastLabel) {
+  const trail = [...ancestorsOf(cat.id), ...(lastLabel ? [cat] : [])]
+    .map((c) => `<a href="#/category/${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a> ›`).join(' ');
+  return `<a href="#/">หน้าแรก</a> › ${trail} ${escapeHtml(lastLabel || cat.name)}`;
+}
+
 function docCountDeep(id) {
   const ids = new Set(descendantIds(id));
   return state.library.documents.filter((d) => ids.has(d.categoryId)).length;
@@ -201,7 +262,7 @@ function navigate(hash) {
 }
 
 function render() {
-  renderSidebar();
+  renderSidebar(true);
   closeSidebar();
   closeModal();
   const app = document.getElementById('app');
@@ -225,43 +286,36 @@ function render() {
 
 const expandedCats = new Set();
 
-function renderSidebar() {
+// autoExpand = true เฉพาะตอนเปลี่ยนหน้า — ตอนผู้ใช้กดหุบ/ขยายเองต้องไม่ถูกบังคับเปิดกลับ
+function renderSidebar(autoExpand = false) {
   const nav = document.getElementById('sidebar-nav');
   if (!nav) return;
   const { page, param } = parseRoute();
   const activeCatId = page === 'category' ? param
     : (page === 'doc' ? docById(param)?.categoryId : null);
-  if (activeCatId) {
-    const active = categoryById(activeCatId);
-    if (active?.parentId) expandedCats.add(active.parentId);
-    else if (childrenOf(activeCatId).length) expandedCats.add(activeCatId);
+  if (autoExpand && activeCatId) {
+    ancestorsOf(activeCatId).forEach((a) => expandedCats.add(a.id));
+    if (childrenOf(activeCatId).length) expandedCats.add(activeCatId);
   }
 
-  const groups = topLevelCategories().map((cat) => {
+  // วาดหมวดแบบ recursive — รองรับหมวดย่อยกี่ระดับก็ได้
+  const renderNode = (cat, depth) => {
     const kids = childrenOf(cat.id);
     const open = expandedCats.has(cat.id);
     return `
       <div class="side-group">
-        <div class="side-item ${activeCatId === cat.id ? 'active' : ''}">
-          <a class="side-link" href="#/category/${encodeURIComponent(cat.id)}">
-            <span class="side-icon">${escapeHtml(cat.icon || '📁')}</span>
-            <span class="side-name">${escapeHtml(cat.name)}</span>
+        <div class="side-item ${depth ? 'side-sub' : ''} ${activeCatId === cat.id ? 'active' : ''}">
+          <a class="side-link" href="#/category/${encodeURIComponent(cat.id)}" title="${escapeHtml(cat.name)}">
+            <span class="side-icon">${escapeHtml(cat.icon || (depth ? '·' : '📁'))}</span>
+            <span class="side-name">${escapeHtml(sidebarLabel(cat.name))}</span>
           </a>
           <span class="side-count">${docCountDeep(cat.id)}</span>
           ${kids.length ? `<button class="side-caret ${open ? 'open' : ''}" data-cat="${escapeHtml(cat.id)}" aria-label="ขยาย/ย่อหมวดย่อย">▸</button>` : ''}
         </div>
-        ${kids.length && open ? `<div class="side-children">
-          ${kids.map((k) => `
-            <div class="side-item side-sub ${activeCatId === k.id ? 'active' : ''}">
-              <a class="side-link" href="#/category/${encodeURIComponent(k.id)}">
-                <span class="side-icon">${escapeHtml(k.icon || '·')}</span>
-                <span class="side-name">${escapeHtml(k.name)}</span>
-              </a>
-              <span class="side-count">${docCountDeep(k.id)}</span>
-            </div>`).join('')}
-        </div>` : ''}
+        ${kids.length && open ? `<div class="side-children">${kids.map((k) => renderNode(k, depth + 1)).join('')}</div>` : ''}
       </div>`;
-  }).join('');
+  };
+  const groups = topLevelCategories().map((cat) => renderNode(cat, 0)).join('');
 
   nav.innerHTML = `
     <div class="side-item side-home ${page === 'home' ? 'active' : ''}">
@@ -342,7 +396,6 @@ function renderHome(app) {
 function renderCategory(app, catId) {
   const cat = categoryById(catId);
   if (!cat) { app.innerHTML = '<div class="empty-state">ไม่พบหมวดหมู่นี้</div>'; return; }
-  const parent = cat.parentId ? categoryById(cat.parentId) : null;
   const kids = childrenOf(catId);
   const ids = new Set(descendantIds(catId));
   const docs = state.library.documents
@@ -352,11 +405,7 @@ function renderCategory(app, catId) {
   const allTags = [...new Set(docs.flatMap((d) => d.tags || []))];
 
   app.innerHTML = `
-    <nav class="breadcrumb">
-      <a href="#/">หน้าแรก</a> ›
-      ${parent ? `<a href="#/category/${encodeURIComponent(parent.id)}">${escapeHtml(parent.name)}</a> ›` : ''}
-      ${escapeHtml(cat.name)}
-    </nav>
+    <nav class="breadcrumb">${breadcrumbHtml(cat)}</nav>
     <section class="hero hero-sm">
       <h1>${escapeHtml(cat.icon || '📁')} ${escapeHtml(cat.name)}</h1>
       <p>${escapeHtml(cat.description || '')}</p>
@@ -444,15 +493,25 @@ function renderDoc(app, docId) {
   const atts = doc.attachments || [];
   const tags = (doc.tags || []).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('');
   const history = [...(doc.history || [])].sort((a, b) => b.version - a.version);
-  const firstPreviewIdx = atts.findIndex(isPreviewable);
+  const isKm = isKnowledgeCategory(doc.categoryId);
+  const mdAtt = isKm ? llmMdAttachment(doc) : null;
+  // ไฟล์ .md สำหรับ LLM แสดงเป็นปุ่มแยก — ไม่ซ้ำในรายการไฟล์แนบ (คง index เดิมไว้ให้ปุ่มดูตัวอย่าง)
+  const firstPreviewIdx = atts.findIndex((a) => a !== mdAtt && isPreviewable(a));
+  const llmBar = !isKm ? '' : (mdAtt ? `
+      <section class="llm-md">
+        <div class="llm-md-title">📝 Markdown for LLM <span class="llm-md-file">${escapeHtml(mdAtt.name || '')} · ${formatSize(mdAtt.size)}</span></div>
+        <div class="llm-md-actions">
+          <button class="btn btn-sm btn-primary" id="btn-md-view">👁 ดู .md</button>
+          <button class="btn btn-sm" id="btn-md-copy">📋 คัดลอกข้อความ</button>
+          <a class="btn btn-sm" href="${GitHub.fileUrl(mdAtt.path)}" download="${escapeHtml(mdAtt.name || '')}">⬇ ดาวน์โหลด .md</a>
+        </div>
+      </section>` : `
+      <section class="llm-md llm-md-missing">
+        ⚠️ เอกสารนี้ยังไม่มีไฟล์ .md สำหรับ LLM — กด “อัพเดตเวอร์ชัน / แก้ไข” เพื่อแนบ (บังคับสำหรับเอกสารใน Knowledge Management)
+      </section>`);
 
   app.innerHTML = `
-    <nav class="breadcrumb">
-      <a href="#/">หน้าแรก</a> ›
-      ${cat?.parentId ? `<a href="#/category/${encodeURIComponent(cat.parentId)}">${escapeHtml(categoryById(cat.parentId)?.name || '')}</a> ›` : ''}
-      ${cat ? `<a href="#/category/${encodeURIComponent(cat.id)}">${escapeHtml(cat.name)}</a> ›` : ''}
-      ${escapeHtml(doc.title)}
-    </nav>
+    <nav class="breadcrumb">${cat ? breadcrumbHtml(cat, doc.title) : `<a href="#/">หน้าแรก</a> › ${escapeHtml(doc.title)}`}</nav>
     <article class="doc-detail">
       <header class="doc-detail-head">
         <div class="doc-detail-icon">${docIcon(doc)}</div>
@@ -471,10 +530,11 @@ function renderDoc(app, docId) {
         </div>
       </header>
       <p class="doc-detail-desc">${escapeHtml(doc.description || '')}</p>
+      ${llmBar}
       <section class="attachments">
         <h2>ไฟล์แนบ</h2>
         <div class="attach-list" id="attach-list">
-          ${atts.map((a, i) => attachmentRow(a, i, i === firstPreviewIdx)).join('') || '<div class="empty-state">ไม่มีไฟล์แนบ</div>'}
+          ${atts.map((a, i) => (a === mdAtt ? '' : attachmentRow(a, i, i === firstPreviewIdx))).join('') || '<div class="empty-state">ไม่มีไฟล์แนบ</div>'}
         </div>
       </section>
       <div class="preview" id="preview-area"></div>
@@ -505,6 +565,23 @@ function renderDoc(app, docId) {
     renderPreview(doc, atts[idx]);
     document.getElementById('preview-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
+  if (mdAtt) {
+    document.getElementById('btn-md-view').onclick = () => {
+      document.querySelectorAll('.attach-row').forEach((r) => r.classList.remove('active'));
+      renderPreview(doc, mdAtt);
+      document.getElementById('preview-area').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+    document.getElementById('btn-md-copy').onclick = async () => {
+      try {
+        const res = await fetch(GitHub.fileUrl(mdAtt.path), { cache: 'no-store' });
+        if (!res.ok) throw new Error();
+        await navigator.clipboard.writeText(await res.text());
+        toast('คัดลอกข้อความ .md แล้ว — นำไปวางให้ LLM ได้เลย');
+      } catch (_) {
+        toast('คัดลอกไม่สำเร็จ — ลองใช้ปุ่มดาวน์โหลดแทน', true);
+      }
+    };
+  }
   document.getElementById('btn-update-doc').onclick = () => requireLogin(() => openDocModal(doc));
   document.getElementById('btn-delete-doc').onclick = () => requireLogin(() => deleteDocument(doc));
 }
@@ -702,17 +779,13 @@ function openLoginModal(next) {
 }
 
 function openCategoryModal() {
-  const parentOptions = topLevelCategories().map((c) =>
-    `<option value="${escapeHtml(c.id)}">${escapeHtml(c.icon)} ${escapeHtml(c.name)}</option>`).join('');
+  const parentOptions = categoryOptionsHtml(null, '— เป็นหมวดหลัก —');
   const modal = openModal(`
     <h2>เพิ่มหมวดหมู่ใหม่</h2>
     <form id="cat-form">
       <label>ชื่อหมวดหมู่<input name="name" required placeholder="เช่น งานสำรวจ" /></label>
       <label>อยู่ภายใต้หมวด
-        <select name="parentId">
-          <option value="">— เป็นหมวดหลัก —</option>
-          ${parentOptions}
-        </select>
+        <select name="parentId">${parentOptions}</select>
       </label>
       <label>คำอธิบาย<input name="description" placeholder="อธิบายสั้นๆ ว่าหมวดนี้เก็บอะไร" /></label>
       <label>ไอคอน (อีโมจิ 1 ตัว)<input name="icon" placeholder="📁" maxlength="4" /></label>
@@ -760,11 +833,7 @@ function uniqueCategoryId(name) {
 function openDocModal(doc) {
   const isEdit = !!doc;
   // เรียงหมวดหลักตามด้วยหมวดย่อย (เยื้องขวา) ให้เลือกเก็บเอกสารได้ทั้งสองระดับ
-  const cats = topLevelCategories().flatMap((top) => [
-    `<option value="${escapeHtml(top.id)}" ${doc?.categoryId === top.id ? 'selected' : ''}>${escapeHtml(top.icon)} ${escapeHtml(top.name)}</option>`,
-    ...childrenOf(top.id).map((k) =>
-      `<option value="${escapeHtml(k.id)}" ${doc?.categoryId === k.id ? 'selected' : ''}>&nbsp;&nbsp;&nbsp;— ${escapeHtml(k.name)}</option>`),
-  ]).join('');
+  const cats = categoryOptionsHtml(doc?.categoryId);
 
   // ไฟล์แนบเดิมที่ยังเก็บไว้ (กด ✕ เพื่อเอาออก)
   const kept = [...(doc?.attachments || [])];
@@ -782,6 +851,10 @@ function openDocModal(doc) {
       <label>เพิ่มไฟล์แนบ (เลือกได้หลายไฟล์พร้อมกัน)
         <input name="files" type="file" multiple />
         <span class="modal-hint">ขนาดแนะนำไม่เกิน ${MAX_FILE_MB}MB ต่อไฟล์ — วิดีโอใหญ่ให้ใช้ลิงก์ภายนอกแทน</span>
+      </label>
+      <label id="md-field" hidden>ไฟล์ Markdown (.md) สำหรับ LLM <strong class="md-required">* บังคับ</strong>
+        <input name="mdfile" type="file" accept=".md,.markdown,text/markdown" />
+        <span class="modal-hint" id="md-hint"></span>
       </label>
       <div id="link-rows"></div>
       <button type="button" class="btn" id="btn-add-link">+ เพิ่มลิงก์ภายนอก (YouTube, Drive ฯลฯ)</button>
@@ -820,6 +893,23 @@ function openDocModal(doc) {
     row.querySelector('.link-name').focus();
   };
 
+  // เอกสารใน Knowledge Management ต้องแนบ .md — แสดงช่องนี้เมื่อเลือกหมวดที่เกี่ยวข้อง
+  const mdField = modal.querySelector('#md-field');
+  const mdHint = modal.querySelector('#md-hint');
+  const catSelect = modal.querySelector('[name=categoryId]');
+  const syncMdField = () => {
+    const km = isKnowledgeCategory(catSelect.value);
+    mdField.hidden = !km;
+    if (!km) return;
+    const existing = kept.find((a) => a.role === LLM_MD_ROLE) || kept.find(isMdAttachment);
+    mdHint.textContent = existing
+      ? `มีไฟล์ .md อยู่แล้ว: ${existing.name} — เลือกไฟล์ใหม่เฉพาะเมื่อต้องการแทนที่`
+      : 'ต้องแนบไฟล์ .md (แปลงจากเอกสารนี้แล้ว) และใส่ Tag รหัสเอกสาร เช่น BM-STR-005 ก่อนจึงจะบันทึกได้';
+  };
+  catSelect.addEventListener('change', syncMdField);
+  syncMdField();
+  keptList?.addEventListener('click', () => setTimeout(syncMdField, 0));
+
   modal.querySelector('#btn-cancel').onclick = closeModal;
   modal.querySelector('#doc-form').onsubmit = (e) => {
     e.preventDefault();
@@ -839,9 +929,37 @@ async function saveDocument(formEl, existingDoc, keptAttachments) {
     .filter((l) => l.url);
 
   const kept = existingDoc ? keptAttachments : [];
-  if (kept.length + files.length + links.length === 0) {
+  const mdFileRaw = form.get('mdfile');
+  const mdFile = mdFileRaw && mdFileRaw.size > 0 ? mdFileRaw : null;
+  if (kept.length + files.length + links.length + (mdFile ? 1 : 0) === 0) {
     toast('กรุณาแนบไฟล์ หรือเพิ่มลิงก์อย่างน้อย 1 รายการ', true);
     return;
+  }
+  // บังคับ: เอกสารใน Knowledge Management ต้องมีไฟล์ .md
+  if (isKnowledgeCategory(form.get('categoryId'))) {
+    if (mdFile && !/\.(md|markdown)$/i.test(mdFile.name)) {
+      toast('ไฟล์สำหรับ LLM ต้องเป็นนามสกุล .md หรือ .markdown', true);
+      return;
+    }
+    const hasMd = !!mdFile
+      || files.some((f) => /\.(md|markdown)$/i.test(f.name))
+      || kept.some((a) => a.role === LLM_MD_ROLE || isMdAttachment(a));
+    if (!hasMd) {
+      toast('เอกสารใน Knowledge Management ต้องแนบไฟล์ .md สำหรับ LLM ด้วย', true);
+      return;
+    }
+    // รหัสเอกสาร BM-xxx-nnn เป็นกุญแจจับคู่กับสารบัญใน OneDrive (tools/check_sync.pl)
+    const tagList = form.get('tags').split(',').map((t) => t.trim()).filter(Boolean);
+    if (!tagList.some((t) => /^BM-[A-Z]+-\d{3}$/.test(t))) {
+      toast('เอกสารใน Knowledge Management ต้องมี Tag รหัสเอกสาร เช่น BM-STR-005 (ใช้จับคู่กับสารบัญใน OneDrive)', true);
+      return;
+    }
+  }
+  // ถ้าอัพ .md ใหม่ ให้แทนที่ .md เดิม (ของเดิมยังอยู่ในประวัติเวอร์ชัน)
+  if (mdFile) {
+    for (let i = kept.length - 1; i >= 0; i -= 1) {
+      if (kept[i].role === LLM_MD_ROLE || isMdAttachment(kept[i])) kept.splice(i, 1);
+    }
   }
   for (const file of files) {
     if (file.size > MAX_FILE_MB * 1024 * 1024) {
@@ -859,6 +977,7 @@ async function saveDocument(formEl, existingDoc, keptAttachments) {
 
     const attachmentsChanged = !existingDoc
       || files.length > 0
+      || !!mdFile
       || links.length > 0
       || kept.length !== (existingDoc.attachments || []).length;
     const newVersion = existingDoc
@@ -867,11 +986,20 @@ async function saveDocument(formEl, existingDoc, keptAttachments) {
     const note = (form.get('note') || '').trim() || (existingDoc ? 'อัพเดตข้อมูล' : 'เวอร์ชันแรก');
 
     // 1) อัพโหลดไฟล์ใหม่ทีละไฟล์ — path แยกตามเวอร์ชัน เพื่อย้อนดูของเก่าได้เสมอ
+    // ไฟล์ .md สำหรับ LLM (เฉพาะ Knowledge Management) ได้ role = 'llm-md'
+    // ใช้ช่อง .md โดยเฉพาะ ถ้าไม่ได้ใช้ ให้ถือ .md ไฟล์แรกในไฟล์แนบทั่วไป
+    const km = isKnowledgeCategory(categoryId);
+    const queue = files.map((file) => ({ file, role: null }));
+    if (mdFile) queue.push({ file: mdFile, role: LLM_MD_ROLE });
+    else if (km) {
+      const firstMd = queue.find((q) => /\.(md|markdown)$/i.test(q.file.name));
+      if (firstMd) firstMd.role = LLM_MD_ROLE;
+    }
     const uploaded = [];
-    for (const [i, file] of files.entries()) {
+    for (const [i, { file, role }] of queue.entries()) {
       const safeName = sanitizeFileName(file.name);
       const path = `assets/${categoryId}/${docId}/v${newVersion}-${safeName}`;
-      toast(`กำลังอัพโหลดไฟล์ ${i + 1}/${files.length}…`);
+      toast(`กำลังอัพโหลดไฟล์ ${i + 1}/${queue.length}…`);
       const base64 = await fileToBase64(file);
       await GitHub.putFile(path, base64, `อัพโหลดไฟล์: ${title} (v${newVersion}) — ${file.name}`, token);
       uploaded.push({
@@ -880,6 +1008,7 @@ async function saveDocument(formEl, existingDoc, keptAttachments) {
         name: file.name,
         type: file.name.split('.').pop().toLowerCase(),
         size: file.size,
+        ...(role ? { role } : {}),
       });
     }
 
@@ -891,7 +1020,7 @@ async function saveDocument(formEl, existingDoc, keptAttachments) {
     // snapshot สำหรับ history — เก็บเฉพาะข้อมูลที่ใช้เปิดไฟล์ย้อนหลัง
     const snapshot = finalAttachments.map((a) => a.kind === 'link'
       ? { kind: 'link', url: a.url, name: a.name }
-      : { kind: 'file', path: a.path, name: a.name });
+      : { kind: 'file', path: a.path, name: a.name, ...(a.role ? { role: a.role } : {}) });
 
     // 2) อัพเดต catalog (อ่าน sha สดก่อนเขียนเสมอ)
     state.library = await updateLibrary((lib) => {

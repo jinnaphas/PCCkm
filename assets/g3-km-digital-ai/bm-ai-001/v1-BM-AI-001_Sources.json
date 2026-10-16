@@ -1,0 +1,65 @@
+[
+  {
+    "id": "S1",
+    "organization": "MIT CISR",
+    "title": "Building Enterprise AI Maturity",
+    "version": "19 Dec 2024; survey 2022 and interviews 2024",
+    "url": "https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian"
+  },
+  {
+    "id": "S2",
+    "organization": "Microsoft Research / HAX",
+    "title": "Guidelines for Human-AI Interaction",
+    "version": "Research 2019; official HAX guide",
+    "url": "https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/"
+  },
+  {
+    "id": "S2a",
+    "organization": "Microsoft Research",
+    "title": "Guidelines for Human-AI Interaction – research overview",
+    "version": "4 Jun 2019",
+    "url": "https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/"
+  },
+  {
+    "id": "S3",
+    "organization": "Stage-Gate International / Robert G. Cooper",
+    "title": "The Stage-Gate Model: An Overview",
+    "version": "Official web overview; accessed 28 Sep 2026",
+    "url": "https://www.stage-gate.com/blog/the-stage-gate-model-an-overview/"
+  },
+  {
+    "id": "S4",
+    "organization": "NIST",
+    "title": "AI Risk Management Framework 1.0: Core",
+    "version": "2023; revision in progress on official site",
+    "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+  },
+  {
+    "id": "S4a",
+    "organization": "NIST",
+    "title": "AI Risk Management Framework",
+    "version": "Version/status overview; accessed 28 Sep 2026",
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+  },
+  {
+    "id": "S5",
+    "organization": "ISO",
+    "title": "ISO/IEC 42001:2023 – AI management systems",
+    "version": "Edition 1, Dec 2023; public overview only",
+    "url": "https://www.iso.org/standard/42001"
+  },
+  {
+    "id": "S6",
+    "organization": "OECD.AI",
+    "title": "AI Principles overview",
+    "version": "Adopted 2019; updated May 2024",
+    "url": "https://oecd.ai/en/ai-principles"
+  },
+  {
+    "id": "S7",
+    "organization": "OpenAI",
+    "title": "Enterprise privacy at OpenAI",
+    "version": "Official product privacy page; accessed 28 Sep 2026",
+    "url": "https://openai.com/enterprise-privacy/"
+  }
+]

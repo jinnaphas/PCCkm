@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>คู่มือใช้งาน: ฐานความรู้ Business Management (OneDrive ↔ เว็บ Paradigm Library)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#f5f7fb; --surface:#fff; --text:#1c2733; --dim:#5c6b7a; --border:#dde3ec; --primary:#1c4fa8; --primary-soft:#e8f0fd; --code-bg:#f0f3f8; --prompt-bg:#f3f8ff; --prompt-bar:#1c4fa8; --warn:#fff8e1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#10161d; --surface:#18212b; --text:#e6edf5; --dim:#9db0c3; --border:#2a3542; --primary:#7fb0ff; --primary-soft:#1f2f47; --code-bg:#202b38; --prompt-bg:#17283d; --prompt-bar:#7fb0ff; --warn:#3a3118; } }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+body { margin:0; background:var(--bg); color:var(--text); font:16px/1.75 "Noto Sans Thai","Sarabun",Tahoma,system-ui,sans-serif; }
+.band { background:linear-gradient(135deg,#102a63,#1c4fa8); color:#fff; padding:28px 16px 24px; }
+.band-in, .wrap { max-width:1120px; margin:0 auto; }
+.band small { opacity:.8; letter-spacing:.04em; }
+.band h1 { margin:6px 0 0; font-size:clamp(1.3rem,3.2vw,1.9rem); line-height:1.35; font-weight:700; }
+.wrap { display:grid; grid-template-columns:260px minmax(0,1fr); gap:28px; padding:22px 16px 60px; }
+nav.toc { position:sticky; top:16px; align-self:start; max-height:calc(100vh - 32px); overflow:auto; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 6px 14px 10px; font-size:.88rem; }
+nav.toc h2 { margin:0 8px 8px; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); }
+nav.toc ol { list-style:none; margin:0; padding:0; }
+nav.toc a { display:block; padding:5px 8px; border-radius:8px; color:var(--text); text-decoration:none; line-height:1.45; }
+nav.toc a:hover, nav.toc a.on { background:var(--primary-soft); color:var(--primary); }
+main { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:8px 28px 28px; min-width:0; }
+.lead { margin:18px 0 6px; padding:12px 14px; background:var(--primary-soft); border-radius:10px; color:var(--text); font-size:.95rem; }
+h2 { margin:34px 0 10px; padding-top:6px; font-size:1.3rem; line-height:1.4; color:var(--primary); border-top:1px solid var(--border); }
+h2:first-of-type { border-top:0; }
+h3 { margin:20px 0 6px; font-size:1.05rem; }
+p { margin:10px 0; } ul, ol { margin:8px 0 12px; padding-left:1.4em; } li { margin:4px 0; } li > ul, li > ol { margin:4px 0; }
+code { font:0.9em/1.4 ui-monospace,Consolas,"Courier New",monospace; background:var(--code-bg); padding:1px 6px; border-radius:5px; word-break:break-word; }
+a { color:var(--primary); word-break:break-word; }
+figure { margin:14px 0; position:relative; }
+figure.prompt blockquote { margin:0; padding:14px 84px 14px 16px; background:var(--prompt-bg); border-left:4px solid var(--prompt-bar); border-radius:0 10px 10px 0; font-size:.95rem; }
+figure.code pre { margin:0; padding:14px 84px 14px 16px; background:var(--code-bg); border-radius:10px; overflow:auto; font:0.88rem/1.55 ui-monospace,Consolas,"Courier New",monospace; white-space:pre-wrap; word-break:break-all; }
+figure.code code { background:none; padding:0; }
+.copy { position:absolute; top:8px; right:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); border-radius:8px; padding:3px 12px; font:inherit; font-size:.8rem; cursor:pointer; }
+.copy:hover { border-color:var(--primary); color:var(--primary); } .copy.done { background:var(--primary); color:#fff; border-color:var(--primary); }
+footer { max-width:1120px; margin:0 auto; padding:0 16px 30px; color:var(--dim); font-size:.8rem; }
+.tools { max-width:1120px; margin:0 auto; padding:10px 16px 0; display:flex; gap:10px; justify-content:flex-end; }
+.tools button { border:1px solid var(--border); background:var(--surface); color:var(--text); border-radius:8px; padding:5px 14px; font:inherit; font-size:.85rem; cursor:pointer; }
+@media (max-width: 900px) { .wrap { grid-template-columns:1fr; } nav.toc { position:static; max-height:none; } main { padding:4px 16px 20px; } }
+@media print {
+  @page { size:A4; margin:16mm 14mm; }
+  body { background:#fff; color:#000; font-size:11pt; line-height:1.6; } .band { background:none; color:#000; padding:0 0 8px; border-bottom:2px solid #1c4fa8; } .band small { opacity:1; }
+  .tools, nav.toc, .copy { display:none !important; } .wrap { display:block; padding:0; } main { border:0; padding:0; background:none; }
+  h2 { break-after:avoid; color:#1c4fa8; } figure, li { break-inside:avoid; } a { color:#000; text-decoration:none; }
+  figure.prompt blockquote { background:#f3f8ff; padding-right:12px; } figure.code pre { padding-right:12px; }
+}
+</style>
+</head>
+<body>
+<header class="band"><div class="band-in"><small>PCC · ฐานความรู้ Business Management · คู่มือใช้งาน</small><h1>คู่มือใช้งาน: ฐานความรู้ Business Management (OneDrive ↔ เว็บ Paradigm Library)</h1></div></header>
+<div class="tools"><button type="button" onclick="window.print()">🖨 พิมพ์ / บันทึกเป็น PDF</button></div>
+<div class="wrap">
+<nav class="toc" aria-label="สารบัญ"><h2>สารบัญ</h2><ol>
+<li><a href="#1.-ภาพรวม-ข้อมูลอยู่-2-ที่-และต้องตรงกันเสมอ">1. ภาพรวม: ข้อมูลอยู่ 2 ที่ และต้องตรงกันเสมอ</a></li>
+<li><a href="#2.-โครงสร้างหมวดบนเว็บ">2. โครงสร้างหมวดบนเว็บ</a></li>
+<li><a href="#3.-กติกาที่ต้องทำเสมอ">3. กติกาที่ต้องทำเสมอ</a></li>
+<li><a href="#4.-ทางที่-1-ใส่ไฟล์ไว้บน-OneDrive-ก่อน">4. ทางที่ 1 — ใส่ไฟล์ไว้บน OneDrive ก่อน</a></li>
+<li><a href="#5.-ทางที่-2-เพิ่มไฟล์บนเว็บก่อน">5. ทางที่ 2 — เพิ่มไฟล์บนเว็บก่อน</a></li>
+<li><a href="#5.1-เพิ่มเอกสารบนเว็บ-แบบ-Paradigm-ไม่ต้องมี-.md-และไม่ต้องมีรหัส">5.1 เพิ่มเอกสารบนเว็บ — แบบ Paradigm (ไม่ต้องมี .md และไม่ต้องมีรหัส)</a></li>
+<li><a href="#6.-กรณีพิเศษ">6. กรณีพิเศษ</a></li>
+<li><a href="#7.-ตรวจความตรงกันของ-2-ที่">7. ตรวจความตรงกันของ 2 ที่</a></li>
+<li><a href="#8.-ข้อความสั่ง-Claude-คัดลอกไปวางได้">8. ข้อความสั่ง Claude (คัดลอกไปวางได้)</a></li>
+<li><a href="#9.-ข้อควรรู้-สถานะ-ณ-21-ต.ค.-2569">9. ข้อควรรู้ (สถานะ ณ 21 ต.ค. 2569)</a></li>
+<li><a href="#10.-ใช้งานเว็บ-Paradigm-Library-สำหรับทุกคน">10. ใช้งานเว็บ Paradigm Library (สำหรับทุกคน)</a></li>
+<li><a href="#11.-เพิ่มเอกสารผ่านแชท-Claude">11. เพิ่มเอกสารผ่านแชท Claude</a></li>
+<li><a href="#12.-สร้าง-GitHub-Token-และเพิ่มหมวดหมู่">12. สร้าง GitHub Token และเพิ่มหมวดหมู่</a></li>
+<li><a href="#13.-แก้ปัญหาเบื้องต้น">13. แก้ปัญหาเบื้องต้น</a></li>
+<li><a href="#14.-โฟลเดอร์-Paradigm-บน-OneDrive">14. โฟลเดอร์ Paradigm บน OneDrive</a></li>
+</ol></nav>
+<main>
+<p class="lead">ฉบับ 12 ตุลาคม 2569 (ปรับปรุง 21 ตุลาคม 2569: เพิ่มขั้นตอนเพิ่มเอกสาร Paradigm, เพิ่มผ่านแชท Claude, สร้าง Token/เพิ่มหมวด, แก้ปัญหา และโฟลเดอร์ Paradigm — ข้อ 5.1 และ 11–14) — แทนที่ <code>BM_Folder_User_Guide_20261009.pdf</code> (ฉบับเดิมอธิบายเฉพาะ OneDrive) คู่มือการใช้เว็บฉบับย่อบนเว็บ (&quot;คู่มือการใช้งาน Paradigm Library และการซิงก์กับ OneDrive&quot;) ใช้กติกาชุดเดียวกัน ถ้าไม่ตรงกันให้ยึดฉบับนี้</p>
+<h2 id="1.-ภาพรวม-ข้อมูลอยู่-2-ที่-และต้องตรงกันเสมอ">1. ภาพรวม: ข้อมูลอยู่ 2 ที่ และต้องตรงกันเสมอ</h2>
+<ul>
+<li><strong>OneDrive</strong> (<code>Business Management - Documents / Business Management</code>): เก็บไฟล์ต้นฉบับ, ไฟล์ <code>.md</code> ที่แปลงแล้ว (<code>knowledge_md/</code>) และสารบัญ (<code>00_INDEX.md</code>, <code>00_INDEX.csv</code>) — <strong>ต้นฉบับคือแหล่งอ้างอิงสุดท้าย</strong> ถ้าเนื้อหาใน <code>.md</code> ขัดกับต้นฉบับ ให้ยึดต้นฉบับ</li>
+<li><strong>เว็บ Paradigm Library</strong>: ค้นหา เปิดดู และดาวน์โหลดเอกสาร เก็บข้อมูลใน repo <code>PCCkm</code> (<code>data/library.json</code> + โฟลเดอร์ <code>assets/</code>)</li>
+<li><strong>กุญแจที่ใช้จับคู่ 2 ที่คือรหัสเอกสาร <code>BM-&lt;รหัสหมวด&gt;-&lt;ลำดับ 3 หลัก&gt;</code></strong> เช่น <code>BM-STR-004</code></li>
+<li>เอกสาร 1 เรื่องใน Knowledge Management ต้องมีครบ <strong>4 อย่าง</strong> จึงถือว่าเสร็จ:<ol>
+<li>ไฟล์ต้นฉบับใน <code>Business Management From GG Drive/&lt;โฟลเดอร์หมวด&gt;/</code></li>
+<li>ไฟล์ <code>.md</code> ใน <code>knowledge_md/&lt;โฟลเดอร์หมวด&gt;/</code></li>
+<li>แถวและรายการของเอกสารใน <code>00_INDEX.csv</code> และ <code>00_INDEX.md</code></li>
+<li>รายการเอกสารบนเว็บ (หมวดใต้ Knowledge Management) พร้อมไฟล์ต้นฉบับ และไฟล์ <code>.md</code> ที่เป็นปุ่ม &quot;Markdown for LLM&quot;</li></ol>
+</li></ul>
+<h2 id="2.-โครงสร้างหมวดบนเว็บ">2. โครงสร้างหมวดบนเว็บ</h2>
+<p>เว็บแบ่งเป็น 4 กลุ่ม แต่ละกลุ่มมี <strong>Paradigm</strong> (เอกสารกรอบแนวคิด) และ <strong>Knowledge Management</strong> (ฐานความรู้ แยกเป็นหัวข้อ) เอกสารที่มีรหัส BM อยู่ใน Knowledge Management ทั้งหมด</p>
+<p>รหัสหมวดในสารบัญ → หมวดบนเว็บ (ภายใต้ Knowledge Management):</p>
+<ul>
+<li>STR → กลุ่ม 1 Strategy &amp; Business Model Development</li>
+<li>COE → กลุ่ม 2 STEM &amp; DBTP › Center of Excellence (CoE)</li>
+<li>AI → กลุ่ม 3 Operation Technology › Digital &amp; AI Transformation</li>
+<li>OPS → กลุ่ม 3 Operation Technology › Operations Excellence &amp; Factory 4.0</li>
+<li>IC, HC, INF, DPC, REL, CUS → กลุ่ม 4 Business Management &amp; Corporate Support › Intellectual Capital (และหมวดย่อย Human / Information / Digital Process / Relationship / Customer Capital ตามลำดับ)</li>
+<li>REV, BG, DS → กลุ่ม 4 › 6 Revenue Stream Types / Business Generation / Demand Satisfaction</li>
+<li>ESG, FIN, POL, PRJ, MTG, REF → กลุ่ม 4 › ESG &amp; Sustainability / Finance &amp; Budget / Policy, Risk &amp; Compliance / Projects, KPI &amp; Performance / Meetings &amp; Decisions / External References &amp; Standards</li></ul>
+<p>ตารางเต็มอยู่ใน <code>00_INDEX.md</code> หัวข้อ &quot;การจัดหมวดบนเว็บ Paradigm Library&quot; ถ้าเพิ่มหมวดใหม่ ต้องแก้ทั้งตารางนั้นและรายการหมวดในเครื่องมือตรวจ (ข้อ 7)</p>
+<h2 id="3.-กติกาที่ต้องทำเสมอ">3. กติกาที่ต้องทำเสมอ</h2>
+<ul>
+<li><strong>ตั้งชื่อไฟล์ขึ้นต้นด้วยรหัสเอกสาร</strong> ทั้งต้นฉบับและ <code>.md</code> เช่น <code>BM-STR-004_ชื่อไฟล์เดิม.pdf</code> และ <code>BM-STR-004_bamboo-business-intelligence.md</code> — <strong>ชื่อไฟล์ที่อัพโหลดบนเว็บต้องเหมือนใน OneDrive ทุกตัวอักษร</strong> ไม่เช่นนั้นเครื่องมือตรวจจะถือว่าคนละไฟล์</li>
+<li><strong>ทุกเอกสารใน Knowledge Management ต้องมีไฟล์ <code>.md</code></strong> — เว็บจะไม่ให้บันทึกถ้าไม่แนบ</li>
+<li><strong>ต้องมี Tag รหัสเอกสาร</strong> (เช่น <code>BM-STR-004</code>) ในช่อง Tag บนเว็บ — เว็บจะไม่ให้บันทึกถ้าไม่ใส่ รหัสนี้คือกุญแจจับคู่กับสารบัญ</li>
+<li>ชื่อเอกสาร (<code>title</code>) ต้องเหมือนกัน 3 ที่: หัว <code>title</code> ใน <code>.md</code>, คอลัมน์ &quot;ชื่อเอกสาร&quot; ใน <code>00_INDEX.csv</code> และชื่อเอกสารบนเว็บ</li>
+<li>ห้ามแก้เนื้อหาหรือเปลี่ยนชื่อไฟล์ต้นฉบับ และห้ามย้ายข้ามหมวดโดยไม่อัปเดตสารบัญ <code>.md</code> และเว็บ</li>
+<li>ห้ามแก้ไฟล์ <code>.md</code> ด้วยมือโดยไม่อัปเดตสารบัญทั้ง 2 ไฟล์ และไม่ลืมแก้สำเนาบนเว็บ</li>
+<li>ห้ามอ้างเอกสารสถานะ &quot;ข้อเสนอ&quot; ว่าเป็นนโยบายหรือเรื่องที่อนุมัติแล้ว</li>
+<li>เอกสารที่ยกเลิก: ไม่ลบไฟล์ ให้เปลี่ยน <code>status</code> เป็น &quot;ยกเลิก / แทนที่ด้วย BM-…&quot; ทั้งใน <code>.md</code> และสารบัญ</li></ul>
+<h2 id="4.-ทางที่-1-ใส่ไฟล์ไว้บน-OneDrive-ก่อน">4. ทางที่ 1 — ใส่ไฟล์ไว้บน OneDrive ก่อน</h2>
+<ol>
+<li><strong>วางต้นฉบับ</strong> ในโฟลเดอร์หมวดที่ตรงกันใน <code>Business Management From GG Drive/</code> ตั้งชื่อ <code>BM-xxx-nnn_ชื่อไฟล์เดิม</code> (ลำดับ 3 หลักต่อจากเลขล่าสุดของหมวด) เอกสารที่มีหลายฟอร์แมต (เช่น docx + pdf) ใช้รหัสเดียวกัน</li>
+<li><strong>สั่ง Claude</strong> (ข้อ 8) ให้แปลงเป็น <code>.md</code> ใน <code>knowledge_md/&lt;โฟลเดอร์หมวด&gt;/</code> เสนอหมวดและรหัส และเพิ่มรายการใน <code>00_INDEX.md</code> กับแถวใน <code>00_INDEX.csv</code></li>
+<li><strong>เจ้าของข้อมูลตรวจ</strong> สถานะ ความน่าเชื่อถือ <code>access_level</code> และจุด <code>[อ่านไม่ชัด]</code> กับต้นฉบับ (ถ้า <code>.md</code> ถูกสกัดข้อความอัตโนมัติ ให้ระบุไว้ใน <code>conversion</code> และตรวจก่อนใช้งานจริง)</li>
+<li><strong>นำขึ้นเว็บ</strong> (ผู้ดูแลที่มี repo <code>PCCkm</code> ในเครื่อง รันใน Git Bash ที่โฟลเดอร์ repo):<ul>
+<li>ดูแผนก่อน: <code>perl tools/sync_from_onedrive.pl &quot;&lt;โฟลเดอร์ OneDrive&gt;&quot;</code></li>
+<li>เขียนจริง: เติม <code>--apply</code> ท้ายคำสั่ง — สคริปต์จะคัดลอกต้นฉบับ + <code>.md</code> ไปที่ <code>assets/&lt;หมวด&gt;/&lt;bm-xxx-nnn&gt;/</code> และเพิ่มรายการท้าย <code>data/library.json</code> (หมวดตามตารางข้อ 2, ชื่อและ Tag จากหัว <code>.md</code>)</li></ul>
+</li>
+<li><strong>ตรวจว่าตรงกัน</strong> ด้วย <code>perl tools/check_sync.pl &quot;&lt;โฟลเดอร์ OneDrive&gt;&quot;</code> (ข้อ 7) แล้วจึง commit และ push (ถ้าตั้งใจเผยแพร่)</li></ol>
+<p>สคริปต์นี้เพิ่มเฉพาะ <strong>เอกสารใหม่</strong> ที่ยังไม่มีบนเว็บเท่านั้น ถ้าแก้เอกสารเดิม ดูข้อ 6</p>
+<h2 id="5.-ทางที่-2-เพิ่มไฟล์บนเว็บก่อน">5. ทางที่ 2 — เพิ่มไฟล์บนเว็บก่อน</h2>
+<ol>
+<li>เตรียมไฟล์ให้ครบก่อน: ต้นฉบับชื่อ <code>BM-xxx-nnn_...</code> และไฟล์ <code>.md</code> ชื่อ <code>BM-xxx-nnn_...md</code> (หัวไฟล์ <code>.md</code> มี <code>doc_id</code>, <code>title</code>, <code>tags</code> ตามรูปแบบใน <code>00_INDEX.md</code>)</li>
+<li>เปิดเว็บ กด <strong>เข้าสู่ระบบ</strong> (ชื่อที่แสดง + GitHub Token ที่มีสิทธิ์เขียน repo — ขอจากผู้ดูแล) แล้วกด <strong>+ เพิ่มเอกสาร</strong></li>
+<li>เลือกหมวดย่อยใต้ <strong>Knowledge Management</strong> ที่ตรงกับตารางข้อ 2 ใส่ชื่อเอกสาร (เหมือน <code>title</code> ใน <code>.md</code>) คำอธิบาย และ <strong>Tag รหัสเอกสาร</strong> <code>BM-xxx-nnn</code> (เพิ่ม Tag อื่นได้)</li>
+<li>แนบไฟล์ต้นฉบับ (ช่อง &quot;เพิ่มไฟล์แนบ&quot;) และไฟล์ <code>.md</code> (ช่อง &quot;ไฟล์ Markdown สำหรับ LLM&quot; ที่บังคับ) แล้วกดบันทึก</li>
+<li><strong>ต้องนำกลับมาลง OneDrive ให้ตรงกันด้วย</strong> (เว็บยังไม่ซิงก์กลับให้เอง):<ul>
+<li>วางต้นฉบับใน <code>Business Management From GG Drive/&lt;โฟลเดอร์หมวด&gt;/</code> และ <code>.md</code> ใน <code>knowledge_md/&lt;โฟลเดอร์หมวด&gt;/</code> ใช้ชื่อไฟล์เดียวกับที่อัพโหลด</li>
+<li>เพิ่มรายการใน <code>00_INDEX.md</code> และแถวใน <code>00_INDEX.csv</code> (สั่ง Claude ตามข้อ 8 ได้)</li></ul>
+</li>
+<li>รัน <code>perl tools/check_sync.pl</code> — ต้องขึ้น &quot;OneDrive และเว็บตรงกันทั้งหมด&quot;</li></ol>
+<h2 id="5.1-เพิ่มเอกสารบนเว็บ-แบบ-Paradigm-ไม่ต้องมี-.md-และไม่ต้องมีรหัส">5.1 เพิ่มเอกสารบนเว็บ — แบบ Paradigm (ไม่ต้องมี .md และไม่ต้องมีรหัส)</h2>
+<p>เอกสารในแท็บ <strong>Paradigm</strong> (กรอบแนวคิด แผนผัง โมเดล) <strong>ไม่ต้องแนบไฟล์ <code>.md</code> และไม่ต้องใส่ Tag รหัส BM</strong> — บังคับเฉพาะเอกสารใต้ Knowledge Management</p>
+<ol>
+<li>เข้าสู่ระบบ (ข้อ 12) แล้วกดปุ่ม <strong>+ เพิ่มเอกสาร</strong></li>
+<li>กรอก <strong>ชื่อเอกสาร</strong>, <strong>คำอธิบาย</strong>, เลือก <strong>หมวดหมู่</strong> เป็นแท็บ Paradigm ของกลุ่มที่ต้องการ (เลือกหมวดย่อยได้ เช่น Intellectual Capital › Human Capital), ใส่ <strong>Tag</strong> (ไม่บังคับ)</li>
+<li>แนบไฟล์ได้หลายไฟล์ และ/หรือกด <strong>+ เพิ่มลิงก์ภายนอก</strong> ต้องมีอย่างน้อย 1 อย่าง แล้วกด <strong>เพิ่มเอกสาร</strong></li>
+<li>เก็บสำเนาใน OneDrive โฟลเดอร์ <code>Paradigm/&lt;กลุ่ม&gt;/</code> และเพิ่มแถวใน <code>Paradigm/00_INDEX.csv</code> (ข้อ 14) — ฝั่ง Paradigm ไม่มีเครื่องมือ <code>check_sync</code> ตรวจให้</li></ol>
+<h2 id="6.-กรณีพิเศษ">6. กรณีพิเศษ</h2>
+<ul>
+<li><strong>ฉบับใหม่ของเอกสารเดิม:</strong> ใช้รหัสเดิม แล้วทำให้ครบ <strong>ทั้ง 2 ที่</strong>: (1) OneDrive — แทนไฟล์ต้นฉบับ แปลง <code>.md</code> ใหม่ แก้ <code>version</code> และ <code>doc_date</code> ในหัว <code>.md</code> และสารบัญ (2) เว็บ — เปิดเอกสาร กด <strong>อัพเดตเวอร์ชัน / แก้ไข</strong> แนบต้นฉบับและ <code>.md</code> ใหม่ ระบบเก็บไฟล์เวอร์ชันเก่าให้ย้อนดูได้ จากนั้นรัน <code>check_sync</code> ถ้าฝั่งใดยังไม่อัปเดต เครื่องมือจะแจ้งว่าไฟล์ &quot;ต่างกัน&quot;</li>
+<li><strong>ถ้าต้องเก็บประวัติเป็นอีกเอกสาร:</strong> ออกรหัสใหม่ แล้วใส่ <code>related_docs</code> ชี้ฉบับเก่า</li>
+<li><strong>ไม่มีหมวดที่ตรง:</strong> ใช้กติกาแยกหมวดใน <code>00_INDEX.md</code> เลือกหมวดที่ใกล้ที่สุด หรือเพิ่มหมวดใหม่ทั้งในสารบัญ 2 ไฟล์ บนเว็บ (ปุ่ม + เพิ่มหมวดหมู่) และในตารางจับคู่ของเครื่องมือตรวจ</li>
+<li><strong>ข้อมูลอ่อนไหว</strong> (เงินเดือน สัญญา ชื่อบุคคล): กำหนด <code>access_level</code> ตั้งแต่ตอนแปลง และพิจารณาก่อนนำขึ้นเว็บ — ดูข้อ 9</li>
+<li><strong>ลบเอกสารบนเว็บ:</strong> ปุ่มลบเอาออกจากหน้าเว็บเท่านั้น ไฟล์ยังอยู่ใน git history ถ้าลบแล้ว ต้องแก้ OneDrive และสารบัญให้ตรงกันด้วย</li></ul>
+<h2 id="7.-ตรวจความตรงกันของ-2-ที่">7. ตรวจความตรงกันของ 2 ที่</h2>
+<p>รันใน Git Bash ที่โฟลเดอร์ repo <code>PCCkm</code> (ต้องมี Perl ซึ่งมากับ Git for Windows):</p>
+<figure class="code"><pre id="c0"><code>perl tools/check_sync.pl &quot;/c/Users/&lt;ชื่อผู้ใช้&gt;/OneDrive - Precise Group/Business Management - Documents/Business Management&quot;
+</code></pre><button type="button" class="copy" data-target="c0">คัดลอก</button></figure>
+<p>เครื่องมือเทียบทุกรหัส <code>BM-xxx-nnn</code> และรายงานเมื่อพบ:</p>
+<ul>
+<li>ไม่มีแถวใน <code>00_INDEX.csv</code> / ไม่มีไฟล์ <code>.md</code> / ไม่มีต้นฉบับ / ไม่มีบนเว็บ</li>
+<li>หมวดบนเว็บไม่ตรงกับรหัสหมวดตามตารางข้อ 2</li>
+<li>เว็บไม่มีไฟล์ <code>.md</code> (role <code>llm-md</code>) หรือไฟล์ในโฟลเดอร์ <code>assets/</code> หาย</li>
+<li>เนื้อหา <code>.md</code> หรือไฟล์ต้นฉบับบนเว็บ <strong>ต่างจาก</strong> ใน OneDrive (เทียบด้วยค่า MD5)</li>
+<li>ไฟล์ต้นฉบับมีฝั่งเดียว (ชื่อไม่ตรงกัน)</li>
+<li>ชื่อเอกสารไม่ตรงกันระหว่างเว็บ, <code>.md</code> และ <code>00_INDEX.csv</code></li></ul>
+<p>ผลลัพธ์ปกติคือ &quot;ตรวจ N เอกสาร: ตรงกัน N, พบความต่าง 0&quot; ควรรันทุกครั้งหลังเพิ่มหรือแก้เอกสาร และก่อน push ขึ้นเว็บจริง</p>
+<p>สิ่งที่เครื่องมือ <strong>ไม่ได้ตรวจ</strong>: เนื้อหาตัวสรุปใน <code>00_INDEX.md</code>, ความถูกต้องของคำแปลใน <code>.md</code> เทียบต้นฉบับ และสิทธิ์การเข้าถึง</p>
+<h2 id="8.-ข้อความสั่ง-Claude-คัดลอกไปวางได้">8. ข้อความสั่ง Claude (คัดลอกไปวางได้)</h2>
+<p>เพิ่มไฟล์ใหม่ใน OneDrive แล้วให้ Claude แปลงและอัปเดตสารบัญ:</p>
+<figure class="prompt"><blockquote id="q752774650">มีไฟล์ใหม่ในโฟลเดอร์ Business Management From GG Drive ช่วยแปลงเป็น .md ตามรูปแบบใน 00_INDEX.md เสนอหมวดและรหัสเอกสารให้ approve ก่อน แล้วอัปเดต 00_INDEX.md และ 00_INDEX.csv รวมทั้งตารางจับคู่หมวดบนเว็บ</blockquote><button type="button" class="copy" data-target="q752774650">คัดลอก</button></figure>
+<p>เพิ่มไฟล์บนเว็บแล้วให้ Claude ลงให้ตรงใน OneDrive:</p>
+<figure class="prompt"><blockquote id="q714887511">มีเอกสาร BM-xxx-nnn ที่เพิ่มบนเว็บแล้ว ช่วยวางไฟล์ต้นฉบับและ .md ในโฟลเดอร์ OneDrive ให้ชื่อตรงกับบนเว็บ เพิ่มรายการใน 00_INDEX.md และ 00_INDEX.csv แล้วรัน tools/check_sync.pl</blockquote><button type="button" class="copy" data-target="q714887511">คัดลอก</button></figure>
+<h2 id="9.-ข้อควรรู้-สถานะ-ณ-21-ต.ค.-2569">9. ข้อควรรู้ (สถานะ ณ 21 ต.ค. 2569)</h2>
+<ul>
+<li>เว็บเปิดใช้งานจริงแล้วที่ <a href="https://jinnaphas.github.io/PCCkm/" target="_blank" rel="noopener">https://jinnaphas.github.io/PCCkm/</a> (merge เข้า <code>main</code> ผ่าน PR #5 และ deploy สำเร็จ) — มีเอกสารฐานความรู้ 15 เรื่อง การแก้ไขที่ทำหลังจากนั้น (คู่มือเว็บ v3, การแก้ตัวแสดงผล Markdown และการรวม PPPP Model ในหมวด Paradigm) รออยู่ใน branch <code>test</code> จนกว่าจะ merge เข้า <code>main</code> ผ่าน Pull Request ใหม่</li>
+<li>repo <code>PCCkm</code> ตั้งเป็น <strong>Public</strong> เอกสารที่ push ขึ้นไปทุกคนบนอินเทอร์เน็ตเปิดอ่านได้ ก่อนนำเอกสารภายในขึ้นเว็บ ให้ตกลงเรื่องสิทธิ์การเผยแพร่ หรือเปลี่ยน repo เป็น Private</li>
+<li><code>BM-STR-004</code> แปลงเป็น <code>.md</code> ด้วยการสกัดข้อความอัตโนมัติ ยังไม่ผ่านการตรวจทานกับภาพหน้าต้นฉบับ</li>
+<li>ผู้ใช้ทั่วไป ไม่ต้องใช้ Git: เปิด <code>00_INDEX.csv</code> ใน Excel กรองหมวด อ่านสรุปและสถานะ แล้วเปิดไฟล์ต้นฉบับ หรือเปิดเอกสารบนเว็บ</li></ul>
+<h2 id="10.-ใช้งานเว็บ-Paradigm-Library-สำหรับทุกคน">10. ใช้งานเว็บ Paradigm Library (สำหรับทุกคน)</h2>
+<ul>
+<li><strong>ค้นหา:</strong> ช่องค้นหาด้านบน (กด <code>/</code> เพื่อโฟกัส) ค้นจากชื่อเอกสาร Tag คำอธิบาย และหมวดทันทีที่พิมพ์ — ใส่รหัสเอกสาร เช่น <code>BM-STR-004</code> เพื่อหาเอกสารตรงตัว</li>
+<li><strong>หมวดหมู่:</strong> เมนูซ้ายแสดง 4 กลุ่ม กดลูกศรเพื่อขยาย/หุบหมวดย่อย (ชี้เมาส์ที่ชื่อหมวดเพื่อดูชื่อเต็ม) แล้วกรองด้วย Tag ในหน้าหมวดได้</li>
+<li><strong>เปิดเอกสาร:</strong> หน้าเอกสารมีตัวอย่าง (PDF, รูป, วิดีโอ, Markdown), ปุ่มดาวน์โหลด และประวัติเวอร์ชัน</li>
+<li><strong>Markdown for LLM:</strong> เอกสารใน Knowledge Management มีแถบปุ่ม <strong>ดู .md / คัดลอกข้อความ / ดาวน์โหลด .md</strong> — กดคัดลอกแล้วนำไปวางในแชทของ LLM ได้ทันที ถ้าเห็นแถบเตือนสีเหลือง แปลว่าเอกสารยังไม่มี <code>.md</code> (ต้องแก้ตามข้อ 3)</li>
+<li><strong>เพิ่ม/อัพเดต/ลบเอกสาร:</strong> ต้องเข้าสู่ระบบด้วย GitHub Token ดูขั้นตอนข้อ 5, 5.1 และ 6 วิดีโอขนาดใหญ่ให้ใช้ลิงก์ภายนอกแทนการอัพโหลด (ไฟล์ไม่ควรเกิน ~50MB)</li></ul>
+<h2 id="11.-เพิ่มเอกสารผ่านแชท-Claude">11. เพิ่มเอกสารผ่านแชท Claude</h2>
+<p>ใช้ได้เมื่อเปิด Claude (Cowork หรือ Claude Code) ในโฟลเดอร์ที่มี repo <code>PCCkm</code> และโฟลเดอร์ OneDrive Business Management อยู่ในเครื่องเดียวกัน — ไม่ต้องกรอกฟอร์มบนเว็บและไม่ต้องใช้ GitHub Token ของคุณ Claude แก้ไฟล์ในเครื่องให้</p>
+<p><strong>Claude ทำอะไรให้</strong></p>
+<ul>
+<li>อ่านไฟล์ที่คุณระบุ แล้วเสนอชื่อเอกสาร คำอธิบาย Tag และหมวดให้ยืนยัน</li>
+<li>เพิ่มไฟล์ลง <code>assets/</code> และเพิ่มรายการใน <code>data/library.json</code> (เลขเวอร์ชันและประวัติครบ)</li>
+<li><strong>Paradigm:</strong> เก็บสำเนาใน <code>Paradigm/&lt;กลุ่ม&gt;/</code> และเพิ่มแถวใน <code>Paradigm/00_INDEX.csv</code></li>
+<li><strong>Knowledge Management:</strong> เสนอรหัส BM ให้อนุมัติ ย้ายต้นฉบับเข้า <code>Business Management From GG Drive/</code> แปลงเป็น <code>.md</code> ใน <code>knowledge_md/</code> อัปเดต <code>00_INDEX.md</code> และ <code>00_INDEX.csv</code> นำขึ้นเว็บ (ใช้ <code>tools/sync_from_onedrive.pl</code>) แล้วรัน <code>tools/check_sync.pl</code></li>
+<li>commit และ push เมื่อคุณสั่ง (ไม่ push เอง) และเปิด Pull Request เมื่อต้องการขึ้นหน้าเว็บจริง</li></ul>
+<p><strong>ข้อความสั่ง — Paradigm</strong></p>
+<figure class="prompt"><blockquote id="q234586155">เพิ่มไฟล์ C:\Users\&lt;ชื่อ&gt;\Downloads\ชื่อไฟล์.pdf ใน Paradigm หมวด Strategy ตั้งชื่อเอกสารว่า &quot;...&quot; (ถ้าไม่ระบุ ให้ตั้งชื่อจากเนื้อหา) เก็บสำเนาใน OneDrive โฟลเดอร์ Paradigm และอัปเดตสารบัญ</blockquote><button type="button" class="copy" data-target="q234586155">คัดลอก</button></figure>
+<p><strong>ข้อความสั่ง — Knowledge Management</strong></p>
+<figure class="prompt"><blockquote id="q610126907">ไฟล์ C:\Users\&lt;ชื่อ&gt;\Downloads\ชื่อไฟล์.pdf เป็นเอกสารฐานความรู้ หมวด &lt;เช่น Digital &amp; AI Transformation&gt; ช่วยเสนอรหัส BM ให้ approve ก่อน แล้วย้ายเข้า Business Management From GG Drive แปลงเป็น .md ใน knowledge_md อัปเดต 00_INDEX.md และ 00_INDEX.csv นำขึ้นเว็บ และรัน check_sync</blockquote><button type="button" class="copy" data-target="q610126907">คัดลอก</button></figure>
+<p><strong>ต่อท้ายเมื่อพร้อมเผยแพร่</strong></p>
+<figure class="prompt"><blockquote id="q470214090">commit และ push ขึ้น branch test แล้วเปิด PR เข้า main</blockquote><button type="button" class="copy" data-target="q470214090">คัดลอก</button></figure>
+<p><strong>ข้อจำกัดที่ควรรู้</strong></p>
+<ul>
+<li>PDF แบบรูปภาพ/สแกน (เช่นสไลด์ที่ส่งออกเป็นรูป) ไม่มีตัวอักษรให้ดึง — Claude อ่านจากรูปและเขียนคำอธิบายให้ได้ แต่ไฟล์ <code>.md</code> ของ Knowledge Management จะเป็นการถอดความที่ต้องตรวจทานก่อนใช้งานจริง</li>
+<li>Claude อาจถูกขออนุญาตหรือถูกปฏิเสธเมื่อคัดลอกไฟล์ภายในจาก OneDrive เข้า repo หรือเมื่อ merge Pull Request — ให้อนุญาตตามที่ระบบถาม หรือรันคำสั่งที่ Claude ให้เอง และให้ผู้ดูแลกด merge</li>
+<li>Claude แก้ไฟล์ในเครื่อง เว็บบน GitHub ยังไม่เปลี่ยนจนกว่าจะ push แล้ว merge เข้า <code>main</code> (Pages deploy เอง ประมาณ 1–2 นาที)</li>
+<li>repo เป็น Public — Claude จะถามยืนยันก่อน push เอกสารภายใน</li></ul>
+<h2 id="12.-สร้าง-GitHub-Token-และเพิ่มหมวดหมู่">12. สร้าง GitHub Token และเพิ่มหมวดหมู่</h2>
+<p><strong>Token (ทำครั้งเดียว ต่อผู้ใช้):</strong> GitHub › Settings › Developer settings › Fine-grained personal access tokens › Generate new token — Repository access เลือกเฉพาะ repo <code>PCCkm</code> และ Permissions: Contents → Read and write จากนั้นกด &quot;เข้าสู่ระบบ&quot; บนเว็บ ใส่ชื่อที่แสดงและ Token (ระบบจำไว้ในเบราว์เซอร์เครื่องนั้น ไม่ควรแชร์ และควรออกจากระบบเมื่อใช้เครื่องร่วมกัน)</p>
+<p><strong>เพิ่มหมวดหมู่:</strong> ปุ่ม &quot;+ เพิ่มหมวดหมู่&quot; ใต้เมนูซ้าย เลือกหมวดแม่ได้ทุกระดับ แต่แก้ชื่อหรือลบหมวดจากหน้าเว็บไม่ได้ (ต้องแก้ไฟล์ข้อมูลผ่านผู้ดูแล) หมวดใหม่ของฐานความรู้ต้องเพิ่มในตารางจับคู่ของ <code>tools/check_sync.pl</code> และ <code>tools/sync_from_onedrive.pl</code> กับตารางใน <code>00_INDEX.md</code> ด้วย</p>
+<h2 id="13.-แก้ปัญหาเบื้องต้น">13. แก้ปัญหาเบื้องต้น</h2>
+<ul>
+<li><strong>&quot;Token ไม่ถูกต้อง หรือหมดอายุ&quot;</strong> — สร้าง Token ใหม่ตามข้อ 12 แล้วเข้าสู่ระบบอีกครั้ง</li>
+<li><strong>GitHub API error (403) หรือ (404) ตอนบันทึก</strong> — Token ไม่มีสิทธิ์เขียน repo นี้ ตรวจว่าเลือก repo <code>PCCkm</code> และตั้ง Contents เป็น Read and write</li>
+<li><strong>GitHub API error (409) หรือ (422)</strong> — มีคนแก้พร้อมกัน หรือมีไฟล์ชื่อเดียวกันในเวอร์ชันเดียวกันอยู่แล้ว ให้รีเฟรชหน้า ตรวจว่าเอกสารถูกบันทึกไปหรือยัง แล้วลองใหม่ (ถ้าซ้ำ ให้เปลี่ยนชื่อไฟล์)</li>
+<li><strong>บันทึกเอกสารใน Knowledge Management ไม่ได้</strong> — ตรวจว่าแนบไฟล์ <code>.md</code> (นามสกุล .md หรือ .markdown) และใส่ Tag รหัส <code>BM-xxx-nnn</code> ถูกรูปแบบ</li>
+<li><strong>เพิ่มเอกสารแล้วเปิดไฟล์ไม่ได้ (404) ชั่วคราว</strong> — ไฟล์มาจากเว็บที่ deploy รอบละประมาณ 1 นาที รอแล้วรีเฟรช</li>
+<li><strong><code>check_sync</code> รายงานความต่าง</strong> — อ่านรายการที่แจ้ง (ขาดแถวสารบัญ / ไฟล์ต่างกัน / ชื่อไม่ตรง) แล้วแก้ฝั่งที่ล้าหลังตามข้อ 6</li></ul>
+<h2 id="14.-โฟลเดอร์-Paradigm-บน-OneDrive">14. โฟลเดอร์ Paradigm บน OneDrive</h2>
+<ul>
+<li>ตำแหน่ง: <code>Business Management/Paradigm/</code> จัดเป็นโฟลเดอร์ตามกลุ่มและหมวดบนเว็บ (<code>G1 Strategy</code>, <code>G2 STEM &amp; DBTP</code>, <code>G4 Business Mgmt/...</code>) ใช้ชื่อไฟล์เดิม</li>
+<li><code>Paradigm/00_INDEX.csv</code> สารบัญของโฟลเดอร์นี้ (ชื่อเอกสาร หมวด ชื่อไฟล์ ที่เก็บ เวอร์ชัน วันที่อัปเดต) รวมลิงก์ภายนอกที่ไม่ใช่ไฟล์</li>
+<li>เป็นสำเนา <strong>ที่ไม่ซิงก์ให้เอง</strong> และไม่ถูกตรวจโดย <code>check_sync</code> — เมื่อเพิ่มหรืออัพเดตเอกสาร Paradigm บนเว็บ ให้นำไฟล์ไปวางและเพิ่มแถวสารบัญ หรือสั่ง Claude ให้ทำ</li>
+<li>เก็บเฉพาะไฟล์เวอร์ชันปัจจุบัน ไม่รวมเวอร์ชันเก่าที่อยู่ในประวัติเว็บ</li></ul>
+</main>
+</div>
+<footer>สร้างจาก <code>BM_Folder_User_Guide_20261012.md</code> เมื่อ 2026-10-21 · ใช้เนื้อหาเดียวกับไฟล์ .md (ถ้าไม่ตรงกัน ให้ยึดไฟล์ .md ฉบับล่าสุดใน OneDrive) · เอกสารภายในองค์กร</footer>
+<script>
+document.querySelectorAll('.copy').forEach(function (b) { b.addEventListener('click', function () {
+  var el = document.getElementById(b.dataset.target); var text = el.innerText.trim();
+  var done = function () { b.textContent = 'คัดลอกแล้ว'; b.classList.add('done'); setTimeout(function () { b.textContent = 'คัดลอก'; b.classList.remove('done'); }, 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, function () { fallback(text, done); }); } else { fallback(text, done); }
+}); });
+function fallback(text, done) { var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); done(); } catch (e) {} t.remove(); }
+var links = [].slice.call(document.querySelectorAll('nav.toc a')), heads = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+function spy() { var y = window.scrollY + 80, cur = 0; heads.forEach(function (h, i) { if (h && h.offsetTop <= y) cur = i; }); links.forEach(function (a, i) { a.classList.toggle('on', i === cur); }); }
+window.addEventListener('scroll', spy, { passive: true }); spy();
+</script>
+</body>
+</html>

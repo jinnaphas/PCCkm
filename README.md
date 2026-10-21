@@ -82,7 +82,7 @@ perl tools/check_sync.pl "/c/Users/<ชื่อผู้ใช้>/OneDrive - P
 perl tools/sync_from_onedrive.pl "<โฟลเดอร์ OneDrive เดียวกัน>" --apply
 ```
 
-ตารางจับคู่รหัสหมวดกับหมวดบนเว็บอยู่ใน `tools/check_sync.pl` และ `tools/sync_from_onedrive.pl` (ต้องแก้ทั้งสองไฟล์พร้อมกับ `00_INDEX.md` เมื่อเพิ่มหมวด) คู่มือฉบับเต็มอยู่ที่ OneDrive: `Business Management/Manual/BM_Folder_User_Guide_20261012.md`
+ตารางจับคู่รหัสหมวดกับหมวดบนเว็บอยู่ใน `tools/check_sync.pl` และ `tools/sync_from_onedrive.pl` (ต้องแก้ทั้งสองไฟล์พร้อมกับ `00_INDEX.md` เมื่อเพิ่มหมวด) **คู่มือฉบับเต็ม** (OneDrive ↔ เว็บ, เพิ่มเอกสารบนเว็บและผ่านแชท Claude, แก้ปัญหา): [`docs/BM_Folder_User_Guide_20261012.md`](docs/BM_Folder_User_Guide_20261012.md) และฉบับ HTML สำหรับอ่าน/พิมพ์เป็น PDF [`docs/BM_Folder_User_Guide_20261012.html`](docs/BM_Folder_User_Guide_20261012.html) (สำเนาเดียวกันอยู่ที่ OneDrive: `Business Management/Manual/`)
 
 ## ข้อจำกัดที่ควรรู้
 

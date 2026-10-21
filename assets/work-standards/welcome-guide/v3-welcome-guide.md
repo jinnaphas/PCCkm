@@ -1,6 +1,6 @@
 # คู่มือการใช้งาน Paradigm Library และการซิงก์กับ OneDrive
 
-ฉบับ 21 ตุลาคม 2569 — คู่มือการใช้เว็บ การเพิ่มเอกสารทั้งจากหน้าเว็บและจากแชท Claude และการทำให้ข้อมูลบนเว็บตรงกับ OneDrive ส่วนคู่มือฉบับเต็มของฐานความรู้ Business Management (ฝั่ง OneDrive และคำสั่งของเครื่องมือ) อยู่ที่ OneDrive: `Business Management/Manual/BM_Folder_User_Guide_20261012.md` ถ้ามีข้อใดไม่ตรงกัน ให้ยึดฉบับเต็มนั้น
+ฉบับ 21 ตุลาคม 2569 — คู่มือการใช้เว็บ การเพิ่มเอกสารทั้งจากหน้าเว็บและจากแชท Claude และการทำให้ข้อมูลบนเว็บตรงกับ OneDrive ส่วนคู่มือฉบับเต็มของฐานความรู้ Business Management (ฝั่ง OneDrive และคำสั่งของเครื่องมือ) อยู่ที่ git: `docs/BM_Folder_User_Guide_20261012.md` (และฉบับ HTML `docs/BM_Folder_User_Guide_20261012.html`) และที่ OneDrive: `Business Management/Manual/` ถ้ามีข้อใดไม่ตรงกัน ให้ยึดฉบับเต็มนั้น
 
 ## 1. โครงสร้างหมวดหมู่
 

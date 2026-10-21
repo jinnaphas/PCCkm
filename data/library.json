@@ -336,10 +336,10 @@
         "OneDrive",
         "Knowledge Management"
       ],
-      "version": 3,
+      "version": 4,
       "createdAt": "2026-07-08T09:00:00.000Z",
       "createdBy": "System",
-      "updatedAt": "2026-10-21T15:07:00.018Z",
+      "updatedAt": "2026-10-21T15:10:25.667Z",
       "updatedBy": "MPP",
       "history": [
         {
@@ -381,6 +381,25 @@
           "updatedAt": "2026-10-21T15:07:00.018Z",
           "updatedBy": "MPP",
           "note": "อัพเดตข้อมูล"
+        },
+        {
+          "version": 4,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-pd-ic-information-capital/welcome-guide/v3-BM_Folder_User_Guide_20261012.md",
+              "name": "BM_Folder_User_Guide_20261012.md",
+              "role": "llm-md"
+            },
+            {
+              "kind": "file",
+              "path": "assets/g4-pd-ic-information-capital/welcome-guide/v4-คู่มือใช้งาน__ฐานความรู้_Business_Management_OneDrive_เว็บ_Paradigm_Library_.pdf",
+              "name": "คู่มือใช้งาน_ ฐานความรู้ Business Management (OneDrive ↔ เว็บ Paradigm Library).pdf"
+            }
+          ],
+          "updatedAt": "2026-10-21T15:10:25.667Z",
+          "updatedBy": "MPP",
+          "note": "อัพเดตข้อมูล"
         }
       ],
       "attachments": [
@@ -391,6 +410,13 @@
           "type": "md",
           "size": 30544,
           "role": "llm-md"
+        },
+        {
+          "kind": "file",
+          "path": "assets/g4-pd-ic-information-capital/welcome-guide/v4-คู่มือใช้งาน__ฐานความรู้_Business_Management_OneDrive_เว็บ_Paradigm_Library_.pdf",
+          "name": "คู่มือใช้งาน_ ฐานความรู้ Business Management (OneDrive ↔ เว็บ Paradigm Library).pdf",
+          "type": "pdf",
+          "size": 598784
         }
       ]
     },

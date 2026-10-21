@@ -3543,6 +3543,42 @@
           "note": "นำเข้าจาก OneDrive: Business Management"
         }
       ]
+    },
+    {
+      "id": "pppp-model",
+      "title": "PPPP Model",
+      "description": "",
+      "categoryId": "g1-strategy",
+      "tags": [],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-strategy/pppp-model/v1-PPPP_Model.pdf",
+          "name": "PPPP Model.pdf",
+          "type": "pdf",
+          "size": 745802
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-21T06:40:30.918Z",
+      "createdBy": "MPP",
+      "updatedAt": "2026-10-21T06:40:30.918Z",
+      "updatedBy": "MPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-strategy/pppp-model/v1-PPPP_Model.pdf",
+              "name": "PPPP Model.pdf"
+            }
+          ],
+          "updatedAt": "2026-10-21T06:40:30.918Z",
+          "updatedBy": "MPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

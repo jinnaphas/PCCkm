@@ -3543,6 +3543,52 @@
           "note": "นำเข้าจาก OneDrive: Business Management"
         }
       ]
+    },
+    {
+      "id": "pppp-model",
+      "title": "PPPP Model",
+      "description": "แผนผัง PPPP Model 6 องค์ประกอบ: Policy, Law, Act → Roadmap → Technology Platform → Innovative Cluster → Smart Communities → Sustainable Development Index Institute (3 หน้า: Digitalization & Automation, Supply Chain of Bamboo, Bamboo and Agriculture waste Biomass Power Plant)",
+      "categoryId": "g1-paradigm",
+      "tags": [
+        "PPPP Model",
+        "Policy",
+        "Roadmap",
+        "Technology Platform",
+        "Innovative Cluster",
+        "Smart Communities",
+        "Sustainable Development Index Institute",
+        "Bamboo",
+        "Biomass"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-paradigm/pppp-model/v1-PPPP_Model.pdf",
+          "name": "PPPP Model.pdf",
+          "type": "pdf",
+          "size": 745802
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-21T06:43:14.000Z",
+      "createdBy": "Claude",
+      "updatedAt": "2026-10-21T06:43:14.000Z",
+      "updatedBy": "Claude",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-paradigm/pppp-model/v1-PPPP_Model.pdf",
+              "name": "PPPP Model.pdf"
+            }
+          ],
+          "updatedAt": "2026-10-21T06:43:14.000Z",
+          "updatedBy": "Claude",
+          "note": "เพิ่มจากไฟล์ PPPP Model.pdf"
+        }
+      ]
     }
   ]
 }

@@ -327,19 +327,21 @@
     {
       "id": "welcome-guide",
       "title": "คู่มือการใช้งาน Paradigm Library และการซิงก์กับ OneDrive",
-      "description": "แนะนำวิธีใช้งานระบบ ทั้งการค้นหา การเปิดดูเอกสาร การเพิ่ม/อัพเดตเอกสาร กติกา Knowledge Management (ต้องมีไฟล์ .md และ Tag รหัสเอกสาร) และวิธีให้ข้อมูลบนเว็บกับ OneDrive ตรงกัน",
+      "description": "วิธีใช้งานระบบ: ค้นหา เปิดดูเอกสาร เพิ่มเอกสารบนเว็บ (แบบ Paradigm ไม่ต้องมี .md และแบบ Knowledge Management ที่บังคับ .md + รหัส BM) เพิ่มเอกสารผ่านแชท Claude อัพเดต/ลบ ให้เว็บตรงกับ OneDrive และแก้ปัญหาเบื้องต้น",
       "categoryId": "g4-pd-ic-information-capital",
       "tags": [
         "คู่มือ",
         "เริ่มต้นใช้งาน",
         "how-to",
         "OneDrive",
-        "Knowledge Management"
+        "Knowledge Management",
+        "Paradigm",
+        "Claude"
       ],
-      "version": 2,
+      "version": 3,
       "createdAt": "2026-07-08T09:00:00.000Z",
       "createdBy": "System",
-      "updatedAt": "2026-10-12T09:00:00.000Z",
+      "updatedAt": "2026-10-21T09:00:00.000Z",
       "updatedBy": "Claude",
       "history": [
         {
@@ -367,15 +369,28 @@
               "name": "welcome-guide.md"
             }
           ]
+        },
+        {
+          "version": 3,
+          "updatedAt": "2026-10-21T09:00:00.000Z",
+          "updatedBy": "Claude",
+          "note": "แยกขั้นตอนเพิ่มเอกสารแบบ Paradigm / Knowledge Management, เพิ่มวิธีเพิ่มผ่านแชท Claude, วิธีสร้าง Token และเพิ่มหมวด, หัวข้อแก้ปัญหา",
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/work-standards/welcome-guide/v3-welcome-guide.md",
+              "name": "welcome-guide.md"
+            }
+          ]
         }
       ],
       "attachments": [
         {
           "kind": "file",
-          "path": "assets/work-standards/welcome-guide/v2-welcome-guide.md",
+          "path": "assets/work-standards/welcome-guide/v3-welcome-guide.md",
           "name": "welcome-guide.md",
           "type": "md",
-          "size": 7791
+          "size": 19319
         }
       ]
     },

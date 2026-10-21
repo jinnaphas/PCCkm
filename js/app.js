@@ -651,7 +651,8 @@ function renderMarkdown(md) {
       out.push(`<li>${line.replace(/^\s*[-*]\s+/, '')}</li>`);
       continue;
     }
-    if (/^\s*>\s?/.test(line)) { closeList(); out.push(`<blockquote>${line.replace(/^\s*>\s?/, '')}</blockquote>`); continue; }
+    // escapeHtml แปลง > เป็น &gt; ไปแล้วก่อนถึงตรงนี้ จึงต้องตรวจรูปแบบที่ escape แล้ว
+    if (/^\s*&gt;\s?/.test(line)) { closeList(); out.push(`<blockquote>${line.replace(/^\s*&gt;\s?/, '')}</blockquote>`); continue; }
     if (/^\s*---+\s*$/.test(line)) { closeList(); out.push('<hr>'); continue; }
     closeList();
     out.push(line.trim() ? `<p>${line}</p>` : '');

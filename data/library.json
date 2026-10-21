@@ -3594,6 +3594,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "full-manual",
+      "title": "Full Manual",
+      "description": "",
+      "categoryId": "g4-paradigm",
+      "tags": [],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g4-paradigm/full-manual/v1-BM_Folder_User_Guide_20261012.md",
+          "name": "BM_Folder_User_Guide_20261012.md",
+          "type": "md",
+          "size": 30544,
+          "role": "llm-md"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-10-21T15:08:20.788Z",
+      "createdBy": "MPP",
+      "updatedAt": "2026-10-21T15:08:20.788Z",
+      "updatedBy": "MPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-paradigm/full-manual/v1-BM_Folder_User_Guide_20261012.md",
+              "name": "BM_Folder_User_Guide_20261012.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-21T15:08:20.788Z",
+          "updatedBy": "MPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

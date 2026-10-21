@@ -21,6 +21,7 @@ const FILE_KINDS = {
   video: { kinds: ['mp4', 'webm', 'mov', 'm4v'], icon: '🎬', label: 'วิดีโอ' },
   audio: { kinds: ['mp3', 'wav', 'm4a', 'ogg'], icon: '🎧', label: 'เสียง' },
   md: { kinds: ['md', 'markdown', 'txt'], icon: '📝', label: 'เอกสารข้อความ' },
+  html: { kinds: ['html', 'htm'], icon: '🌐', label: 'หน้าเว็บ HTML' },
   word: { kinds: ['doc', 'docx'], icon: '📃', label: 'Word' },
   excel: { kinds: ['xls', 'xlsx', 'csv'], icon: '📊', label: 'Excel' },
   ppt: { kinds: ['ppt', 'pptx'], icon: '📽️', label: 'PowerPoint' },
@@ -69,7 +70,7 @@ async function updateLibrary(mutate, message) {
 function isPreviewable(att) {
   if (att.kind === 'link') return !!youtubeEmbedUrl(att.url);
   const k = fileKind(att.name || '').kind;
-  return ['pdf', 'image', 'video', 'audio', 'md'].includes(k);
+  return ['pdf', 'image', 'video', 'audio', 'md', 'html'].includes(k);
 }
 
 /* ---------- utilities ---------- */
@@ -606,6 +607,24 @@ async function renderPreview(doc, att) {
     area.innerHTML = `<video class="preview-frame" src="${url}" controls></video>`;
   } else if (kind === 'audio') {
     area.innerHTML = `<audio src="${url}" controls style="width:100%"></audio>`;
+  } else if (kind === 'html') {
+    // HTML แสดงในกรอบที่ไม่มี allow-same-origin: สคริปต์ในไฟล์เข้าถึง token/localStorage ของเว็บนี้ไม่ได้
+    // และสั่งเปลี่ยนหน้าหลักไม่ได้ (ไม่ใส่ allow-top-navigation) — ปุ่มคัดลอกในไฟล์ใช้ได้ผ่าน allow="clipboard-write"
+    // โหลดด้วย srcdoc (ไม่ต้องขอไฟล์เป็นเอกสารใหม่) — ลิงก์ #หัวข้อ ในไฟล์ต้องจัดการเลื่อนหน้าเองในไฟล์
+    area.innerHTML = '<div class="preview-md">กำลังโหลด…</div>';
+    try {
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error();
+      const frame = document.createElement('iframe');
+      frame.className = 'preview-frame preview-html';
+      frame.title = doc.title;
+      frame.setAttribute('sandbox', 'allow-scripts allow-popups allow-popups-to-escape-sandbox');
+      frame.setAttribute('allow', 'clipboard-write');
+      frame.srcdoc = await res.text();
+      area.replaceChildren(frame);
+    } catch (_) {
+      area.innerHTML = '<div class="preview-fallback">เปิดตัวอย่างไม่สำเร็จ — ใช้ปุ่มดาวน์โหลดแทน</div>';
+    }
   } else if (kind === 'md') {
     area.innerHTML = '<div class="preview-md">กำลังโหลด…</div>';
     try {

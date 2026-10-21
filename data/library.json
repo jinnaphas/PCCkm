@@ -378,6 +378,11 @@
           "attachments": [
             {
               "kind": "file",
+              "path": "assets/work-standards/welcome-guide/v3-BM_Folder_User_Guide_20261012.html",
+              "name": "BM_Folder_User_Guide_20261012.html"
+            },
+            {
+              "kind": "file",
               "path": "assets/work-standards/welcome-guide/v3-welcome-guide.md",
               "name": "welcome-guide.md"
             }
@@ -385,6 +390,13 @@
         }
       ],
       "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/work-standards/welcome-guide/v3-BM_Folder_User_Guide_20261012.html",
+          "name": "BM_Folder_User_Guide_20261012.html",
+          "type": "html",
+          "size": 46672
+        },
         {
           "kind": "file",
           "path": "assets/work-standards/welcome-guide/v3-welcome-guide.md",

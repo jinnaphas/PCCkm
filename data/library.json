@@ -3585,8 +3585,8 @@
         }
       ],
       "version": 1,
-      "createdAt": "2026-10-21T06:43:14.000Z",
-      "createdBy": "Claude",
+      "createdAt": "2026-10-21T06:40:30.918Z",
+      "createdBy": "MPP",
       "updatedAt": "2026-10-21T06:43:14.000Z",
       "updatedBy": "Claude",
       "history": [
@@ -3599,9 +3599,9 @@
               "name": "PPPP Model.pdf"
             }
           ],
-          "updatedAt": "2026-10-21T06:43:14.000Z",
-          "updatedBy": "Claude",
-          "note": "เพิ่มจากไฟล์ PPPP Model.pdf"
+          "updatedAt": "2026-10-21T06:40:30.918Z",
+          "updatedBy": "MPP",
+          "note": "เวอร์ชันแรก"
         }
       ]
     }

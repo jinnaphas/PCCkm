@@ -336,11 +336,11 @@
         "OneDrive",
         "Knowledge Management"
       ],
-      "version": 2,
+      "version": 3,
       "createdAt": "2026-07-08T09:00:00.000Z",
       "createdBy": "System",
-      "updatedAt": "2026-10-12T09:00:00.000Z",
-      "updatedBy": "Claude",
+      "updatedAt": "2026-10-21T15:07:00.018Z",
+      "updatedBy": "MPP",
       "history": [
         {
           "version": 1,
@@ -367,15 +367,30 @@
               "name": "welcome-guide.md"
             }
           ]
+        },
+        {
+          "version": 3,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-pd-ic-information-capital/welcome-guide/v3-BM_Folder_User_Guide_20261012.md",
+              "name": "BM_Folder_User_Guide_20261012.md",
+              "role": "llm-md"
+            }
+          ],
+          "updatedAt": "2026-10-21T15:07:00.018Z",
+          "updatedBy": "MPP",
+          "note": "อัพเดตข้อมูล"
         }
       ],
       "attachments": [
         {
           "kind": "file",
-          "path": "assets/work-standards/welcome-guide/v2-welcome-guide.md",
-          "name": "welcome-guide.md",
+          "path": "assets/g4-pd-ic-information-capital/welcome-guide/v3-BM_Folder_User_Guide_20261012.md",
+          "name": "BM_Folder_User_Guide_20261012.md",
           "type": "md",
-          "size": 7791
+          "size": 30544,
+          "role": "llm-md"
         }
       ]
     },

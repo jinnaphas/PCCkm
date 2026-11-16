@@ -3696,6 +3696,42 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "bid-tender-proposals",
+      "title": "Bid,Tender&Proposals",
+      "description": "",
+      "categoryId": "g4-pd-rs-tendering",
+      "tags": [],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g4-pd-rs-tendering/bid-tender-proposals/v1-bidtendersproposals.pdf",
+          "name": "bidtendersproposals.pdf",
+          "type": "pdf",
+          "size": 16142744
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-11-16T08:54:44.024Z",
+      "createdBy": "MPP",
+      "updatedAt": "2026-11-16T08:54:44.024Z",
+      "updatedBy": "MPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g4-pd-rs-tendering/bid-tender-proposals/v1-bidtendersproposals.pdf",
+              "name": "bidtendersproposals.pdf"
+            }
+          ],
+          "updatedAt": "2026-11-16T08:54:44.024Z",
+          "updatedBy": "MPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

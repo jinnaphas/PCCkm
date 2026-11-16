@@ -3658,6 +3658,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "marginal-concept",
+      "title": "Marginal Concept",
+      "description": "Marginal Concept",
+      "categoryId": "g1-strategy",
+      "tags": [
+        "Marginal"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-strategy/marginal-concept/v1-Marginal_concept_1_.jpg",
+          "name": "Marginal concept (1).jpg",
+          "type": "jpg",
+          "size": 178244
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-11-16T02:54:47.576Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-11-16T02:54:47.576Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-strategy/marginal-concept/v1-Marginal_concept_1_.jpg",
+              "name": "Marginal concept (1).jpg"
+            }
+          ],
+          "updatedAt": "2026-11-16T02:54:47.576Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

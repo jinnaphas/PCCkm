@@ -538,6 +538,8 @@ video.preview-frame { height: auto; max-height: 70vh; }
 
 .modal form { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
 .modal label { display: flex; flex-direction: column; gap: 4px; font-size: 0.88rem; font-weight: 500; }
+/* display ของ .modal label ทับแอตทริบิวต์ hidden — ต้องบังคับให้ซ่อนจริง (เช่นช่อง .md ที่ซ่อนเมื่อเลือก Paradigm) */
+[hidden] { display: none !important; }
 .modal input, .modal select, .modal textarea {
   font: inherit;
   font-weight: 400;

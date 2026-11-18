@@ -3771,6 +3771,42 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "moat-คูเมือง",
+      "title": "Moat (คูเมือง)",
+      "description": "Moat",
+      "categoryId": "g1-strategy",
+      "tags": [],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-strategy/moat-คูเมือง/v1-Five_Mountains_Six_Castles_Many_Streams_18_Nov.png",
+          "name": "Five Mountains, Six Castles, Many Streams 18 Nov.png",
+          "type": "png",
+          "size": 2687383
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-11-18T09:35:19.207Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-11-18T09:35:19.207Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-strategy/moat-คูเมือง/v1-Five_Mountains_Six_Castles_Many_Streams_18_Nov.png",
+              "name": "Five Mountains, Six Castles, Many Streams 18 Nov.png"
+            }
+          ],
+          "updatedAt": "2026-11-18T09:35:19.207Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

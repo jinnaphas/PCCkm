@@ -3832,6 +3832,42 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "schneider-products",
+      "title": "Schneider Products",
+      "description": "Schneider Products",
+      "categoryId": "g1-strategy",
+      "tags": [],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-strategy/schneider-products/v1-Schneider.png",
+          "name": "Schneider.png",
+          "type": "png",
+          "size": 2287811
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-11-25T03:03:46.814Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-11-25T03:03:46.814Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-strategy/schneider-products/v1-Schneider.png",
+              "name": "Schneider.png"
+            }
+          ],
+          "updatedAt": "2026-11-25T03:03:46.814Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

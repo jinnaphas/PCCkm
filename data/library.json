@@ -3982,6 +3982,44 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "7-thinking",
+      "title": "7 Thinking",
+      "description": "",
+      "categoryId": "g1-strategy",
+      "tags": [
+        "Thinking"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-strategy/7-thinking/v1-Thinking_7_Infographic_v2.png",
+          "name": "Thinking_7_Infographic_v2.png",
+          "type": "png",
+          "size": 1740790
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-11-27T08:21:25.889Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-11-27T08:21:25.889Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-strategy/7-thinking/v1-Thinking_7_Infographic_v2.png",
+              "name": "Thinking_7_Infographic_v2.png"
+            }
+          ],
+          "updatedAt": "2026-11-27T08:21:25.889Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

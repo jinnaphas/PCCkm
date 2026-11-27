@@ -3904,6 +3904,48 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "คำนิยาม-5-digital-architecture",
+      "title": "คำนิยาม 5 Digital Architecture",
+      "description": "คำนิยาม 5 Digital Architecture",
+      "categoryId": "g1-strategy",
+      "tags": [
+        "SGAM",
+        "SFAM",
+        "RAMI",
+        "SCIAM",
+        "ACDC"
+      ],
+      "attachments": [
+        {
+          "kind": "file",
+          "path": "assets/g1-strategy/คำนิยาม-5-digital-architecture/v1-PCC_Five_Tower_Architecture_Executive_Summary_r2.pdf",
+          "name": "PCC_Five_Tower_Architecture_Executive_Summary r2.pdf",
+          "type": "pdf",
+          "size": 3140113
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-11-27T08:07:28.599Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-11-27T08:07:28.599Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "file",
+              "path": "assets/g1-strategy/คำนิยาม-5-digital-architecture/v1-PCC_Five_Tower_Architecture_Executive_Summary_r2.pdf",
+              "name": "PCC_Five_Tower_Architecture_Executive_Summary r2.pdf"
+            }
+          ],
+          "updatedAt": "2026-11-27T08:07:28.599Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }

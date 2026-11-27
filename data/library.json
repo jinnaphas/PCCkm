@@ -3946,6 +3946,42 @@
           "note": "เวอร์ชันแรก"
         }
       ]
+    },
+    {
+      "id": "stem-de-dbtp-ของ-5-architecture-model",
+      "title": "STEM, DE&DBTP ของ 5 Architecture Model",
+      "description": "",
+      "categoryId": "g1-strategy",
+      "tags": [
+        "STEM"
+      ],
+      "attachments": [
+        {
+          "kind": "link",
+          "url": "https://claude.ai/artifact/WsHNaiVwDqHV2sCS4CrUe9#sgam",
+          "name": "STEM DE&DBTP of 5 AM"
+        }
+      ],
+      "version": 1,
+      "createdAt": "2026-11-27T08:09:08.820Z",
+      "createdBy": "JPP",
+      "updatedAt": "2026-11-27T08:09:08.820Z",
+      "updatedBy": "JPP",
+      "history": [
+        {
+          "version": 1,
+          "attachments": [
+            {
+              "kind": "link",
+              "url": "https://claude.ai/artifact/WsHNaiVwDqHV2sCS4CrUe9#sgam",
+              "name": "STEM DE&DBTP of 5 AM"
+            }
+          ],
+          "updatedAt": "2026-11-27T08:09:08.820Z",
+          "updatedBy": "JPP",
+          "note": "เวอร์ชันแรก"
+        }
+      ]
     }
   ]
 }
